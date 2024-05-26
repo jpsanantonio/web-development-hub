@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import SearchIcon from "@/components/icons/search";
 import MountainIcon from "@/components/icons/mountain";
 import AngryIcon from "@/components/icons/angry";
@@ -29,7 +28,6 @@ export default function Home() {
                 type="search"
               />
             </form>
-            <Button variant="outline">Sign In</Button>
           </div>
         </div>
       </header>
