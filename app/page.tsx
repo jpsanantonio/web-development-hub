@@ -1,6 +1,7 @@
 import Link from "next/link";
-import AngryIcon from "@/components/icons/angry";
-import ViewIcon from "@/components/icons/view";
+import VSCodeIcon from "@/components/icons/vscode";
+import GitHubIcon from "@/components/icons/github";
+import FigmaIcon from "@/components/icons/figma";
 import BookIcon from "@/components/icons/book";
 import CodeIcon from "@/components/icons/code";
 import ReactIcon from "@/components/icons/react";
@@ -73,49 +74,56 @@ export default function Home() {
                 </Link>
               </div>
             </section>
+            {/** Developer Tools */}
             <section>
               <h2 className="text-lg font-semibold mb-4">Developer Tools</h2>
               <div className="grid gap-3">
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://code.visualstudio.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <CodeIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <VSCodeIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       Visual Studio Code
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      A powerful code editor with a vast ecosystem of
-                      extensions.
+                      A code editor redefined and optimized for building and
+                      debugging modern web and cloud applications.
                     </p>
                   </div>
                 </Link>
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://github.com/"
                 >
-                  <CodeIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <GitHubIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       GitHub
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      The world's leading software development platform.
+                      It is where people build software. More than 100 million
+                      people use it to discover, fork, and contribute to over
+                      420 million projects.
                     </p>
                   </div>
                 </Link>
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://www.figma.com/"
                 >
-                  <CodeIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <FigmaIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       Figma
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      The collaborative design tool for teams.
+                      It is the leading collaborative design tool for building
+                      meaningful products. Seamlessly design, prototype,
+                      develop, and collect feedback in a single platform.
                     </p>
                   </div>
                 </Link>
