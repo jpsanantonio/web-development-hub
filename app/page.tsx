@@ -3,7 +3,9 @@ import AngryIcon from "@/components/icons/angry";
 import ViewIcon from "@/components/icons/view";
 import BookIcon from "@/components/icons/book";
 import CodeIcon from "@/components/icons/code";
-import ComponentIcon from "@/components/icons/component";
+import ReactIcon from "@/components/icons/react";
+import VueIcon from "@/components/icons/vue";
+import AngularIcon from "@/components/icons/angular";
 import NewspaperIcon from "@/components/icons/newspaper";
 import UsersIcon from "@/components/icons/user";
 
@@ -119,6 +121,7 @@ export default function Home() {
                 </Link>
               </div>
             </section>
+            {/** Frameworks & Libraries */}
             <section>
               <h2 className="text-lg font-semibold mb-4">
                 Frameworks & Libraries
@@ -126,44 +129,50 @@ export default function Home() {
               <div className="grid gap-3">
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://react.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <ComponentIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <ReactIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       React
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      A JavaScript library for building user interfaces.
+                      The library for web and native user interfaces.
                     </p>
                   </div>
                 </Link>
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://vuejs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <AngryIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
-                      Angular
-                    </p>
-                    <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      A TypeScript-based web application framework.
-                    </p>
-                  </div>
-                </Link>
-                <Link
-                  className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
-                >
-                  <ViewIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <VueIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       Vue.js
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      A progressive JavaScript framework for building user
-                      interfaces.
+                      A progressive, incrementally-adoptable JavaScript
+                      framework for building UI on the web.
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
+                  href="https://angular.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AngularIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
+                      Angular
+                    </p>
+                    <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
+                      The web development framework for building modern apps.
                     </p>
                   </div>
                 </Link>
