@@ -1,9 +1,11 @@
 import Link from "next/link";
+import MdnDocs from "@/components/icons/mdndocs";
+import FreeCodeCampIcon from "@/components/icons/freecodecamp";
+import CodeAcademyIcon from "@/components/icons/codeacademy";
 import VSCodeIcon from "@/components/icons/vscode";
 import GitHubIcon from "@/components/icons/github";
 import FigmaIcon from "@/components/icons/figma";
 import BookIcon from "@/components/icons/book";
-import CodeIcon from "@/components/icons/code";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -25,28 +27,35 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/** Learning Resources */}
             <section>
               <h2 className="text-lg font-semibold mb-4">Learning Resources</h2>
               <div className="grid gap-3">
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://developer.mozilla.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <BookIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <MdnDocs className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       MDN Web Docs
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      The definitive source for all things web development.
+                      Provides information about Open Web technologies including
+                      HTML, CSS, and APIs for both Web sites and progressive web
+                      apps.
                     </p>
                   </div>
                 </Link>
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://www.freecodecamp.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <BookIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <FreeCodeCampIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       FreeCodeCamp
@@ -59,9 +68,11 @@ export default function Home() {
                 </Link>
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://www.codecademy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <BookIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <CodeAcademyIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       Codecademy
@@ -98,6 +109,8 @@ export default function Home() {
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
                   href="https://github.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <GitHubIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
@@ -114,6 +127,8 @@ export default function Home() {
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
                   href="https://www.figma.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FigmaIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
