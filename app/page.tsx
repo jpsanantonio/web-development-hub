@@ -5,10 +5,12 @@ import CodeAcademyIcon from "@/components/icons/codeacademy";
 import VSCodeIcon from "@/components/icons/vscode";
 import GitHubIcon from "@/components/icons/github";
 import FigmaIcon from "@/components/icons/figma";
-import BookIcon from "@/components/icons/book";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
+import DevtoIcon from "@/components/icons/devto";
+import CssTricksIcon from "@/components/icons/csstricks";
+import SmashingMagazineIcon from "@/components/icons/smashingmagazine";
 import NewspaperIcon from "@/components/icons/newspaper";
 import UsersIcon from "@/components/icons/user";
 
@@ -201,44 +203,51 @@ export default function Home() {
                 </Link>
               </div>
             </section>
+            {/** Community & Blogs */}
             <section>
               <h2 className="text-lg font-semibold mb-4">Community & Blogs</h2>
               <div className="grid gap-3">
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://dev.to/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <UsersIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <DevtoIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       Dev.to
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      A community of software developers sharing ideas and
-                      helping each other.
+                      A constructive and inclusive social network for software
+                      developers. With you every step of your journey.
                     </p>
                   </div>
                 </Link>
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://css-tricks.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <NewspaperIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <CssTricksIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       CSS-Tricks
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                      A community-edited collection of CSS, HTML, and JavaScript
-                      techniques.
+                      Daily articles about CSS, HTML, JavaScript, and all things
+                      related to web design and development.
                     </p>
                   </div>
                 </Link>
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                  href="#"
+                  href="https://www.smashingmagazine.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <NewspaperIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <SmashingMagazineIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       Smashing Magazine
