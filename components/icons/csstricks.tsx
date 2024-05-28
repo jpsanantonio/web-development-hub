@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactNode } from "react";
+import { ComponentProps } from "react";
 
 export default function CssTricksIcon(props: ComponentProps<"svg">) {
   return (
