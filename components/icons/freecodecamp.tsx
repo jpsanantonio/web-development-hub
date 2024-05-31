@@ -31,16 +31,16 @@ export default function FreeCodeCampIcon(props: ComponentProps<"svg">) {
           <g>
             <use
               fill="#0a0a23"
-              fill-opacity="1"
+              fillOpacity="1"
               opacity="1"
               xlinkHref="#f2jrM5bTZu"
             />
             <g>
               <use
-                fill-opacity="0"
+                fillOpacity="0"
                 stroke="#000"
-                stroke-opacity="0"
-                stroke-width="1"
+                strokeOpacity="0"
+                strokeWidth="1"
                 opacity="1"
                 xlinkHref="#f2jrM5bTZu"
               />
@@ -49,16 +49,16 @@ export default function FreeCodeCampIcon(props: ComponentProps<"svg">) {
           <g>
             <use
               fill="#0a0a23"
-              fill-opacity="1"
+              fillOpacity="1"
               opacity="1"
               xlinkHref="#fePvRWSP7"
             />
             <g>
               <use
-                fill-opacity="0"
+                fillOpacity="0"
                 stroke="#000"
-                stroke-opacity="0"
-                stroke-width="1"
+                strokeOpacity="0"
+                strokeWidth="1"
                 opacity="1"
                 xlinkHref="#fePvRWSP7"
               />
@@ -67,16 +67,16 @@ export default function FreeCodeCampIcon(props: ComponentProps<"svg">) {
           <g>
             <use
               fill="#0a0a23"
-              fill-opacity="1"
+              fillOpacity="1"
               opacity="1"
               xlinkHref="#a1dIEIC07z"
             />
             <g>
               <use
-                fill-opacity="0"
+                fillOpacity="0"
                 stroke="#000"
-                stroke-opacity="0"
-                stroke-width="1"
+                strokeOpacity="0"
+                strokeWidth="1"
                 opacity="1"
                 xlinkHref="#a1dIEIC07z"
               />
