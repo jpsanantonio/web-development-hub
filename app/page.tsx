@@ -9,8 +9,11 @@ import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
 import DevtoIcon from "@/components/icons/devto";
+import RedditIcon from "@/components/icons/reddit";
+import IcodethisIcon from "@/components/icons/icodethis";
 import CssTricksIcon from "@/components/icons/csstricks";
 import SmashingMagazineIcon from "@/components/icons/smashingmagazine";
+import JoshWComeauIcon from "@/components/icons/joshwcomeau";
 import ArrowRightIcon from "@/components/icons/arrowright";
 
 export default function Home() {
@@ -223,9 +226,9 @@ export default function Home() {
                 <span>View All</span>
               </Link>
             </section>
-            {/** Community & Blogs */}
+            {/** Communities */}
             <section className="flex flex-col">
-              <h2 className="text-lg font-semibold mb-4">Community & Blogs</h2>
+              <h2 className="text-lg font-semibold mb-4">Communities</h2>
               <div className="grid gap-3">
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
@@ -244,6 +247,52 @@ export default function Home() {
                     </p>
                   </div>
                 </Link>
+                <Link
+                  className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
+                  href="https://www.reddit.com/r/webdev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <RedditIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
+                      r/webdev
+                    </p>
+                    <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
+                      The largest web development community on Reddit.
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
+                  href="https://icodethis.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IcodethisIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
+                      iCodeThis
+                    </p>
+                    <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
+                      A helpful community for web developers that encourages
+                      growth in a playful yet competitive way.
+                    </p>
+                  </div>
+                </Link>
+              </div>
+              <Link
+                href="/"
+                className="self-end text-black hover:underline hover:underline-offset-4 text-sm flex items-center gap-1 mt-4 mr-2"
+              >
+                <ArrowRightIcon className="text-black" />
+                <span>View All</span>
+              </Link>
+            </section>
+            {/** Blogs */}
+            <section className="flex flex-col">
+              <h2 className="text-lg font-semibold mb-4">Blogs</h2>
+              <div className="grid gap-3">
                 <Link
                   className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
                   href="https://css-tricks.com/"
@@ -271,6 +320,23 @@ export default function Home() {
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       Smashing Magazine
+                    </p>
+                    <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
+                      A leading online magazine for professional web designers
+                      and developers.
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
+                  href="https://www.joshwcomeau.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <JoshWComeauIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
+                      Josh W Comeau
                     </p>
                     <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
                       A leading online magazine for professional web designers
