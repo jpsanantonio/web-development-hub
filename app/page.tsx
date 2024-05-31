@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MdnDocsIcon from "@/components/icons/mdndocs";
+import MdnDocs from "@/components/icons/mdndocs";
 import FreeCodeCampIcon from "@/components/icons/freecodecamp";
 import CodeAcademyIcon from "@/components/icons/codeacademy";
 import VSCodeIcon from "@/components/icons/vscode";
@@ -11,6 +11,7 @@ import AngularIcon from "@/components/icons/angular";
 import DevtoIcon from "@/components/icons/devto";
 import CssTricksIcon from "@/components/icons/csstricks";
 import SmashingMagazineIcon from "@/components/icons/smashingmagazine";
+import ArrowRightIcon from "@/components/icons/arrowright";
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/** Learning Resources */}
-            <section>
+            <section className="flex flex-col">
               <h2 className="text-lg font-semibold mb-4">Learning Resources</h2>
               <div className="grid gap-3">
                 <Link
@@ -37,7 +38,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MdnDocsIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <MdnDocs className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       MDN Web Docs
@@ -84,9 +85,16 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+              <Link
+                href="/"
+                className="self-end text-black hover:underline hover:underline-offset-4 text-sm flex items-center gap-1 mt-4 mr-2"
+              >
+                <ArrowRightIcon className="text-black" />
+                <span>View All</span>
+              </Link>
             </section>
             {/** Developer Tools */}
-            <section>
+            <section className="flex flex-col">
               <h2 className="text-lg font-semibold mb-4">Developer Tools</h2>
               <div className="grid gap-3">
                 <Link
@@ -143,9 +151,16 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+              <Link
+                href="/"
+                className="self-end text-black hover:underline hover:underline-offset-4 text-sm flex items-center gap-1 mt-4 mr-2"
+              >
+                <ArrowRightIcon className="text-black" />
+                <span>View All</span>
+              </Link>
             </section>
             {/** Frameworks & Libraries */}
-            <section>
+            <section className="flex flex-col">
               <h2 className="text-lg font-semibold mb-4">
                 Frameworks & Libraries
               </h2>
@@ -200,9 +215,16 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+              <Link
+                href="/"
+                className="self-end text-black hover:underline hover:underline-offset-4 text-sm flex items-center gap-1 mt-4 mr-2"
+              >
+                <ArrowRightIcon className="text-black" />
+                <span>View All</span>
+              </Link>
             </section>
             {/** Community & Blogs */}
-            <section>
+            <section className="flex flex-col">
               <h2 className="text-lg font-semibold mb-4">Community & Blogs</h2>
               <div className="grid gap-3">
                 <Link
@@ -257,6 +279,13 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+              <Link
+                href="/"
+                className="self-end text-black hover:underline hover:underline-offset-4 text-sm flex items-center gap-1 mt-4 mr-2"
+              >
+                <ArrowRightIcon className="text-black" />
+                <span>View All</span>
+              </Link>
             </section>
           </div>
         </div>

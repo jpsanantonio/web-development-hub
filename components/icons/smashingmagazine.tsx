@@ -40,16 +40,16 @@ export default function SmashingMagazineIcon(props: ComponentProps<"svg">) {
           cx="22.3"
           id="D"
         >
-          <stop stop-color="#fff" offset="0" />
-          <stop stop-opacity=".894" stop-color="#fefaf9" offset=".106" />
-          <stop stop-opacity=".755" stop-color="#fdece9" offset=".245" />
-          <stop stop-opacity=".598" stop-color="#f9d5ce" offset=".402" />
-          <stop stop-opacity=".428" stop-color="#f5b6a8" offset=".572" />
-          <stop stop-opacity=".246" stop-color="#f08d77" offset=".754" />
-          <stop stop-opacity=".06" stop-color="#e95c3d" offset=".941" />
-          <stop stop-opacity="0" stop-color="#e74b29" offset="1" />
+          <stop stopColor="#fff" offset="0" />
+          <stop stopOpacity=".894" stopColor="#fefaf9" offset=".106" />
+          <stop stopOpacity=".755" stopColor="#fdece9" offset=".245" />
+          <stop stopOpacity=".598" stopColor="#f9d5ce" offset=".402" />
+          <stop stopOpacity=".428" stopColor="#f5b6a8" offset=".572" />
+          <stop stopOpacity=".246" stopColor="#f08d77" offset=".754" />
+          <stop stopOpacity=".06" stopColor="#e95c3d" offset=".941" />
+          <stop stopOpacity="0" stopColor="#e74b29" offset="1" />
         </radialGradient>
-        <use xlinkHref="#B" clip-path="url(#C)" opacity=".65" fill="url(#D)" />
+        <use xlinkHref="#B" clipPath="url(#C)" opacity=".65" fill="url(#D)" />
         <radialGradient
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(1.1702,0,0,1.1702,3.972,-106.27)"
@@ -58,14 +58,14 @@ export default function SmashingMagazineIcon(props: ComponentProps<"svg">) {
           cx="22.3"
           id="E"
         >
-          <stop stop-color="#f9bc3a" offset="0" />
-          <stop stop-opacity=".843" stop-color="#f8b639" offset=".158" />
-          <stop stop-opacity=".636" stop-color="#f5a637" offset=".364" />
-          <stop stop-opacity=".403" stop-color="#f18b33" offset=".597" />
-          <stop stop-opacity=".152" stop-color="#eb652d" offset=".848" />
-          <stop stop-opacity="0" stop-color="#e74b29" offset="1" />
+          <stop stopColor="#f9bc3a" offset="0" />
+          <stop stopOpacity=".843" stopColor="#f8b639" offset=".158" />
+          <stop stopOpacity=".636" stopColor="#f5a637" offset=".364" />
+          <stop stopOpacity=".403" stopColor="#f18b33" offset=".597" />
+          <stop stopOpacity=".152" stopColor="#eb652d" offset=".848" />
+          <stop stopOpacity="0" stopColor="#e74b29" offset="1" />
         </radialGradient>
-        <use xlinkHref="#B" clip-path="url(#C)" opacity=".3" fill="url(#E)" />
+        <use xlinkHref="#B" clipPath="url(#C)" opacity=".3" fill="url(#E)" />
         <g fill="#fff">
           <path d="M16.776 21.433l27.597-6.374-2.5-.47-23.9 5.5c-.437.42-.845.87-1.217 1.33zM53.72 48.976c-.765-.972-1.7-1.894-2.775-2.77-3.88 2.64-8.875 3.8-15 .85-4.832-2.316-9.563-2.393-13.845-1.2 2.133 1.485 4.65 2.844 7.585 4.06 4.935 2.055 8.25 3.838 9.958 5.353 1.7 1.5 2.557 3.44 2.557 5.8-.013 4.03-2.828 6.04-8.497 6.04-5.464 0-10.372-1.73-14.717-5.18L13.82 73.5c3.922 2.1 7.118 3.47 9.597 4.134.124.033.258.062.387.094l30.055-6.934c2.3-2.92 3.46-6.493 3.46-10.724-.01-4.343-1.2-8.047-3.6-11.108z" />
           <path d="M13.598 31.18c0 5.838 2.848 10.72 8.512 14.666 4.282-1.183 9.013-1.107 13.844 1.2 6.116 2.94 11.1 1.8 15-.85-2.306-1.9-5.307-3.566-9.04-5.026-5.46-2.165-9.022-3.892-10.7-5.17-1.66-1.285-2.507-2.714-2.507-4.305 0-4.03 2.545-6.05 7.62-6.05 5.66 0 10.1 1.36 13.262 4.077l4.2-11.288a39.84 39.84 0 0 0-9.41-3.383l-27.6 6.38c-2.12 2.63-3.18 5.88-3.18 9.75z" />
