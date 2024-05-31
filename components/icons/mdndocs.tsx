@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 
-export default function MdnDocs(props: ComponentProps<"svg">) {
+export default function MdnDocsIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       {...props}

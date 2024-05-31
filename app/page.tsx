@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MdnDocs from "@/components/icons/mdndocs";
+import MdnDocsIcon from "@/components/icons/mdndocs";
 import FreeCodeCampIcon from "@/components/icons/freecodecamp";
 import CodeAcademyIcon from "@/components/icons/codeacademy";
 import VSCodeIcon from "@/components/icons/vscode";
@@ -11,8 +11,6 @@ import AngularIcon from "@/components/icons/angular";
 import DevtoIcon from "@/components/icons/devto";
 import CssTricksIcon from "@/components/icons/csstricks";
 import SmashingMagazineIcon from "@/components/icons/smashingmagazine";
-import NewspaperIcon from "@/components/icons/newspaper";
-import UsersIcon from "@/components/icons/user";
 
 export default function Home() {
   return (
@@ -39,7 +37,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MdnDocs className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                  <MdnDocsIcon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                       MDN Web Docs
