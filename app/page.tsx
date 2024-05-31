@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import SearchIcon from "@/components/icons/search";
@@ -154,6 +154,7 @@ const sections = [
 ];
 
 export default function Home() {
+  const searchRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
 
   const filteredSections = sections.map((section) => {
@@ -166,9 +167,21 @@ export default function Home() {
     };
   });
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.metaKey && event.key === "k") {
+        searchRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
-    <div className="flex lg:flex-row flex-col h-screen">
-      <aside className="bg-gray-100 dark:bg-gray-800 py-4 px-8 flex flex-row justify-between lg:flex-col lg:justify-normal gap-4 lg:w-1/5">
+    <div className="flex xl:flex-row flex-col h-screen">
+      <aside className="bg-gray-100 dark:bg-gray-800 py-4 px-8 flex flex-row justify-between xl:flex-col xl:justify-normal gap-4">
         <Link className="flex items-center gap-2" href="#">
           <MountainIcon className="h-6 w-6" />
           <span className="text-lg font-bold">Web Development Hub</span>
@@ -177,12 +190,16 @@ export default function Home() {
           <form className="relative">
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" />
             <Input
+              ref={searchRef}
               className="pl-10 pr-4 py-2 rounded-md bg-white dark:bg-gray-950 dark:text-gray-50 focus:outline-none focus:ring-1 focus:ring-gray-500 dark:focus:ring-gray-300"
               placeholder="Search resources..."
               type="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
+            <span className="absolute top-1/2 -translate-y-1/2 right-2 hidden sm:flex items-center justify-center px-2.5 py-[3px] gap-2.5 bg-white dark:bg-gray-800 rounded-md border border-zinc-400 border-opacity-40 text-zinc-400 dark:text-neutral-200 text-sm font-medium peer-focus:hidden select-none tracking-[2.80px]">
+              ⌘K
+            </span>
           </form>
         </div>
       </aside>
