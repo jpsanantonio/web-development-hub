@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import SearchIcon from "@/components/icons/search";
@@ -151,6 +154,18 @@ const sections = [
 ];
 
 export default function Home() {
+  const [search, setSearch] = useState("");
+
+  const filteredSections = sections.map((section) => {
+    const filteredLinks = section.links.filter((link) =>
+      link.title.toLowerCase().includes(search.toLowerCase())
+    );
+    return {
+      ...section,
+      links: filteredLinks,
+    };
+  });
+
   return (
     <div className="flex lg:flex-row flex-col h-screen">
       <aside className="bg-gray-100 dark:bg-gray-800 py-4 px-8 flex flex-row justify-between lg:flex-col lg:justify-normal gap-4 lg:w-1/5">
@@ -165,6 +180,8 @@ export default function Home() {
               className="pl-10 pr-4 py-2 rounded-md bg-white dark:bg-gray-950 dark:text-gray-50 focus:outline-none focus:ring-1 focus:ring-gray-500 dark:focus:ring-gray-300"
               placeholder="Search resources..."
               type="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </form>
         </div>
@@ -181,39 +198,46 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sections.map((section) => (
-              <section key={section.title} className="flex flex-col">
-                <h2 className="text-lg font-semibold mb-4">{section.title}</h2>
-                <div className="grid gap-3">
-                  {section.links.map((link) => (
-                    <Link
-                      key={link.title}
-                      className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <link.icon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
-                          {link.title}
-                        </p>
-                        <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
-                          {link.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-                <Link
-                  href="/"
-                  className="self-end text-black hover:underline hover:underline-offset-4 text-sm flex items-center gap-1 mt-4 mr-2"
-                >
-                  <ArrowRightIcon className="text-black" />
-                  <span>View All</span>
-                </Link>
-              </section>
-            ))}
+            {filteredSections.map(
+              (section) =>
+                section.links.length > 0 && (
+                  <section key={section.title} className="flex flex-col">
+                    <h2 className="text-lg font-semibold mb-4">
+                      {section.title}
+                    </h2>
+                    <div className="grid gap-3">
+                      {section.links.map((link) => (
+                        <Link
+                          key={link.title}
+                          className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <link.icon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                          <div className="flex-1">
+                            <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
+                              {link.title}
+                            </p>
+                            <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
+                              {link.description}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                    {section.links.length > 3 && (
+                      <Link
+                        href="/"
+                        className="self-end text-black hover:underline hover:underline-offset-4 text-sm flex items-center gap-1 mt-4 mr-2"
+                      >
+                        <ArrowRightIcon className="text-black" />
+                        <span>View All</span>
+                      </Link>
+                    )}
+                  </section>
+                )
+            )}
           </div>
         </div>
       </main>
