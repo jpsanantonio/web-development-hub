@@ -1,5 +1,8 @@
 import Link from "next/link";
-import MdnDocs from "@/components/icons/mdndocs";
+import { Input } from "@/components/ui/input";
+import SearchIcon from "@/components/icons/search";
+import MountainIcon from "@/components/icons/mountain";
+import MdnDocsIcon from "@/components/icons/mdndocs";
 import FreeCodeCampIcon from "@/components/icons/freecodecamp";
 import CodeAcademyIcon from "@/components/icons/codeacademy";
 import VSCodeIcon from "@/components/icons/vscode";
@@ -21,7 +24,7 @@ const sections = [
     title: "Learning Resources",
     links: [
       {
-        icon: MdnDocs,
+        icon: MdnDocsIcon,
         title: "MDN Web Docs",
         href: "https://developer.mozilla.org/",
         description:
@@ -149,7 +152,23 @@ const sections = [
 
 export default function Home() {
   return (
-    <>
+    <div className="flex">
+      <aside className="bg-gray-100 dark:bg-gray-800 py-4 px-8 flex flex-col gap-4">
+        <Link className="flex items-center gap-2" href="#">
+          <MountainIcon className="h-6 w-6" />
+          <span className="text-lg font-bold">Web Development Hub</span>
+        </Link>
+        <div className="flex items-center gap-4">
+          <form className="relative">
+            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" />
+            <Input
+              className="pl-10 pr-4 py-2 rounded-md bg-white dark:bg-gray-950 dark:text-gray-50 focus:outline-none focus:ring-1 focus:ring-gray-500 dark:focus:ring-gray-300"
+              placeholder="Search resources..."
+              type="search"
+            />
+          </form>
+        </div>
+      </aside>
       <main className="w-full max-w-5xl mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20">
         <div className="space-y-6">
           <div className="text-center">
@@ -198,6 +217,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 }
