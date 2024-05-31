@@ -14,7 +14,7 @@ export default function JoshWComeauIcon(props: ComponentProps<"svg">) {
       x="0px"
       y="0px"
       viewBox="0 0 170 170"
-      enable-background="new 0 0 170 170"
+      enableBackground="new 0 0 170 170"
       xmlSpace="preserve"
     >
       <path

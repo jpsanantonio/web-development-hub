@@ -14,7 +14,7 @@ export default function IcodethisIcon(props: ComponentProps<"svg">) {
       x="0px"
       y="0px"
       viewBox="0 0 400 400"
-      enable-background="new 0 0 400 400"
+      enableBackground="new 0 0 400 400"
       xmlSpace="preserve"
     >
       <path
