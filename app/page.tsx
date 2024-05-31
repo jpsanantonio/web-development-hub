@@ -152,13 +152,13 @@ const sections = [
 
 export default function Home() {
   return (
-    <div className="flex">
-      <aside className="bg-gray-100 dark:bg-gray-800 py-4 px-8 flex flex-col gap-4">
+    <div className="flex lg:flex-row flex-col h-screen">
+      <aside className="bg-gray-100 dark:bg-gray-800 py-4 px-8 flex flex-row justify-between lg:flex-col lg:justify-normal gap-4 lg:w-1/5">
         <Link className="flex items-center gap-2" href="#">
           <MountainIcon className="h-6 w-6" />
           <span className="text-lg font-bold">Web Development Hub</span>
         </Link>
-        <div className="flex items-center gap-4">
+        <div>
           <form className="relative">
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" />
             <Input
