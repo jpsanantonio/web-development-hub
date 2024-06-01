@@ -3,6 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import SearchIcon from "@/components/icons/search";
 import MountainIcon from "@/components/icons/mountain";
 import MdnDocsIcon from "@/components/icons/mdndocs";
@@ -167,6 +173,8 @@ export default function Home() {
     };
   });
 
+  const sectionLabels = sections.map((section) => section.title);
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.metaKey && event.key === "k") {
@@ -181,7 +189,7 @@ export default function Home() {
 
   return (
     <div className="flex xl:flex-row flex-col h-screen">
-      <aside className="bg-gray-100 dark:bg-gray-800 py-4 px-8 flex flex-row justify-between xl:flex-col xl:justify-normal gap-4">
+      <aside className="bg-gray-100 dark:bg-gray-800 py-4 px-8 flex flex-row justify-between xl:flex-col xl:justify-normal gap-8">
         <Link className="flex items-center gap-2" href="#">
           <MountainIcon className="h-6 w-6" />
           <span className="text-lg font-bold">Web Development Hub</span>
@@ -202,6 +210,43 @@ export default function Home() {
             </span>
           </form>
         </div>
+        <Accordion
+          type="multiple"
+          className="hidden xl:block"
+          defaultValue={sectionLabels}
+        >
+          {filteredSections.map(
+            (section) =>
+              section.links.length > 0 && (
+                <AccordionItem key={section.title} value={section.title}>
+                  <AccordionTrigger>{section.title}</AccordionTrigger>
+                  <AccordionContent>
+                    <div className="grid gap-3">
+                      {section.links.map((link) => (
+                        <Link
+                          key={link.title}
+                          className="group flex items-center gap-3 rounded-md bg-white px-4 py-3 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800"
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <link.icon className="h-6 w-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-50" />
+                          <div className="flex-1">
+                            <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
+                              {link.title}
+                            </p>
+                            {/* <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
+                              {link.description}
+                            </p> */}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              )
+          )}
+        </Accordion>
       </aside>
       <main className="w-full max-w-5xl mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20">
         <div className="space-y-6">
