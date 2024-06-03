@@ -1,6 +1,14 @@
+import FrontendMastersIcon from "@/components/icons/frontendmasters";
+import EpicWebIcon from "@/components/icons/epicweb";
 import MdnDocsIcon from "@/components/icons/mdndocs";
 import FreeCodeCampIcon from "@/components/icons/freecodecamp";
+import WesBosIcon from "@/components/icons/wesbos";
 import CodeAcademyIcon from "@/components/icons/codeacademy";
+import WebDevIcon from "@/components/icons/webdev";
+import EricelliottJsIcon from "@/components/icons/ericelliottjs";
+import TestingJavaScriptIcon from "@/components/icons/testingjavascript";
+import EpicReactIcon from "@/components/icons/epicreact";
+import BuildUIIcon from "@/components/icons/buildui";
 import VSCodeIcon from "@/components/icons/vscode";
 import GitHubIcon from "@/components/icons/github";
 import FigmaIcon from "@/components/icons/figma";
@@ -27,9 +35,24 @@ export const SECTIONS = [
   {
     icon: LearningResourcesIcon,
     title: "Learning Resources",
+    href: "/learning-resources",
     description:
       "Comprehensive tutorials and courses to master the fundamentals and advanced topics in web development.",
     links: [
+      {
+        icon: FrontendMastersIcon,
+        title: "Frontend Masters",
+        href: "https://frontendmasters.com/",
+        description:
+          "A leading brand that offers in-depth and modern JavaScript and front-end engineering courses to help developers advance their skills. ",
+      },
+      {
+        icon: EpicWebIcon,
+        title: "Epic Web",
+        href: "https://epicweb.dev/",
+        description:
+          "Learn full-stack web development with Kent C. Dodds and the Epic Web instructors. Learn TypeScript, React, Node.js, and more through hands-on workshops.",
+      },
       {
         icon: MdnDocsIcon,
         title: "MDN Web Docs",
@@ -45,11 +68,52 @@ export const SECTIONS = [
           "Learn to code for free. Build projects. Earn certifications.",
       },
       {
+        icon: WesBosIcon,
+        title: "Wes Bos",
+        href: "https://wesbos.com/",
+        description:
+          "Wes Bos creates and shares tutorials, courses, and articles on web development. He also does a tri-weekly podcast called Syntax",
+      },
+      {
         icon: CodeAcademyIcon,
         title: "Codecademy",
         href: "https://www.codecademy.com/",
         description:
           "Interactive coding lessons and projects to build your skills.",
+      },
+      {
+        icon: WebDevIcon,
+        title: "web.dev",
+        href: "https://webdev.to/",
+        description:
+          "A curated list of web development resources, tutorials, and courses.",
+      },
+      {
+        icon: EricelliottJsIcon,
+        title: "EricElliottJS",
+        href: "https://ericelliottjs.com/",
+        description:
+          "Learn JavaScript with Eric Elliott. Don't just learn JavaScript; learn how to change the world.",
+      },
+      {
+        icon: TestingJavaScriptIcon,
+        title: "Testing JavaScript",
+        href: "https://testingjavascript.com/",
+        description:
+          "Learn the smart, efficient way to test any JavaScript application.",
+      },
+      {
+        icon: EpicReactIcon,
+        title: "Epic React",
+        href: "https://epicreact.dev/",
+        description:
+          "Strap in and take your React applications to the next level.",
+      },
+      {
+        icon: BuildUIIcon,
+        title: "Build UI",
+        href: "https://buildui.dev/",
+        description: "Learn how to build modern user interfaces for the web.",
       },
     ],
   },
