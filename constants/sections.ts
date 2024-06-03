@@ -8,6 +8,7 @@ import WebDevIcon from "@/components/icons/webdev";
 import EricelliottJsIcon from "@/components/icons/ericelliottjs";
 import TestingJavaScriptIcon from "@/components/icons/testingjavascript";
 import EpicReactIcon from "@/components/icons/epicreact";
+import BuildUIIcon from "@/components/icons/buildui";
 import VSCodeIcon from "@/components/icons/vscode";
 import GitHubIcon from "@/components/icons/github";
 import FigmaIcon from "@/components/icons/figma";
@@ -107,6 +108,12 @@ export const SECTIONS = [
         href: "https://epicreact.dev/",
         description:
           "Strap in and take your React applications to the next level.",
+      },
+      {
+        icon: BuildUIIcon,
+        title: "Build UI",
+        href: "https://buildui.dev/",
+        description: "Learn how to build modern user interfaces for the web.",
       },
     ],
   },
