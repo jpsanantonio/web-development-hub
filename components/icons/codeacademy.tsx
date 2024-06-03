@@ -1,8 +1,11 @@
 import { ComponentProps, FC } from "react";
 
-export default function CodeAcademyIcon(props: ComponentProps<"svg">) {
+export default function CodeAcademyIcon({
+  width = 24,
+  height = 24,
+}: ComponentProps<"svg">) {
   return (
-    <svg {...props} width="24" height="24" viewBox="0 0 102 21.705">
+    <svg width={width} height={height} viewBox="0 0 102 21.705">
       <title>Codecademy Logo</title>
       <g fill="none" fillRule="nonzero">
         <path
