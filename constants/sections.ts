@@ -150,6 +150,7 @@ export const SECTIONS = [
   {
     icon: FrameworkAndLibrariesIcon,
     title: "Frameworks & Libraries",
+    href: "/frameworks-and-libraries",
     description:
       "Popular frameworks and libraries to help you build robust and scalable web applications efficiently.",
     links: [
