@@ -120,6 +120,7 @@ export const SECTIONS = [
   {
     icon: DeveloperToolsIcon,
     title: "Developer Tools",
+    href: "/developer-tools",
     description:
       "Essential tools and software to streamline your web development workflow and enhance productivity.",
     links: [

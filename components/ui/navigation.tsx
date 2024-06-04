@@ -27,8 +27,6 @@ export default function Navigation() {
     };
   });
 
-  const sectionLabels = SECTIONS.map((section) => section.title);
-
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.metaKey && event.key === "k") {
@@ -63,11 +61,7 @@ export default function Navigation() {
           </span>
         </form>
       </div>
-      <Accordion
-        type="multiple"
-        className="hidden xl:block"
-        defaultValue={sectionLabels}
-      >
+      <Accordion type="single" className="hidden xl:block" collapsible>
         {filteredSections.map(
           (section) =>
             section.links.length > 0 && (
