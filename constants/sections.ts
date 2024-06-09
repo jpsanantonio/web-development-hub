@@ -178,6 +178,7 @@ export const SECTIONS = [
   {
     icon: CommunitiesIcon,
     title: "Communities",
+    href: "/communities",
     description:
       "Engaging forums and groups where you can connect with fellow developers, share knowledge, and collaborate on projects.",
     links: [
