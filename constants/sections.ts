@@ -207,6 +207,7 @@ export const SECTIONS = [
   {
     icon: BlogsIcon,
     title: "Blogs",
+    href: "/blogs",
     description:
       "Insightful articles and updates from industry experts to keep you informed about the latest trends and best practices in web development.",
     links: [
