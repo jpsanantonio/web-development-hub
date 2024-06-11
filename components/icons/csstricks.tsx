@@ -1,11 +1,13 @@
 import { ComponentProps } from "react";
 
-export default function CssTricksIcon(props: ComponentProps<"svg">) {
+export default function CssTricksIcon({
+  width = 24,
+  height = 24,
+}: ComponentProps<"svg">) {
   return (
     <svg
-      {...props}
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 362.62 388.52"
       data-spin-me="false"
     >

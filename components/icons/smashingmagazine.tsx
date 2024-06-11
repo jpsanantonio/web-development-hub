@@ -1,11 +1,13 @@
 import { ComponentProps } from "react";
 
-export default function SmashingMagazineIcon(props: ComponentProps<"svg">) {
+export default function SmashingMagazineIcon({
+  width = 24,
+  height = 24,
+}: ComponentProps<"svg">) {
   return (
     <svg
-      {...props}
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 10 64 64"

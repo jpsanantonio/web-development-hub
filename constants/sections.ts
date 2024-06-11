@@ -21,6 +21,11 @@ import IcodethisIcon from "@/components/icons/icodethis";
 import CssTricksIcon from "@/components/icons/csstricks";
 import SmashingMagazineIcon from "@/components/icons/smashingmagazine";
 import JoshWComeauIcon from "@/components/icons/joshwcomeau";
+import LeerobinsonIcon from "@/components/icons/leerobinson";
+import TaoofnodeIcon from "@/components/icons/taoofnode";
+import RafaelCamargoIcon from "@/components/icons/rafaelcamargo";
+import NicopranantaIcon from "@/components/icons/nicoprananta";
+import FrontendatscaleIcon from "@/components/icons/frontendatscale";
 import LearningResourcesIcon from "@/components/icons/learningresources";
 import DeveloperToolsIcon from "@/components/icons/developertools";
 import FrameworkAndLibrariesIcon from "@/components/icons/frameworkandlibraries";
@@ -232,6 +237,41 @@ export const SECTIONS = [
         href: "https://www.joshwcomeau.com/",
         description:
           "Friendly tutorials for developers. Focus on React, CSS, Animation, and more!",
+      },
+      {
+        icon: LeerobinsonIcon,
+        title: "Lee Robinson",
+        href: "https://leerob.io/",
+        description:
+          "Lee Robinson shares tutorials, tips, and insights on building modern web applications, optimizing performance, and improving developer experience. His content is designed to educate and inspire both new and experienced developers.",
+      },
+      {
+        icon: TaoofnodeIcon,
+        title: "Tao of Node",
+        href: "https://alexkondov.com/tao-of-node/",
+        description:
+          "One of the main benefits of JavaScript is that it runs both in the browser and the server. As an engineer you need to master a single language and your skills",
+      },
+      {
+        icon: RafaelCamargoIcon,
+        title: "Rafael Camargo",
+        href: "https://www.cmrg.me/",
+        description:
+          "Rafael Rakochinski Camargo is a software engineer who specializes in building fast, high-converting digital products and experiences at scale.",
+      },
+      {
+        icon: NicopranantaIcon,
+        title: "Nico Prananta",
+        href: "https://www.nico.fyi/",
+        description:
+          "Nico Prananta is a software developer from Indonesia, currently residing in Zürich, Switzerland. His present tech stack includes React (with Next.js or Remix), TypeScript, Tailwind CSS, Prisma, PostgreSQL, and Node.js.",
+      },
+      {
+        icon: FrontendatscaleIcon,
+        title: "Frontend At Scale",
+        href: "https://frontendatscale.com/",
+        description:
+          "Get the latest articles, talks, case studies, and insights from the world of software design and architecture—tailored specifically to frontend engineers.",
       },
     ],
   },
