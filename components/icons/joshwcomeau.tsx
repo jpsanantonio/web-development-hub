@@ -1,12 +1,14 @@
 import { ComponentProps } from "react";
 
-export default function JoshWComeauIcon(props: ComponentProps<"svg">) {
+export default function JoshWComeauIcon({
+  width = 24,
+  height = 24,
+}: ComponentProps<"svg">) {
   return (
     <svg
-      {...props}
+      width={width}
+      height={height}
       className="rounded"
-      width="24"
-      height={24}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1.1"
