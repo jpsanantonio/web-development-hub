@@ -1,11 +1,13 @@
 import { ComponentProps } from "react";
 
-export default function VSCodeIcon(props: ComponentProps<"svg">) {
+export default function VSCodeIcon({
+  width = 24,
+  height = 24,
+}: ComponentProps<"svg">) {
   return (
     <svg
-      {...props}
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

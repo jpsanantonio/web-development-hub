@@ -19,7 +19,7 @@ export default function Page() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Learning Resources</BreadcrumbPage>
+            <BreadcrumbPage>Developer Tools</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

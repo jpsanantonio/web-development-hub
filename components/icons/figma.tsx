@@ -1,11 +1,13 @@
 import { ComponentProps } from "react";
 
-export default function FigmaIcon(props: ComponentProps<"svg">) {
+export default function FigmaIcon({
+  width = 24,
+  height = 24,
+}: ComponentProps<"svg">) {
   return (
     <svg
-      {...props}
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 38 57"
     >
