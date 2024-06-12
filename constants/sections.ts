@@ -9,6 +9,8 @@ import EricelliottJsIcon from "@/components/icons/ericelliottjs";
 import TestingJavaScriptIcon from "@/components/icons/testingjavascript";
 import EpicReactIcon from "@/components/icons/epicreact";
 import BuildUIIcon from "@/components/icons/buildui";
+import GreatFrontendIcon from "@/components/icons/greatfrontend";
+import DesignGurusIcon from "@/components/icons/designgurus";
 import VSCodeIcon from "@/components/icons/vscode";
 import GitHubIcon from "@/components/icons/github";
 import FigmaIcon from "@/components/icons/figma";
@@ -134,6 +136,20 @@ export const SECTIONS = [
         title: "Build UI",
         href: "https://buildui.dev/",
         description: "Learn how to build modern user interfaces for the web.",
+      },
+      {
+        icon: GreatFrontendIcon,
+        title: "Great Frontend",
+        href: "https://greatfrontend.com/",
+        description:
+          "The complete preparation platform for front end interviews. 200+ practice questions (with answers) across system design, UI and more. By ex-FAANG interviewers.",
+      },
+      {
+        icon: DesignGurusIcon,
+        title: "Design Gurus",
+        href: "https://designgurus.com/",
+        description:
+          "Prepare for tech interviews with specialized training from Design Gurus. Learn from experts and start grokking now.",
       },
     ],
   },
