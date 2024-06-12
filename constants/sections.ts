@@ -12,6 +12,21 @@ import BuildUIIcon from "@/components/icons/buildui";
 import VSCodeIcon from "@/components/icons/vscode";
 import GitHubIcon from "@/components/icons/github";
 import FigmaIcon from "@/components/icons/figma";
+import ProjectIdxIcon from "@/components/icons/projectidx";
+import VercelIcon from "@/components/icons/vercel";
+import TursoIcon from "@/components/icons/turso";
+import AWSIcon from "@/components/icons/aws";
+import GoogleCloudIcon from "@/components/icons/googlecloud";
+import UnsplashIcon from "@/components/icons/unsplash";
+import NetlifyIcon from "@/components/icons/netlify";
+import SupermavenIcon from "@/components/icons/supermaven";
+import ChatGPTIcon from "@/components/icons/chatgpt";
+import GoogleGeminiIcon from "@/components/icons/googlegemini";
+import ClerkIcon from "@/components/icons/clerk";
+import CloudinaryIcon from "@/components/icons/cloudinary";
+import SanityIcon from "@/components/icons/sanity";
+import FrontmatterIcon from "@/components/icons/frontmatter";
+import AdobeExpressIcon from "@/components/icons/adobeexpress";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -149,6 +164,111 @@ export const SECTIONS = [
         href: "https://www.figma.com/",
         description:
           "A collaborative design tool for building meaningful products. Seamlessly design, prototype, develop, and collect feedback in a single platform.",
+      },
+      {
+        icon: VercelIcon,
+        title: "Vercel",
+        href: "https://vercel.com/",
+        description:
+          "A platform for building and deploying modern web applications.",
+      },
+      {
+        icon: ProjectIdxIcon,
+        title: "Project IDX",
+        href: "https://developers.google.com/idx",
+        description:
+          "An AI-assisted workspace for full-stack, multiplatform app development in the cloud.",
+      },
+      {
+        icon: AWSIcon,
+        title: "Amazon Web Services (AWS)",
+        href: "https://aws.amazon.com/",
+        description:
+          "Amazon Web Services (AWS) is a collection of cloud computing services that you can use to build and run applications in the cloud.",
+      },
+      {
+        icon: GoogleCloudIcon,
+        title: "Google Cloud",
+        href: "https://cloud.google.com/",
+        description:
+          "Google Cloud provides flexible infrastructure, end-to-end security, and intelligent insights engineered to help your business thrive.",
+      },
+      {
+        icon: UnsplashIcon,
+        title: "Unsplash",
+        href: "https://unsplash.com/",
+        description:
+          "Unsplash is a free stock photo website that provides high-quality images for commercial and personal use.",
+      },
+      {
+        icon: TursoIcon,
+        title: "Turso",
+        href: "https://turso.tech/",
+        description:
+          "Turso is SQLite for production: great developer experience and efficiency with essential quality of life improvements for modern applications.",
+      },
+      {
+        icon: NetlifyIcon,
+        title: "Netlify",
+        href: "https://netlify.com/",
+        description:
+          "Realize the speed, agility and performance of a scalable, composable web architecture with Netlify. Explore the composable web platform now!",
+      },
+      {
+        icon: SupermavenIcon,
+        title: "Supermaven",
+        href: "https://supermaven.com/",
+        description:
+          "The fastest copilot. Supermaven uses a 300,000 token context window to provide the highest quality code completions.",
+      },
+      {
+        icon: ChatGPTIcon,
+        title: "ChatGPT",
+        href: "https://chatgpt.com/",
+        description:
+          "A chatbot that can converse with you in natural language. It can answer questions, provide information, and even have a conversation.",
+      },
+      {
+        icon: GoogleGeminiIcon,
+        title: "Google Gemini",
+        href: "https://gemini.google.com/",
+        description:
+          "Bard is now Gemini. Get help with writing, planning, learning, and more from Google AI.",
+      },
+      {
+        icon: ClerkIcon,
+        title: "Clerk",
+        href: "https://clerk.com/",
+        description:
+          "The easiest way to add authentication and user management to your application. Purpose-built for React, Next.js, Remix, and “The Modern Web”.",
+      },
+      {
+        icon: CloudinaryIcon,
+        title: "Cloudinary",
+        href: "https://cloudinary.com/",
+        description:
+          "Cloudinary is a cloud-based image and video management platform that provides a simple, powerful API for developers to upload, transform, and deliver images and videos to customers.",
+      },
+      {
+        icon: SanityIcon,
+        title: "Sanity",
+        href: "https://sanity.io/",
+        description:
+          "Sanity is a headless CMS that makes it easy to build a content-focused application. It's built on top of the Sanity API and the Sanity Studio.",
+      },
+      {
+        icon: FrontmatterIcon,
+        title: "Frontmatter",
+        href: "https://frontmatter.codes/",
+        description:
+          "Headless CMS running in Visual Studio Code that helps managing your static sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.Headless CMS running in Visual Studio Code that helps managing your static sites. Supports Hugo, Jekyll, Docusaurus, NextJs, Gatsby, and more.",
+      },
+      {
+        icon: AdobeExpressIcon,
+        title: "Adobe Express",
+        href: "https://www.adobe.com/express/",
+        description:
+          "An all-in-one design, photo, and video tool to make content creation easy. Quickly and easily make stunning social content, videos, logos, and more to stand out on social and beyond.",
       },
     ],
   },
