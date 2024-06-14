@@ -32,6 +32,14 @@ import AdobeExpressIcon from "@/components/icons/adobeexpress";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
+import SvelteIcon from "@/components/icons/svelte";
+import NextjsIcon from "@/components/icons/nextjs";
+import RemixIcon from "@/components/icons/remix";
+import NuxtIcon from "@/components/icons/nuxt";
+import PreactIcon from "@/components/icons/preact";
+import SolidIcon from "@/components/icons/solidjs";
+import QwikIcon from "@/components/icons/qwik";
+import AstroIcon from "@/components/icons/astro";
 import DevtoIcon from "@/components/icons/devto";
 import RedditIcon from "@/components/icons/reddit";
 import IcodethisIcon from "@/components/icons/icodethis";
@@ -299,20 +307,78 @@ export const SECTIONS = [
         icon: ReactIcon,
         title: "React",
         href: "https://react.dev/",
-        description: "The library for web and native user interfaces.",
+        description:
+          "A popular JavaScript library for building user interfaces, particularly single-page applications where you need a fast, interactive user experience. It was developed by Facebook and is maintained as an open-source project.",
       },
       {
         icon: VueIcon,
         title: "Vue.js",
         href: "https://vuejs.org/",
         description:
-          "A progressive, incrementally-adoptable JavaScript framework for building UI on the web.",
+          "A progressive JavaScript framework used for building user interfaces and single-page applications. It was created by Evan You and is designed to be incrementally adoptable, meaning you can use as much or as little of Vue as you need, making it flexible for a wide range of projects.",
+      },
+      {
+        icon: SvelteIcon,
+        title: "Svelte",
+        href: "https://svelte.dev/",
+        description:
+          "A modern JavaScript framework for building user interfaces. It differs from traditional frameworks like React and Vue in that it shifts much of the work to compile time rather than runtime. This means Svelte applications can be faster and more efficient because the framework compiles your components into highly optimized JavaScript code that updates the DOM directly.",
       },
       {
         icon: AngularIcon,
         title: "Angular",
         href: "https://angular.dev/",
-        description: "The web development framework for building modern apps.",
+        description:
+          "A robust, comprehensive JavaScript framework developed and maintained by Google for building dynamic, single-page web applications (SPAs). It is a complete rewrite of AngularJS and provides a highly opinionated, structured approach to application development.",
+      },
+      {
+        icon: NextjsIcon,
+        title: "Next.js",
+        href: "https://nextjs.org/",
+        description:
+          "A powerful React framework developed and maintained by Vercel (formerly Zeit) that enables developers to build server-rendered React applications with ease. It extends the capabilities of React by providing additional features and optimizations that enhance performance, SEO, and developer experience.",
+      },
+      {
+        icon: RemixIcon,
+        title: "Remix",
+        href: "https://remix.run/",
+        description:
+          "A modern JavaScript framework for building web applications. It focuses on performance, user experience, and the seamless integration of server and client-side code. Remix aims to provide an optimized development and deployment experience by leveraging the latest web standards and technologies.",
+      },
+      {
+        icon: NuxtIcon,
+        title: "Nuxt",
+        href: "https://nuxt.com/",
+        description:
+          "A powerful framework built on top of Vue.js that enables developers to create server-rendered applications, static websites, and progressive web apps (PWAs) with ease. It provides a robust set of features and conventions to streamline the development process and improve performance and SEO.",
+      },
+      {
+        icon: PreactIcon,
+        title: "Preact",
+        href: "https://preactjs.com/",
+        description:
+          "A fast, lightweight alternative to React, designed for building user interfaces with a small footprint. It provides the same modern API as React but is much smaller in size, making it ideal for performance-critical applications where bundle size is a concern.",
+      },
+      {
+        icon: SolidIcon,
+        title: "Solid",
+        href: "https://www.solidjs.com/",
+        description:
+          "A declarative JavaScript library for building user interfaces, similar to React and Vue. It focuses on performance and simplicity by using a fine-grained reactivity model. Unlike virtual DOM-based frameworks, SolidJS compiles its templates to real DOM nodes and updates only the parts of the DOM that need to change, resulting in highly efficient and fast updates.",
+      },
+      {
+        icon: QwikIcon,
+        title: "Qwik",
+        href: "https://qwik.builder.io/",
+        description:
+          "A modern JavaScript framework designed to deliver instant loading web applications by prioritizing performance and optimizing for fast, interactive experiences. It introduces innovative concepts to reduce the time to interactive (TTI) and improve the overall user experience, focusing on minimizing JavaScript execution and maximizing static content.",
+      },
+      {
+        icon: AstroIcon,
+        title: "Astro",
+        href: "https://astro.build/",
+        description:
+          "A modern static site generator designed to build fast, optimized websites. It focuses on delivering highly performant, minimal JavaScript pages by default, while still allowing the integration of JavaScript frameworks for dynamic functionality when needed. Astro aims to make it easy to create static websites that load quickly and are SEO-friendly.",
       },
     ],
   },
