@@ -1,13 +1,16 @@
 import { ComponentProps } from "react";
 
-export default function AngularIcon(props: ComponentProps<"svg">) {
+export default function AngularIcon({
+  width = 24,
+  height = 24,
+}: ComponentProps<"svg">) {
   return (
     <svg
+      width={width}
+      height={height}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 223 236"
-      width="24"
-      height="24"
       className="angular-logo"
     >
       <g clipPath="url(#a)">

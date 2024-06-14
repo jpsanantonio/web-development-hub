@@ -1,12 +1,14 @@
 import { ComponentProps } from "react";
 
-export default function ReacIcon(props: ComponentProps<"svg">) {
+export default function ReacIcon({
+  width = 24,
+  height = 24,
+}: ComponentProps<"svg">) {
   return (
     <svg
-      {...props}
+      width={width}
+      height={height}
       viewBox="-10.5 -9.45 21 18.9"
-      width="24"
-      height="24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
