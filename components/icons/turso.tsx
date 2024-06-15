@@ -9,7 +9,7 @@ export default function TursoIcon({
       width={width}
       height={height}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 192 54"
+      viewBox="0 0 54 54"
       fill="none"
       className="h-10"
     >
@@ -92,8 +92,8 @@ export default function TursoIcon({
           y2="-45.879"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1D2B33"></stop>
-          <stop offset="1" stop-color="#121B24"></stop>
+          <stop stopColor="#1D2B33"></stop>
+          <stop offset="1" stopColor="#121B24"></stop>
         </linearGradient>
         <linearGradient
           id="d"
@@ -103,8 +103,8 @@ export default function TursoIcon({
           y2="-45.879"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1D2B33"></stop>
-          <stop offset="1" stop-color="#121B24"></stop>
+          <stop stopColor="#1D2B33"></stop>
+          <stop offset="1" stopColor="#121B24"></stop>
         </linearGradient>
       </defs>
     </svg>

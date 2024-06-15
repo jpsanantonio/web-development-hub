@@ -17,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} flex xl:flex-row flex-col h-screen relative`}
-      >
+      <body className={`${inter.className} flex xl:flex-row flex-col relative`}>
         <Navigation />
         <main className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 flex-1">
           {children}

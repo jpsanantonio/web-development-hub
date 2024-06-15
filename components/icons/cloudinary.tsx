@@ -9,7 +9,7 @@ export default function CloudinaryIcon({
       width={width}
       height={height}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 500 96.77"
+      viewBox="0 0 120 96.77"
     >
       <title>Cloudinary Logo</title>
       <defs></defs>

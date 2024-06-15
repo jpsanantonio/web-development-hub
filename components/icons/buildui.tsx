@@ -8,8 +8,7 @@ export default function BuildUI({
     <svg
       width={width}
       height={height}
-      className="bg-[#221C39] rounded"
-      viewBox="0 0 345 83"
+      viewBox="0 0 83 83"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -39,7 +38,7 @@ export default function BuildUI({
           y2="19.1538"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#CFD5FF"></stop>
+          <stop stopColor="#7b89f5"></stop>
           <stop offset="1" stopColor="#fff"></stop>
         </linearGradient>
         <linearGradient
@@ -50,7 +49,7 @@ export default function BuildUI({
           y2="25.19"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#CFD5FF"></stop>
+          <stop stopColor="#7b89f5"></stop>
           <stop offset="1" stopColor="#fff"></stop>
         </linearGradient>
         <linearGradient
@@ -61,7 +60,7 @@ export default function BuildUI({
           y2="38.5667"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#CFD5FF"></stop>
+          <stop stopColor="#7b89f5"></stop>
           <stop offset="1" stopColor="#fff"></stop>
         </linearGradient>
       </defs>

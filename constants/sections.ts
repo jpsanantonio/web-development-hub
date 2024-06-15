@@ -11,6 +11,7 @@ import EpicReactIcon from "@/components/icons/epicreact";
 import BuildUIIcon from "@/components/icons/buildui";
 import GreatFrontendIcon from "@/components/icons/greatfrontend";
 import DesignGurusIcon from "@/components/icons/designgurus";
+import LearnWithJasonIcon from "@/components/icons/learnwithjason";
 import VSCodeIcon from "@/components/icons/vscode";
 import GitHubIcon from "@/components/icons/github";
 import FigmaIcon from "@/components/icons/figma";
@@ -29,12 +30,15 @@ import CloudinaryIcon from "@/components/icons/cloudinary";
 import SanityIcon from "@/components/icons/sanity";
 import FrontmatterIcon from "@/components/icons/frontmatter";
 import AdobeExpressIcon from "@/components/icons/adobeexpress";
+import TurborepoIcon from "@/components/icons/turborepo";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
 import SvelteIcon from "@/components/icons/svelte";
 import NextjsIcon from "@/components/icons/nextjs";
 import RemixIcon from "@/components/icons/remix";
+import GatsbyIcon from "@/components/icons/gatsby";
+import EleventyIcon from "@/components/icons/eleventy";
 import NuxtIcon from "@/components/icons/nuxt";
 import PreactIcon from "@/components/icons/preact";
 import SolidIcon from "@/components/icons/solidjs";
@@ -158,6 +162,13 @@ export const SECTIONS = [
         href: "https://designgurus.com/",
         description:
           "Prepare for tech interviews with specialized training from Design Gurus. Learn from experts and start grokking now.",
+      },
+      {
+        icon: LearnWithJasonIcon,
+        title: "Learn With Jason",
+        href: "https://learnwithjason.dev/",
+        description:
+          "Learn from the web’s leading experts. Build something new. Grow your career. Let’s do it together.",
       },
     ],
   },
@@ -294,6 +305,13 @@ export const SECTIONS = [
         description:
           "An all-in-one design, photo, and video tool to make content creation easy. Quickly and easily make stunning social content, videos, logos, and more to stand out on social and beyond.",
       },
+      {
+        icon: TurborepoIcon,
+        title: "Turborepo",
+        href: "https://turbo.build/repo",
+        description:
+          "A high-performance build system for JavaScript and TypeScript codebases. It is designed for scaling monorepos and also makes workflows in single-package workspaces faster, too.",
+      },
     ],
   },
   {
@@ -344,6 +362,20 @@ export const SECTIONS = [
         href: "https://remix.run/",
         description:
           "A modern JavaScript framework for building web applications. It focuses on performance, user experience, and the seamless integration of server and client-side code. Remix aims to provide an optimized development and deployment experience by leveraging the latest web standards and technologies.",
+      },
+      {
+        icon: GatsbyIcon,
+        title: "Gatsby",
+        href: "https://www.gatsbyjs.com/",
+        description:
+          "A modern framework for building fast, secure, and scalable websites and web applications using React. It leverages the power of static site generation (SSG) to deliver pre-built HTML, CSS, and JavaScript to clients, resulting in quick load times and excellent performance. Gatsby is particularly well-suited for creating static websites, blogs, and documentation sites.",
+      },
+      {
+        icon: EleventyIcon,
+        title: "Eleventy",
+        href: "https://www.11ty.dev/",
+        description:
+          "A simple and flexible static site generator (SSG) for creating fast and modern websites. It focuses on developer simplicity, flexibility, and performance by allowing developers to use their preferred templating languages and workflows. Eleventy is designed to be a lightweight and unopinionated tool, making it highly customizable to suit a wide range of projects.",
       },
       {
         icon: NuxtIcon,
