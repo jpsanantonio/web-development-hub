@@ -21,7 +21,7 @@ export default function PreactIcon({
       <ellipse
         cx="0"
         cy="0"
-        stroke-width="16px"
+        strokeWidth="16px"
         rx="75px"
         ry="196px"
         fill="none"
@@ -31,7 +31,7 @@ export default function PreactIcon({
       <ellipse
         cx="0"
         cy="0"
-        stroke-width="16px"
+        strokeWidth="16px"
         rx="75px"
         ry="196px"
         fill="none"

@@ -9,7 +9,7 @@ export default function DesignGurusIcon({
       width={width}
       height={height}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 220 37"
+      viewBox="0 0 37 37"
       fill="none"
     >
       <path

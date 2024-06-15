@@ -17,14 +17,14 @@ export default function SupermavenIcon({
         fill="#58C4FF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M160 253.979L71.2355 421L13 390.021L101.765 223L160 253.979Z"
         fill="#58C4FF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M191 55.9791L101.632 223L43 192.021L132.368 25L191 55.9791Z"
         fill="#58C4FF"
       />
@@ -33,8 +33,8 @@ export default function SupermavenIcon({
         fill="#58C4FF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M318.971 7.98315C333.679 11.6475 344 24.8484 344 39.9952V405H277.968V172.319L218.303 284.453L160 253.475L281.833 24.5064C288.949 11.1326 304.264 4.31881 318.971 7.98315Z"
         fill="#58C4FF"
       />
