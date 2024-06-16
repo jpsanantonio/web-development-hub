@@ -43,6 +43,8 @@ import NuxtIcon from "@/components/icons/nuxt";
 import PreactIcon from "@/components/icons/preact";
 import SolidIcon from "@/components/icons/solidjs";
 import QwikIcon from "@/components/icons/qwik";
+import AlpineIcon from "@/components/icons/alpine";
+import LitIcon from "@/components/icons/lit";
 import AstroIcon from "@/components/icons/astro";
 import DevtoIcon from "@/components/icons/devto";
 import RedditIcon from "@/components/icons/reddit";
@@ -404,6 +406,20 @@ export const SECTIONS = [
         href: "https://qwik.builder.io/",
         description:
           "A modern JavaScript framework designed to deliver instant loading web applications by prioritizing performance and optimizing for fast, interactive experiences. It introduces innovative concepts to reduce the time to interactive (TTI) and improve the overall user experience, focusing on minimizing JavaScript execution and maximizing static content.",
+      },
+      {
+        icon: AlpineIcon,
+        title: "Alpine.js",
+        href: "https://alpinejs.dev/",
+        description:
+          "A lightweight, declarative JavaScript framework designed for adding interactivity to web pages without the complexity and overhead of larger frameworks like React or Vue. It is particularly well-suited for projects that require simple, reactive behavior directly in the HTML markup, making it an excellent choice for enhancing static websites with interactive elements.",
+      },
+      {
+        icon: LitIcon,
+        title: "Lit",
+        href: "https://lit.dev/",
+        description:
+          "A library for building fast, lightweight web components. It is part of the Polymer Project and is designed to leverage the web standards for creating reusable and encapsulated components. Lit focuses on simplicity and performance, making it easy to create components that can be used across different frameworks and libraries.",
       },
       {
         icon: AstroIcon,
