@@ -45,7 +45,11 @@ import SolidIcon from "@/components/icons/solidjs";
 import QwikIcon from "@/components/icons/qwik";
 import AlpineIcon from "@/components/icons/alpine";
 import LitIcon from "@/components/icons/lit";
+import HtmxIcon from "@/components/icons/htmx";
 import AstroIcon from "@/components/icons/astro";
+import DenofreshIcon from "@/components/icons/denofresh";
+import DocusaurusIcon from "@/components/icons/docusaurus";
+import SolidstartIcon from "@/components/icons/solidstart";
 import DevtoIcon from "@/components/icons/devto";
 import RedditIcon from "@/components/icons/reddit";
 import IcodethisIcon from "@/components/icons/icodethis";
@@ -352,41 +356,6 @@ export const SECTIONS = [
           "A robust, comprehensive JavaScript framework developed and maintained by Google for building dynamic, single-page web applications (SPAs). It is a complete rewrite of AngularJS and provides a highly opinionated, structured approach to application development.",
       },
       {
-        icon: NextjsIcon,
-        title: "Next.js",
-        href: "https://nextjs.org/",
-        description:
-          "A powerful React framework developed and maintained by Vercel (formerly Zeit) that enables developers to build server-rendered React applications with ease. It extends the capabilities of React by providing additional features and optimizations that enhance performance, SEO, and developer experience.",
-      },
-      {
-        icon: RemixIcon,
-        title: "Remix",
-        href: "https://remix.run/",
-        description:
-          "A modern JavaScript framework for building web applications. It focuses on performance, user experience, and the seamless integration of server and client-side code. Remix aims to provide an optimized development and deployment experience by leveraging the latest web standards and technologies.",
-      },
-      {
-        icon: GatsbyIcon,
-        title: "Gatsby",
-        href: "https://www.gatsbyjs.com/",
-        description:
-          "A modern framework for building fast, secure, and scalable websites and web applications using React. It leverages the power of static site generation (SSG) to deliver pre-built HTML, CSS, and JavaScript to clients, resulting in quick load times and excellent performance. Gatsby is particularly well-suited for creating static websites, blogs, and documentation sites.",
-      },
-      {
-        icon: EleventyIcon,
-        title: "Eleventy",
-        href: "https://www.11ty.dev/",
-        description:
-          "A simple and flexible static site generator (SSG) for creating fast and modern websites. It focuses on developer simplicity, flexibility, and performance by allowing developers to use their preferred templating languages and workflows. Eleventy is designed to be a lightweight and unopinionated tool, making it highly customizable to suit a wide range of projects.",
-      },
-      {
-        icon: NuxtIcon,
-        title: "Nuxt",
-        href: "https://nuxt.com/",
-        description:
-          "A powerful framework built on top of Vue.js that enables developers to create server-rendered applications, static websites, and progressive web apps (PWAs) with ease. It provides a robust set of features and conventions to streamline the development process and improve performance and SEO.",
-      },
-      {
         icon: PreactIcon,
         title: "Preact",
         href: "https://preactjs.com/",
@@ -422,11 +391,81 @@ export const SECTIONS = [
           "A library for building fast, lightweight web components. It is part of the Polymer Project and is designed to leverage the web standards for creating reusable and encapsulated components. Lit focuses on simplicity and performance, making it easy to create components that can be used across different frameworks and libraries.",
       },
       {
+        icon: HtmxIcon,
+        title: "htmx",
+        href: "https://htmx.org/",
+        description:
+          "A lightweight JavaScript library that allows you to add dynamic behavior to your web pages using HTML attributes. It enhances the capabilities of HTML by enabling declarative handling of AJAX requests, CSS transitions, WebSockets, and server-sent events (SSE) directly within HTML. This approach promotes a more straightforward and maintainable way to create interactive web applications without relying heavily on JavaScript.",
+      },
+      {
+        icon: NextjsIcon,
+        title: "Next.js",
+        href: "https://nextjs.org/",
+        description:
+          "A powerful React framework developed and maintained by Vercel (formerly Zeit) that enables developers to build server-rendered React applications with ease. It extends the capabilities of React by providing additional features and optimizations that enhance performance, SEO, and developer experience.",
+      },
+      {
+        icon: RemixIcon,
+        title: "Remix",
+        href: "https://remix.run/",
+        description:
+          "A modern JavaScript framework for building web applications. It focuses on performance, user experience, and the seamless integration of server and client-side code. Remix aims to provide an optimized development and deployment experience by leveraging the latest web standards and technologies.",
+      },
+      {
+        icon: NuxtIcon,
+        title: "Nuxt",
+        href: "https://nuxt.com/",
+        description:
+          "A powerful framework built on top of Vue.js that enables developers to create server-rendered applications, static websites, and progressive web apps (PWAs) with ease. It provides a robust set of features and conventions to streamline the development process and improve performance and SEO.",
+      },
+      {
+        icon: GatsbyIcon,
+        title: "Gatsby",
+        href: "https://www.gatsbyjs.com/",
+        description:
+          "A modern framework for building fast, secure, and scalable websites and web applications using React. It leverages the power of static site generation (SSG) to deliver pre-built HTML, CSS, and JavaScript to clients, resulting in quick load times and excellent performance. Gatsby is particularly well-suited for creating static websites, blogs, and documentation sites.",
+      },
+      {
         icon: AstroIcon,
         title: "Astro",
         href: "https://astro.build/",
         description:
           "A modern static site generator designed to build fast, optimized websites. It focuses on delivering highly performant, minimal JavaScript pages by default, while still allowing the integration of JavaScript frameworks for dynamic functionality when needed. Astro aims to make it easy to create static websites that load quickly and are SEO-friendly.",
+      },
+      {
+        icon: DenofreshIcon,
+        title: "Deno Fresh",
+        href: "https://fresh.deno.dev/",
+        description:
+          "A modern web framework designed for building web applications using Deno, a secure runtime for JavaScript and TypeScript. Fresh emphasizes simplicity, speed, and developer productivity, leveraging Deno's capabilities to provide a streamlined development experience.",
+      },
+      {
+        icon: DocusaurusIcon,
+        title: "Docusaurus",
+        href: "https://docusaurus.io/",
+        description:
+          "An open-source static site generator designed primarily for creating documentation websites. It is built by Facebook and leverages React to provide a flexible and modern approach to building and maintaining documentation sites, blogs, and other content-driven websites.",
+      },
+      {
+        icon: SolidstartIcon,
+        title: "SolidStart",
+        href: "https://start.solidjs.com/",
+        description:
+          "The official meta-framework for SolidJS, designed to facilitate building modern web applications with SolidJS. SolidJS is a declarative JavaScript library for creating user interfaces, known for its fine-grained reactivity and performance. SolidStart builds on SolidJS by providing essential features and tools needed for developing full-fledged web applications, including routing, server-side rendering (SSR), and more.",
+      },
+      {
+        icon: EleventyIcon,
+        title: "Eleventy",
+        href: "https://www.11ty.dev/",
+        description:
+          "A simple and flexible static site generator (SSG) for creating fast and modern websites. It focuses on developer simplicity, flexibility, and performance by allowing developers to use their preferred templating languages and workflows. Eleventy is designed to be a lightweight and unopinionated tool, making it highly customizable to suit a wide range of projects.",
+      },
+      {
+        icon: SvelteIcon,
+        title: "SvelteKit",
+        href: "https://kit.svelte.dev/",
+        description:
+          "A framework for building modern web applications with Svelte, a JavaScript framework known for its simplicity and efficiency. SvelteKit enhances Svelte by providing a robust set of tools and features for server-side rendering (SSR), static site generation (SSG), and client-side routing, making it easier to build fully-featured, high-performance web applications.",
       },
     ],
   },
