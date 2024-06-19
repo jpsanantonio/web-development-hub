@@ -50,6 +50,10 @@ import AstroIcon from "@/components/icons/astro";
 import DenofreshIcon from "@/components/icons/denofresh";
 import DocusaurusIcon from "@/components/icons/docusaurus";
 import SolidstartIcon from "@/components/icons/solidstart";
+import JestIcon from "@/components/icons/jest";
+import MochaIcon from "@/components/icons/mocha";
+import StorybookIcon from "@/components/icons/storybook";
+import CypressIcon from "@/components/icons/cypress";
 import DevtoIcon from "@/components/icons/devto";
 import RedditIcon from "@/components/icons/reddit";
 import IcodethisIcon from "@/components/icons/icodethis";
@@ -466,6 +470,34 @@ export const SECTIONS = [
         href: "https://kit.svelte.dev/",
         description:
           "A framework for building modern web applications with Svelte, a JavaScript framework known for its simplicity and efficiency. SvelteKit enhances Svelte by providing a robust set of tools and features for server-side rendering (SSR), static site generation (SSG), and client-side routing, making it easier to build fully-featured, high-performance web applications.",
+      },
+      {
+        icon: JestIcon,
+        title: "Jest",
+        href: "https://jestjs.io/",
+        description:
+          "A JavaScript testing framework maintained by Facebook, designed primarily for testing React applications but also widely used for testing JavaScript code in general. It provides a comprehensive set of features for writing and running tests, making it a popular choice among developers for its ease of use, powerful functionality, and integration with modern JavaScript ecosystems.",
+      },
+      {
+        icon: MochaIcon,
+        title: "Mocha",
+        href: "https://mochajs.org/",
+        description:
+          "A flexible and feature-rich JavaScript testing framework running on Node.js, designed for testing both synchronous and asynchronous code. It is known for its simplicity, modularity, and extensive configurability, making it a popular choice for writing unit and integration tests for Node.js and browser-based applications.",
+      },
+      {
+        icon: StorybookIcon,
+        title: "Storybook",
+        href: "https://storybook.js.org/",
+        description:
+          "An open-source tool for developing, testing, and documenting UI components in isolation. It provides a visual playground for building and showcasing components independently from the main application, which enhances component-driven development and makes it easier to create, test, and maintain UI components.",
+      },
+      {
+        icon: CypressIcon,
+        title: "Cypress",
+        href: "https://www.cypress.io/",
+        description:
+          "An end-to-end testing framework designed to test web applications. It is known for its developer-friendly features, fast setup, and comprehensive testing capabilities. Unlike traditional testing tools that run outside the browser, Cypress runs directly inside the browser, providing a more accurate and reliable testing environment.",
       },
     ],
   },
