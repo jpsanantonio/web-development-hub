@@ -54,6 +54,12 @@ import JestIcon from "@/components/icons/jest";
 import MochaIcon from "@/components/icons/mocha";
 import StorybookIcon from "@/components/icons/storybook";
 import CypressIcon from "@/components/icons/cypress";
+import PuppeteerIcon from "@/components/icons/puppeteer";
+import TestingLibraryIcon from "@/components/icons/testinglibrary";
+import PlaywrightIcon from "@/components/icons/playwright";
+import WebdriverioIcon from "@/components/icons/webdriverio";
+import VitestIcon from "@/components/icons/vitest";
+import TestcafeIcon from "@/components/icons/testcafe";
 import DevtoIcon from "@/components/icons/devto";
 import RedditIcon from "@/components/icons/reddit";
 import IcodethisIcon from "@/components/icons/icodethis";
@@ -498,6 +504,48 @@ export const SECTIONS = [
         href: "https://www.cypress.io/",
         description:
           "An end-to-end testing framework designed to test web applications. It is known for its developer-friendly features, fast setup, and comprehensive testing capabilities. Unlike traditional testing tools that run outside the browser, Cypress runs directly inside the browser, providing a more accurate and reliable testing environment.",
+      },
+      {
+        icon: PuppeteerIcon,
+        title: "Puppeteer",
+        href: "https://pptr.dev/",
+        description:
+          "A Node.js library for controlling headless Chrome or Chromium over the DevTools Protocol. It allows you to automate interactions with web pages, take screenshots, and more, all from Node.js. Puppeteer is a powerful tool for automating web testing and debugging, and is widely used in the industry for tasks such as end-to-end testing, web scraping, and browser automation.",
+      },
+      {
+        icon: TestingLibraryIcon,
+        title: "Testing Library",
+        href: "https://testing-library.com/",
+        description:
+          "A library for writing tests for React, React Native, and web applications. It provides a set of utilities for testing React components, including functions for rendering components, simulating user interactions, and asserting on component state and behavior. Testing Library is designed to be easy to use and integrate with existing testing frameworks, making it a popular choice for developers who want to write more comprehensive and reliable tests for their React applications.",
+      },
+      {
+        icon: PlaywrightIcon,
+        title: "Playwright",
+        href: "https://playwright.dev/",
+        description:
+          "A tool for automating Chromium, Firefox, WebKit, and WebAssembly with a single API. It provides a high-level API for writing end-to-end tests in a browser-based environment, allowing you to automate web applications and web services with ease. Playwright is designed to be fast, reliable, and easy to use, making it a popular choice for developers who want to write automated tests for their web applications.",
+      },
+      {
+        icon: WebdriverioIcon,
+        title: "WebdriverIO",
+        href: "https://webdriver.io/",
+        description:
+          "A JavaScript test automation framework for browsers and Node.js. It provides a simple and intuitive API for writing tests that can be run in a variety of environments, including headless browsers, real browsers, and Node.js. WebdriverIO is designed to be easy to use and integrate with existing testing frameworks, making it a popular choice for developers who want to write more comprehensive and reliable tests for their web applications.",
+      },
+      {
+        icon: VitestIcon,
+        title: "Vitest",
+        href: "https://vitest.dev/",
+        description:
+          "A fast and modern unit testing framework built on top of Vite, a front-end build tool. Designed with the same principles of speed and efficiency, Vitest aims to provide a seamless testing experience, particularly for projects already using Vite. It is optimized for performance and developer experience, leveraging Vite's capabilities to enable instant feedback and rapid test runs.",
+      },
+      {
+        icon: TestcafeIcon,
+        title: "TestCafé",
+        href: "https://testcafe.io/",
+        description:
+          "A cross-browser testing framework that allows you to write tests in a simple, intuitive syntax. It provides a powerful set of tools for automating web applications, including support for multiple browsers, page objects, and custom assertions. TestCafé is designed to be easy to use and integrate with existing testing frameworks, making it a popular choice for developers who want to write more comprehensive and reliable tests for their web applications.",
       },
     ],
   },
