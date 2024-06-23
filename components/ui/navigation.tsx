@@ -41,7 +41,7 @@ export default function Navigation() {
 
   return (
     <nav className="w-full xl:w-1/5 bg-white dark:bg-gray-800 py-4 px-8 flex flex-row justify-between xl:flex-col xl:justify-normal gap-8 xl:h-screen xl:overflow-y-auto sticky top-0 z-10">
-      <Link className="flex items-center gap-2" href="#">
+      <Link className="flex items-center gap-2" href="/">
         <MountainIcon className="h-6 w-6" />
         <span className="text-lg font-bold">Web Development Hub</span>
       </Link>
