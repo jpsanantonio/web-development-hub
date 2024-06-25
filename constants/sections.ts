@@ -31,6 +31,9 @@ import SanityIcon from "@/components/icons/sanity";
 import FrontmatterIcon from "@/components/icons/frontmatter";
 import AdobeExpressIcon from "@/components/icons/adobeexpress";
 import TurborepoIcon from "@/components/icons/turborepo";
+import WebpackIcon from "@/components/icons/webpack";
+import RollupIcon from "@/components/icons/rollup";
+import ParcelIcon from "@/components/icons/parcel";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -327,6 +330,27 @@ export const SECTIONS = [
         href: "https://turbo.build/repo",
         description:
           "A high-performance build system for JavaScript and TypeScript codebases. It is designed for scaling monorepos and also makes workflows in single-package workspaces faster, too.",
+      },
+      {
+        icon: WebpackIcon,
+        title: "Webpack",
+        href: "https://webpack.js.org/",
+        description:
+          "A powerful and popular module bundler for JavaScript applications. It takes modules with dependencies and generates static assets representing those modules. Webpack is highly configurable and extensible, making it a versatile tool for managing and optimizing the assets and dependencies of modern web applications.",
+      },
+      {
+        icon: RollupIcon,
+        title: "Rollup",
+        href: "https://rollupjs.org/",
+        description:
+          "A module bundler for JavaScript that is designed to be more focused on simplicity and performance compared to other bundlers like Webpack. It is particularly well-suited for bundling libraries and packages rather than entire applications. Rollup uses the new standardized format for code modules included in the ES6 revision of JavaScript, offering a more efficient and streamlined way to bundle JavaScript.",
+      },
+      {
+        icon: ParcelIcon,
+        title: "Parcel",
+        href: "https://parceljs.org/",
+        description:
+          "A fast, zero-configuration web application bundler that aims to simplify the process of building and bundling web applications. It provides an easy-to-use development experience by automatically handling many of the complexities associated with modern web development. Parcel is known for its out-of-the-box support for many file types, quick setup, and efficient build process.",
       },
     ],
   },
