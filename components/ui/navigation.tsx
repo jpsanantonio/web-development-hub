@@ -46,7 +46,7 @@ export default function Navigation() {
         <span className="text-lg font-bold">Web Development Hub</span>
       </Link>
       <div className="hidden xl:flex">
-        <form className="relative">
+        <form className="relative flex-1">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" />
           <Input
             ref={searchRef}
