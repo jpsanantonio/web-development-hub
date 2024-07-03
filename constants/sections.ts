@@ -34,6 +34,7 @@ import TurborepoIcon from "@/components/icons/turborepo";
 import WebpackIcon from "@/components/icons/webpack";
 import RollupIcon from "@/components/icons/rollup";
 import ParcelIcon from "@/components/icons/parcel";
+import SwcIcon from "@/components/icons/swc";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -351,6 +352,13 @@ export const SECTIONS = [
         href: "https://parceljs.org/",
         description:
           "A fast, zero-configuration web application bundler that aims to simplify the process of building and bundling web applications. It provides an easy-to-use development experience by automatically handling many of the complexities associated with modern web development. Parcel is known for its out-of-the-box support for many file types, quick setup, and efficient build process.",
+      },
+      {
+        icon: SwcIcon,
+        title: "SWC",
+        href: "https://swc.rs/",
+        description:
+          "A modern, blazing-fast, and zero-configuration JavaScript compiler. It is designed to be a drop-in replacement for Babel, enabling developers to write modern JavaScript code without sacrificing performance. SWC is known for its speed, efficiency, and compatibility with modern JavaScript features.",
       },
     ],
   },
