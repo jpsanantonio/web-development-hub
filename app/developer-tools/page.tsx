@@ -37,7 +37,7 @@ export default function Page() {
               <p className="text-sm font-medium text-gray-900 group-hover:text-gray-900 dark:text-gray-50 dark:group-hover:text-gray-50">
                 {link.title}
               </p>
-              <p className="text-sm text-gray-500 line-clamp-2 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
+              <p className="text-sm text-gray-500 line-clamp-4 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
                 {link.description}
               </p>
             </div>

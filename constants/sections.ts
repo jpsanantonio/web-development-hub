@@ -35,6 +35,7 @@ import WebpackIcon from "@/components/icons/webpack";
 import RollupIcon from "@/components/icons/rollup";
 import ParcelIcon from "@/components/icons/parcel";
 import SwcIcon from "@/components/icons/swc";
+import EsbuildIcon from "@/components/icons/esbuild";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -359,6 +360,13 @@ export const SECTIONS = [
         href: "https://swc.rs/",
         description:
           "A modern, blazing-fast, and zero-configuration JavaScript compiler. It is designed to be a drop-in replacement for Babel, enabling developers to write modern JavaScript code without sacrificing performance. SWC is known for its speed, efficiency, and compatibility with modern JavaScript features.",
+      },
+      {
+        icon: EsbuildIcon,
+        title: "Esbuild",
+        href: "https://esbuild.github.io/",
+        description:
+          "An extremely fast JavaScript bundler and minifier written in Go. It is designed to be highly efficient and to handle large codebases quickly, making it a popular choice for modern web development. esbuild prioritizes speed and simplicity, offering a powerful yet straightforward tool for bundling, transforming, and optimizing JavaScript, TypeScript, and other web assets.",
       },
     ],
   },
