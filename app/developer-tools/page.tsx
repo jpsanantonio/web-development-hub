@@ -11,7 +11,7 @@ import { SECTIONS } from "@/constants/sections";
 
 export default function Page() {
   return (
-    <div className="container px-4 md:px-6 flex flex-col gap-10">
+    <div className="container px-4 md:px-6 flex flex-col gap-10 mx-auto max-w-[1100px]">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
