@@ -36,6 +36,7 @@ import RollupIcon from "@/components/icons/rollup";
 import ParcelIcon from "@/components/icons/parcel";
 import SwcIcon from "@/components/icons/swc";
 import EsbuildIcon from "@/components/icons/esbuild";
+import ViteIcon from "@/components/icons/vite";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -367,6 +368,13 @@ export const SECTIONS = [
         href: "https://esbuild.github.io/",
         description:
           "An extremely fast JavaScript bundler and minifier written in Go. It is designed to be highly efficient and to handle large codebases quickly, making it a popular choice for modern web development. esbuild prioritizes speed and simplicity, offering a powerful yet straightforward tool for bundling, transforming, and optimizing JavaScript, TypeScript, and other web assets.",
+      },
+      {
+        icon: ViteIcon,
+        title: "Vite",
+        href: "https://vitejs.dev/",
+        description:
+          "A next generation front-end build tool that provides a fast, powerful, and flexible development experience. It is designed to be a lightweight alternative to traditional build tools like webpack and Gulp, offering a seamless integration with modern JavaScript ecosystems. Vite is known for its fast build times, optimized bundling, and seamless integration with popular frameworks like React and Vue.",
       },
     ],
   },
