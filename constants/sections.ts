@@ -37,6 +37,7 @@ import ParcelIcon from "@/components/icons/parcel";
 import SwcIcon from "@/components/icons/swc";
 import EsbuildIcon from "@/components/icons/esbuild";
 import ViteIcon from "@/components/icons/vite";
+import TurbopackIcon from "@/components/icons/turbopack";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -375,6 +376,13 @@ export const SECTIONS = [
         href: "https://vitejs.dev/",
         description:
           "A next generation front-end build tool that provides a fast, powerful, and flexible development experience. It is designed to be a lightweight alternative to traditional build tools like webpack and Gulp, offering a seamless integration with modern JavaScript ecosystems. Vite is known for its fast build times, optimized bundling, and seamless integration with popular frameworks like React and Vue.",
+      },
+      {
+        icon: TurbopackIcon,
+        title: "Turbopack",
+        href: "https://turbo.build/pack",
+        description:
+          "A next-generation bundler for JavaScript and TypeScript, developed by the creators of Vercel and Next.js. It is designed to be extremely fast, leveraging Rust for performance and parallel processing. Turbopack aims to be the successor to Webpack, offering modern features and optimizations that cater to the needs of contemporary web development.",
       },
     ],
   },
