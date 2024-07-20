@@ -38,6 +38,7 @@ import SwcIcon from "@/components/icons/swc";
 import EsbuildIcon from "@/components/icons/esbuild";
 import ViteIcon from "@/components/icons/vite";
 import TurbopackIcon from "@/components/icons/turbopack";
+import BiomeIcon from "@/components/icons/biome";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -383,6 +384,13 @@ export const SECTIONS = [
         href: "https://turbo.build/pack",
         description:
           "A next-generation bundler for JavaScript and TypeScript, developed by the creators of Vercel and Next.js. It is designed to be extremely fast, leveraging Rust for performance and parallel processing. Turbopack aims to be the successor to Webpack, offering modern features and optimizations that cater to the needs of contemporary web development.",
+      },
+      {
+        icon: BiomeIcon,
+        title: "Biome",
+        href: "https://biomejs.dev/",
+        description:
+          "A modern and lightweight framework for building web applications. It is designed to be fast, modular, and easy to use, making it a great choice for developers who want to build high-performance web applications.",
       },
     ],
   },
