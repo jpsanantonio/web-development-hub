@@ -39,6 +39,7 @@ import EsbuildIcon from "@/components/icons/esbuild";
 import ViteIcon from "@/components/icons/vite";
 import TurbopackIcon from "@/components/icons/turbopack";
 import BiomeIcon from "@/components/icons/biome";
+import RushIcon from "@/components/icons/rush";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -390,7 +391,14 @@ export const SECTIONS = [
         title: "Biome",
         href: "https://biomejs.dev/",
         description:
-          "A modern and lightweight framework for building web applications. It is designed to be fast, modular, and easy to use, making it a great choice for developers who want to build high-performance web applications.",
+          "Formerly known as Rome, is an all-in-one toolchain for JavaScript and TypeScript development. It aims to provide a comprehensive solution for various aspects of the development workflow, including linting, formatting, bundling, compiling, and testing. The goal of Biome is to reduce the number of tools required in a typical development setup by integrating these functionalities into a single, cohesive toolchain.",
+      },
+      {
+        icon: RushIcon,
+        title: "Rush",
+        href: "https://rushjs.io/",
+        description:
+          "A monorepo management tool developed by Microsoft. It is designed to manage large-scale monorepos with many projects, providing tools and workflows to streamline the development process, manage dependencies, and optimize builds. Rush is part of the Rush Stack, a collection of tools for managing monorepos, and is particularly well-suited for enterprise environments and large teams.",
       },
     ],
   },
