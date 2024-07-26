@@ -40,6 +40,7 @@ import ViteIcon from "@/components/icons/vite";
 import TurbopackIcon from "@/components/icons/turbopack";
 import BiomeIcon from "@/components/icons/biome";
 import RushIcon from "@/components/icons/rush";
+import YarnIcon from "@/components/icons/yarn";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -399,6 +400,13 @@ export const SECTIONS = [
         href: "https://rushjs.io/",
         description:
           "A monorepo management tool developed by Microsoft. It is designed to manage large-scale monorepos with many projects, providing tools and workflows to streamline the development process, manage dependencies, and optimize builds. Rush is part of the Rush Stack, a collection of tools for managing monorepos, and is particularly well-suited for enterprise environments and large teams.",
+      },
+      {
+        icon: YarnIcon,
+        title: "Yarn Workspaces",
+        href: "https://yarnpkg.com/features/workspaces",
+        description:
+          "Yarn Workspaces is a feature of Yarn that allows you to define multiple packages in a single repository. It enables you to manage dependencies across multiple projects, making it easier to share code and collaborate with others. Yarn Workspaces is particularly useful for large-scale projects with multiple teams or repositories.",
       },
     ],
   },
