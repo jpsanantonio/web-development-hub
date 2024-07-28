@@ -41,6 +41,7 @@ import TurbopackIcon from "@/components/icons/turbopack";
 import BiomeIcon from "@/components/icons/biome";
 import RushIcon from "@/components/icons/rush";
 import YarnIcon from "@/components/icons/yarn";
+import LernaIcon from "@/components/icons/lerna";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -407,6 +408,13 @@ export const SECTIONS = [
         href: "https://yarnpkg.com/features/workspaces",
         description:
           "Yarn Workspaces is a feature of Yarn that allows you to define multiple packages in a single repository. It enables you to manage dependencies across multiple projects, making it easier to share code and collaborate with others. Yarn Workspaces is particularly useful for large-scale projects with multiple teams or repositories.",
+      },
+      {
+        icon: LernaIcon,
+        title: "Lerna",
+        href: "https://lerna.js.org/",
+        description:
+          "A tool for managing JavaScript projects with multiple packages. It provides a command-line interface (CLI) and a JavaScript API for automating tasks such as publishing, versioning, and running scripts across multiple packages. Lerna is particularly well-suited for large-scale projects with multiple packages and teams.",
       },
     ],
   },
