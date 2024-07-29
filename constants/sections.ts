@@ -42,6 +42,7 @@ import BiomeIcon from "@/components/icons/biome";
 import RushIcon from "@/components/icons/rush";
 import YarnIcon from "@/components/icons/yarn";
 import LernaIcon from "@/components/icons/lerna";
+import NpmIcon from "@/components/icons/npm";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -415,6 +416,13 @@ export const SECTIONS = [
         href: "https://lerna.js.org/",
         description:
           "A tool for managing JavaScript projects with multiple packages. It provides a command-line interface (CLI) and a JavaScript API for automating tasks such as publishing, versioning, and running scripts across multiple packages. Lerna is particularly well-suited for large-scale projects with multiple packages and teams.",
+      },
+      {
+        icon: NpmIcon,
+        title: "NPM",
+        href: "https://www.npmjs.com/",
+        description:
+          "A package manager for JavaScript. It is the default package manager for Node.js and is used by many JavaScript developers to manage dependencies and build applications. NPM is known for its speed, reliability, and ease of use, making it a popular choice for developers who want to manage and distribute their JavaScript projects.",
       },
     ],
   },
