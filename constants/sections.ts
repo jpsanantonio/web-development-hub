@@ -43,6 +43,7 @@ import RushIcon from "@/components/icons/rush";
 import YarnIcon from "@/components/icons/yarn";
 import LernaIcon from "@/components/icons/lerna";
 import NpmIcon from "@/components/icons/npm";
+import PnpmIcon from "@/components/icons/pnpm";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -423,6 +424,13 @@ export const SECTIONS = [
         href: "https://www.npmjs.com/",
         description:
           "A package manager for JavaScript. It is the default package manager for Node.js and is used by many JavaScript developers to manage dependencies and build applications. NPM is known for its speed, reliability, and ease of use, making it a popular choice for developers who want to manage and distribute their JavaScript projects.",
+      },
+      {
+        icon: PnpmIcon,
+        title: "PNPM",
+        href: "https://pnpm.io/",
+        description:
+          "An advanced package manager for JavaScript and TypeScript that offers several improvements over traditional NPM and Yarn. It is designed to be fast, efficient, and disk space-saving, particularly for monorepos and large-scale projects. PNPM addresses some of the shortcomings of other package managers by providing a unique approach to dependency management.",
       },
     ],
   },
