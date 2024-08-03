@@ -44,6 +44,7 @@ import YarnIcon from "@/components/icons/yarn";
 import LernaIcon from "@/components/icons/lerna";
 import NpmIcon from "@/components/icons/npm";
 import PnpmIcon from "@/components/icons/pnpm";
+import NxIcon from "@/components/icons/nx";
 import ReactIcon from "@/components/icons/react";
 import VueIcon from "@/components/icons/vue";
 import AngularIcon from "@/components/icons/angular";
@@ -431,6 +432,13 @@ export const SECTIONS = [
         href: "https://pnpm.io/",
         description:
           "An advanced package manager for JavaScript and TypeScript that offers several improvements over traditional NPM and Yarn. It is designed to be fast, efficient, and disk space-saving, particularly for monorepos and large-scale projects. PNPM addresses some of the shortcomings of other package managers by providing a unique approach to dependency management.",
+      },
+      {
+        icon: NxIcon,
+        title: "Nx",
+        href: "https://nx.dev/",
+        description:
+          "A powerful build system and monorepo management tool that helps developers manage complex projects with multiple applications and libraries. It is designed to improve developer productivity, optimize build performance, and facilitate the management of large codebases. Nx was created by the team at Nrwl and provides tools and practices inspired by Google's internal development tools.",
       },
     ],
   },
