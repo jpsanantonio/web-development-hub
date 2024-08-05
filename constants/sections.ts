@@ -74,6 +74,7 @@ import PlaywrightIcon from "@/components/icons/playwright";
 import WebdriverioIcon from "@/components/icons/webdriverio";
 import VitestIcon from "@/components/icons/vitest";
 import TestcafeIcon from "@/components/icons/testcafe";
+import ElectronIcon from "@/components/icons/electron";
 import DevtoIcon from "@/components/icons/devto";
 import RedditIcon from "@/components/icons/reddit";
 import IcodethisIcon from "@/components/icons/icodethis";
@@ -658,6 +659,13 @@ export const SECTIONS = [
         href: "https://testcafe.io/",
         description:
           "A cross-browser testing framework that allows you to write tests in a simple, intuitive syntax. It provides a powerful set of tools for automating web applications, including support for multiple browsers, page objects, and custom assertions. TestCafé is designed to be easy to use and integrate with existing testing frameworks, making it a popular choice for developers who want to write more comprehensive and reliable tests for their web applications.",
+      },
+      {
+        icon: ElectronIcon,
+        title: "Electron",
+        href: "https://www.electronjs.org/",
+        description:
+          "A framework for building cross-platform desktop applications using web technologies. It allows you to create desktop applications with JavaScript, HTML, and CSS, and package them into standalone executables for Windows, macOS, and Linux. Electron is a popular choice for developers who want to build desktop applications using web technologies.",
       },
     ],
   },
