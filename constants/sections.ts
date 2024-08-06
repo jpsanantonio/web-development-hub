@@ -75,6 +75,7 @@ import WebdriverioIcon from "@/components/icons/webdriverio";
 import VitestIcon from "@/components/icons/vitest";
 import TestcafeIcon from "@/components/icons/testcafe";
 import ElectronIcon from "@/components/icons/electron";
+import ReactNativeIcon from "@/components/icons/reactnative";
 import DevtoIcon from "@/components/icons/devto";
 import RedditIcon from "@/components/icons/reddit";
 import IcodethisIcon from "@/components/icons/icodethis";
@@ -666,6 +667,13 @@ export const SECTIONS = [
         href: "https://www.electronjs.org/",
         description:
           "A framework for building cross-platform desktop applications using web technologies. It allows you to create desktop applications with JavaScript, HTML, and CSS, and package them into standalone executables for Windows, macOS, and Linux. Electron is a popular choice for developers who want to build desktop applications using web technologies.",
+      },
+      {
+        icon: ReactNativeIcon,
+        title: "React Native",
+        href: "https://reactnative.dev/",
+        description:
+          "An open-source framework developed by Facebook for building mobile applications using JavaScript and React. It enables developers to create natively-rendered mobile apps for both iOS and Android using a single codebase. React Native bridges the gap between web and mobile development, allowing for the reuse of code across platforms while still providing a native look and feel.",
       },
     ],
   },
