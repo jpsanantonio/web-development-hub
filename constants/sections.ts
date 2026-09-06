@@ -3036,9 +3036,9 @@ export const SECTIONS = [
       },
       {
         title: 'Lee Robinson',
-        href: 'https://leerob.io/',
+        href: 'https://leerob.com/',
         description:
-          "Insights on building modern web applications, performance optimization, and developer experience from Vercel's CEO.",
+          'Insights on building modern web applications, performance optimization, and developer experience from a former Vercel product lead.',
         tags: [
           'blog',
           'free',
@@ -3120,9 +3120,9 @@ export const SECTIONS = [
       },
       {
         title: 'Sarah Drasner',
-        href: 'https://sarah.dev/',
+        href: 'https://sarah.dev/writing',
         description:
-          'Personal blog covering CSS, animations, Vue.js, and creative web development techniques.',
+          'Occasional long-form essays on engineering leadership, career, and the craft of building for the web.',
         tags: [
           'css',
           'vue',
@@ -3177,34 +3177,6 @@ export const SECTIONS = [
         ],
       },
       {
-        title: 'Eric Elliott',
-        href: 'https://ericelliottjs.com/',
-        description:
-          'Advanced JavaScript concepts, functional programming, and software architecture insights.',
-        tags: [
-          'javascript',
-          'blog',
-          'free',
-          'paid',
-          'advanced',
-          'career-focused',
-        ],
-      },
-      {
-        title: 'Adam Wathan',
-        href: 'https://adamwathan.me/',
-        description:
-          'Personal blog of Tailwind CSS creator sharing thoughts on CSS, design systems, and web development.',
-        tags: [
-          'css',
-          'design',
-          'blog',
-          'free',
-          'advanced',
-          'trending',
-        ],
-      },
-      {
         title: 'Surma',
         href: 'https://surma.dev/',
         description:
@@ -3246,26 +3218,11 @@ export const SECTIONS = [
         ],
       },
       {
-        title: 'Rich Harris',
+        title: 'Svelte Blog',
         href: 'https://svelte.dev/blog',
         description:
-          'Personal blog of Svelte creator sharing thoughts on web frameworks and modern development.',
+          'Official Svelte blog where Rich Harris and the core team announce releases and explain framework design decisions.',
         tags: [
-          'javascript',
-          'blog',
-          'free',
-          'advanced',
-          'trending',
-          'career-focused',
-        ],
-      },
-      {
-        title: 'Evan You',
-        href: 'https://blog.evanyou.me/',
-        description:
-          'Personal blog of Vue.js creator sharing insights on framework design and web development.',
-        tags: [
-          'vue',
           'javascript',
           'blog',
           'free',
@@ -3333,20 +3290,6 @@ export const SECTIONS = [
         ],
       },
       {
-        title: 'Kyle Simpson',
-        href: 'https://me.getify.com/',
-        description:
-          "Deep JavaScript insights and functional programming concepts from the author of You Don't Know JS book series.",
-        tags: [
-          'javascript',
-          'blog',
-          'free',
-          'paid',
-          'advanced',
-          'tutorial',
-        ],
-      },
-      {
         title: 'Lea Verou',
         href: 'https://lea.verou.me/',
         description:
@@ -3362,7 +3305,7 @@ export const SECTIONS = [
       },
       {
         title: 'Paul Irish',
-        href: 'https://paulirish.com/',
+        href: 'https://www.paulirish.com/',
         description:
           'Chrome team member sharing insights on web performance, developer tools, and modern web platform.',
         tags: [
@@ -3410,7 +3353,7 @@ export const SECTIONS = [
       },
       {
         title: 'Robin Rendle',
-        href: 'https://www.robinrendle.com/',
+        href: 'https://robinrendle.com/',
         description:
           'CSS and design systems expert sharing thoughts on web design, typography, and modern CSS.',
         tags: [
@@ -3451,7 +3394,7 @@ export const SECTIONS = [
       },
       {
         title: 'Rachel Andrew',
-        href: 'https://rachelandrew.co.uk/blog/',
+        href: 'https://rachelandrew.co.uk/archives/',
         description:
           'CSS Grid expert and web standards advocate sharing insights on modern CSS and web layout.',
         tags: [
@@ -3461,35 +3404,6 @@ export const SECTIONS = [
           'free',
           'advanced',
           'tutorial',
-        ],
-      },
-      {
-        title: 'Jen Simmons',
-        href: 'https://jensimmons.com/',
-        description:
-          'CSS layout expert and former Mozilla developer sharing insights on modern CSS and web design.',
-        tags: [
-          'css',
-          'design',
-          'blog',
-          'free',
-          'advanced',
-          'tutorial',
-        ],
-      },
-      {
-        title: 'Val Head',
-        href: 'https://valhead.com/',
-        description:
-          'Web animation expert sharing insights on CSS animations, motion design, and user experience.',
-        tags: [
-          'css',
-          'design',
-          'animation',
-          'blog',
-          'free',
-          'tutorial',
-          'advanced',
         ],
       },
       {
@@ -3521,7 +3435,7 @@ export const SECTIONS = [
       },
       {
         title: 'Codesmith',
-        href: 'https://www.codesmith.io/blog',
+        href: 'https://codesmith.io/blog',
         description:
           'Coding bootcamp insights covering software engineering, AI/ML, career transitions, and tech industry trends.',
         tags: [
@@ -3545,6 +3459,277 @@ export const SECTIONS = [
           'free',
           'modern',
           'trending',
+          'tutorial',
+        ],
+      },
+      {
+        title: 'JavaScript Weekly',
+        href: 'https://javascriptweekly.com/',
+        description:
+          'Weekly roundup of JavaScript news, articles, and releases, curated since 2011.',
+        tags: [
+          'javascript',
+          'newsletter',
+          'free',
+          'weekly',
+          'trending',
+          'modern',
+        ],
+      },
+      {
+        title: 'Frontend Focus',
+        href: 'https://frontendfoc.us/',
+        description:
+          'Weekly newsletter on HTML, CSS, and the browser platform, covering front-end news, tutorials, and specs.',
+        tags: [
+          'css',
+          'html',
+          'newsletter',
+          'free',
+          'weekly',
+          'modern',
+        ],
+      },
+      {
+        title: 'React Status',
+        href: 'https://react.statuscode.com/',
+        description:
+          'Weekly React and React Native newsletter covering releases, tutorials, and notable ecosystem projects.',
+        tags: ['react', 'newsletter', 'free', 'weekly', 'modern'],
+      },
+      {
+        title: 'Node Weekly',
+        href: 'https://nodeweekly.com/',
+        description:
+          'Weekly Node.js newsletter covering runtime releases, server-side JavaScript articles, and package news.',
+        tags: [
+          'nodejs',
+          'javascript',
+          'newsletter',
+          'free',
+          'weekly',
+          'full-stack',
+        ],
+      },
+      {
+        title: 'Bytes',
+        href: 'https://bytes.dev/',
+        description:
+          'Irreverent JavaScript newsletter pairing ecosystem news and tooling updates with a sense of humor.',
+        tags: [
+          'javascript',
+          'newsletter',
+          'free',
+          'trending',
+          'beginner-friendly',
+        ],
+      },
+      {
+        title: 'CSS Weekly',
+        href: 'https://css-weekly.com/',
+        description:
+          'Weekly roundup of CSS articles, tutorials, tools, and experiments curated for front-end developers.',
+        tags: [
+          'css',
+          'newsletter',
+          'free',
+          'weekly',
+          'tutorial',
+          'design',
+        ],
+      },
+      {
+        title: 'Chrome for Developers',
+        href: 'https://developer.chrome.com/blog',
+        description:
+          'Official Chrome team blog covering new browser features, web platform APIs, DevTools, and performance guidance.',
+        tags: [
+          'performance',
+          'blog',
+          'free',
+          'platform',
+          'modern',
+          'documentation',
+        ],
+      },
+      {
+        title: 'WebKit Blog',
+        href: 'https://webkit.org/blog/',
+        description:
+          'Official WebKit blog detailing Safari releases, new web platform features, and browser engine internals.',
+        tags: [
+          'css',
+          'blog',
+          'free',
+          'platform',
+          'modern',
+          'documentation',
+        ],
+      },
+      {
+        title: 'Mozilla Hacks',
+        href: 'https://hacks.mozilla.org/',
+        description:
+          'Mozilla developer blog covering web standards, Firefox features, WebAssembly, and open web technology.',
+        tags: [
+          'blog',
+          'free',
+          'platform',
+          'open-source',
+          'modern',
+          'advanced',
+        ],
+      },
+      {
+        title: 'React Blog',
+        href: 'https://react.dev/blog',
+        description:
+          'Official React blog announcing releases, RFCs, and design guidance straight from the React team.',
+        tags: [
+          'react',
+          'blog',
+          'free',
+          'platform',
+          'documentation',
+          'modern',
+        ],
+      },
+      {
+        title: 'Ahmad Shadeed',
+        href: 'https://ishadeed.com/',
+        description:
+          'Heavily illustrated CSS deep dives on layout, container queries, and debugging real-world interfaces.',
+        tags: [
+          'css',
+          'design',
+          'blog',
+          'free',
+          'advanced',
+          'tutorial',
+        ],
+      },
+      {
+        title: 'Bramus Van Damme',
+        href: 'https://www.bram.us/',
+        description:
+          'CSS and web platform writing from a Chrome developer relations engineer, covering new specs as they ship.',
+        tags: [
+          'css',
+          'blog',
+          'free',
+          'platform',
+          'modern',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Jim Nielsen',
+        href: 'https://blog.jim-nielsen.com/',
+        description:
+          'Frequent short essays on web craft, design, browsers, and the culture of building for the web.',
+        tags: [
+          'design',
+          'blog',
+          'free',
+          'advanced',
+          'career-focused',
+        ],
+      },
+      {
+        title: 'Simon Willison',
+        href: 'https://simonwillison.net/',
+        description:
+          'Prolific notes on large language models, AI tooling, and web development from the co-creator of Django.',
+        tags: [
+          'ai',
+          'blog',
+          'free',
+          'advanced',
+          'trending',
+          'open-source',
+        ],
+      },
+      {
+        title: 'Adrian Roselli',
+        href: 'https://adrianroselli.com/',
+        description:
+          'Accessibility consultant writing tested, detailed guidance on ARIA, semantics, and inclusive interface patterns.',
+        tags: [
+          'accessibility',
+          'html',
+          'blog',
+          'free',
+          'advanced',
+          'tutorial',
+        ],
+      },
+      {
+        title: 'Piccalilli',
+        href: 'https://piccalil.li/blog/',
+        description:
+          "Front-end education from Andy Bell's studio, covering CSS, accessibility, HTML, and design systems.",
+        tags: [
+          'css',
+          'accessibility',
+          'design',
+          'blog',
+          'free',
+          'tutorial',
+        ],
+      },
+      {
+        title: 'TkDodo',
+        href: 'https://tkdodo.eu/blog',
+        description:
+          'React and TypeScript deep dives from a TanStack Query maintainer, focused on data fetching and state.',
+        tags: [
+          'react',
+          'typescript',
+          'blog',
+          'free',
+          'advanced',
+          'tutorial',
+        ],
+      },
+      {
+        title: 'Anthony Fu',
+        href: 'https://antfu.me/',
+        description:
+          'Open source tooling notes from a Vue, Vite, and Nuxt core team member and the creator of UnoCSS.',
+        tags: [
+          'vue',
+          'javascript',
+          'blog',
+          'free',
+          'open-source',
+          'tool',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Alex Russell',
+        href: 'https://infrequently.org/',
+        description:
+          'Long-form critique of browsers, standards, and web performance budgets from a browser engineer.',
+        tags: [
+          'performance',
+          'blog',
+          'free',
+          'advanced',
+          'platform',
+        ],
+      },
+      {
+        title: 'Manuel Matuzovic',
+        href: 'https://www.matuzo.at/blog/',
+        description:
+          'HTML, CSS, and accessibility writing, including deep dives on semantics and everyday markup mistakes.',
+        tags: [
+          'html',
+          'css',
+          'accessibility',
+          'blog',
+          'free',
           'tutorial',
         ],
       },
