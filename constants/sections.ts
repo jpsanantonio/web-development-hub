@@ -6,10 +6,10 @@ export const SECTIONS = [
       'Comprehensive tutorials, courses, and educational content to master web development fundamentals and advanced concepts.',
     links: [
       {
-        title: 'Frontend Masters',
-        href: 'https://frontendmasters.com/',
+        title: 'Master.dev',
+        href: 'https://master.dev/',
         description:
-          'Premium in-depth courses on modern JavaScript, React, Vue, and front-end engineering taught by industry experts.',
+          'Frontend Masters, renamed in 2026, with in-depth courses across JavaScript, TypeScript, backend, and AI engineering.',
         tags: [
           'course',
           'paid',
@@ -649,6 +649,191 @@ export const SECTIONS = [
           'javascript',
           'python',
           'career-focused',
+        ],
+      },
+      {
+        title: 'Anthropic Academy',
+        href: 'https://academy.claude.com/',
+        description:
+          "Anthropic's own curriculum for building with Claude, covering the API, tool use, agent design, and Claude Code workflows.",
+        tags: [
+          'course',
+          'free',
+          'ai',
+          'agent',
+          'modern',
+          'hands-on',
+        ],
+      },
+      {
+        title: 'Claude Docs',
+        href: 'https://docs.claude.com/',
+        description:
+          'Reference for the Claude API, tool use, context management, and the Agent SDK, alongside prompting guides and model comparisons.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'DeepLearning.AI',
+        href: 'https://www.deeplearning.ai/',
+        description:
+          'Short courses and specializations on LLMs, retrieval, agents, and evaluation, each taught with the tooling teams actually ship.',
+        tags: [
+          'course',
+          'free',
+          'paid',
+          'ai',
+          'video-based',
+          'beginner-friendly',
+        ],
+      },
+      {
+        title: 'Hugging Face Learn',
+        href: 'https://huggingface.co/learn',
+        description:
+          'Free courses on transformers, diffusion models, agents, and MCP, each built around notebooks you run against real open models.',
+        tags: [
+          'course',
+          'free',
+          'ai',
+          'hands-on',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Prompt Engineering Guide',
+        href: 'https://www.promptingguide.ai/',
+        description:
+          'Paper-backed catalogue of prompting techniques from few-shot to ReAct, with a worked example behind every entry.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'open-source',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'OpenAI Cookbook',
+        href: 'https://developers.openai.com/cookbook',
+        description:
+          'Runnable recipes for structured outputs, function calling, embeddings, evals, and agent loops against the OpenAI API.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'open-source',
+          'hands-on',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Claude Cookbooks',
+        href: 'https://github.com/anthropics/claude-cookbooks',
+        description:
+          "Anthropic's notebook collection showing tool use, sub-agents, retrieval, and vision patterns as code you can run and adapt.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'open-source',
+          'hands-on',
+        ],
+      },
+      {
+        title: 'Model Context Protocol',
+        href: 'https://modelcontextprotocol.io/',
+        description:
+          'Spec and quickstarts for MCP, the open standard letting agents reach tools, data, and prompts through one interface.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'open-source',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'fast.ai',
+        href: 'https://www.fast.ai/',
+        description:
+          'Practical Deep Learning, taught top-down from working code rather than from the mathematics up.',
+        tags: [
+          'course',
+          'free',
+          'ai',
+          'python',
+          'hands-on',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Web Platform Status',
+        href: 'https://webstatus.dev/',
+        description:
+          'Baseline dashboard for which web features are safe to use today, with per-feature interoperability timelines across browsers.',
+        tags: [
+          'reference',
+          'free',
+          'css',
+          'javascript',
+          'html',
+          'documentation',
+          'modern',
+        ],
+      },
+      {
+        title: 'CodeCrafters',
+        href: 'https://codecrafters.io/',
+        description:
+          'Build-your-own-X challenges — Redis, Git, an interpreter, an HTTP server — staged in the language you want to practise.',
+        tags: [
+          'free',
+          'paid',
+          'hands-on',
+          'advanced',
+          'interactive',
+          'coding-challenges',
+        ],
+      },
+      {
+        title: 'Next.js Learn',
+        href: 'https://nextjs.org/learn',
+        description:
+          'Official Next.js course that builds an App Router dashboard end to end with server components, streaming, and mutations.',
+        tags: [
+          'course',
+          'free',
+          'react',
+          'typescript',
+          'tutorial',
+          'hands-on',
+          'modern',
+        ],
+      },
+      {
+        title: 'Svelte Tutorial',
+        href: 'https://svelte.dev/tutorial',
+        description:
+          'Interactive walkthrough of Svelte and SvelteKit that runs entirely in the browser, from runes to server routes.',
+        tags: [
+          'tutorial',
+          'free',
+          'interactive',
+          'javascript',
+          'beginner-friendly',
+          'hands-on',
         ],
       },
     ],
@@ -1822,6 +2007,402 @@ export const SECTIONS = [
           'modern',
         ],
       },
+      {
+        title: 'Claude',
+        href: 'https://claude.ai/',
+        description:
+          "Anthropic's assistant for research, writing, and code, with projects, artifacts, and connectors into the tools a team already uses.",
+        tags: [
+          'ai',
+          'free',
+          'paid',
+          'tool',
+          'trending',
+          'modern',
+          'assistant',
+        ],
+      },
+      {
+        title: 'OpenAI Codex',
+        href: 'https://openai.com/codex/',
+        description:
+          "OpenAI's coding agent across terminal, IDE, and cloud, running tasks against a checkout and handing back reviewable diffs.",
+        tags: [
+          'ai',
+          'agent',
+          'paid',
+          'tool',
+          'trending',
+          'modern',
+        ],
+      },
+      {
+        title: 'Amp',
+        href: 'https://ampcode.com/',
+        description:
+          "Sourcegraph's coding agent for terminal and editor, built around unconstrained token use and shareable thread history.",
+        tags: [
+          'ai',
+          'agent',
+          'paid',
+          'tool',
+          'terminal',
+          'modern',
+        ],
+      },
+      {
+        title: 'OpenCode',
+        href: 'https://opencode.ai/',
+        description:
+          'Open-source terminal coding agent that drives any model through one TUI, with a client/server split for remote sessions.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'terminal',
+          'tool',
+          'modern',
+        ],
+      },
+      {
+        title: 'Aider',
+        href: 'https://aider.chat/',
+        description:
+          'Terminal pair programmer that edits files directly in a git repo and commits each change with a written message.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'terminal',
+          'tool',
+        ],
+      },
+      {
+        title: 'Continue',
+        href: 'https://continue.dev/',
+        description:
+          'Open-source IDE assistant you configure yourself — choose the models, context providers, and rules per project.',
+        tags: [
+          'ai',
+          'free',
+          'open-source',
+          'tool',
+          'ide',
+          'modern',
+        ],
+      },
+      {
+        title: 'CodeRabbit',
+        href: 'https://www.coderabbit.ai/',
+        description:
+          'AI reviewer that comments on pull requests line by line and picks up the conventions a repository already follows.',
+        tags: [
+          'ai',
+          'paid',
+          'free',
+          'tool',
+          'testing',
+          'modern',
+        ],
+      },
+      {
+        title: 'Graphite',
+        href: 'https://graphite.com/',
+        description:
+          'Stacked pull request workflow with an AI reviewer, keeping a large change as small dependent PRs that merge in order.',
+        tags: [
+          'ai',
+          'paid',
+          'free',
+          'tool',
+          'productivity',
+          'modern',
+        ],
+      },
+      {
+        title: 'Hugging Face',
+        href: 'https://huggingface.co/',
+        description:
+          'Hub for open models, datasets, and demo Spaces, with inference endpoints for serving any of them.',
+        tags: [
+          'ai',
+          'free',
+          'paid',
+          'platform',
+          'open-source',
+          'trending',
+        ],
+      },
+      {
+        title: 'Ollama',
+        href: 'https://ollama.com/',
+        description:
+          'Runs open models locally behind a familiar API, so prototypes work offline and private data never leaves the machine.',
+        tags: [
+          'ai',
+          'free',
+          'open-source',
+          'tool',
+          'cli',
+          'modern',
+        ],
+      },
+      {
+        title: 'LM Studio',
+        href: 'https://lmstudio.ai/',
+        description:
+          'Desktop app for downloading and running local models, exposing an OpenAI-compatible server for existing code to point at.',
+        tags: [
+          'ai',
+          'free',
+          'tool',
+          'desktop-dev',
+          'modern',
+        ],
+      },
+      {
+        title: 'OpenRouter',
+        href: 'https://openrouter.ai/',
+        description:
+          'One API and one bill across hundreds of models, with routing, fallbacks, and published price and latency per model.',
+        tags: [
+          'ai',
+          'paid',
+          'platform',
+          'api',
+          'modern',
+          'trending',
+        ],
+      },
+      {
+        title: 'Groq',
+        href: 'https://groq.com/',
+        description:
+          'Inference platform on custom silicon, aimed at the token rates interactive and voice applications need.',
+        tags: [
+          'ai',
+          'free',
+          'paid',
+          'platform',
+          'performance',
+          'api',
+        ],
+      },
+      {
+        title: 'Replicate',
+        href: 'https://replicate.com/',
+        description:
+          'Runs open image, video, audio, and language models behind one API, with your own models deployable via Cog.',
+        tags: [
+          'ai',
+          'paid',
+          'platform',
+          'api',
+          'open-source',
+          'generative',
+        ],
+      },
+      {
+        title: 'fal',
+        href: 'https://fal.ai/',
+        description:
+          'Generative media platform tuned for fast image, video, and audio inference, with a JavaScript client for web apps.',
+        tags: [
+          'ai',
+          'paid',
+          'platform',
+          'api',
+          'generative',
+          'performance',
+        ],
+      },
+      {
+        title: 'Modal',
+        href: 'https://modal.com/',
+        description:
+          'Serverless GPU compute defined in Python, spinning containers up per request for inference, fine-tuning, and batch jobs.',
+        tags: [
+          'ai',
+          'paid',
+          'platform',
+          'python',
+          'deployment',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Langfuse',
+        href: 'https://langfuse.com/',
+        description:
+          'Open-source tracing, evals, and prompt management for LLM apps, self-hostable so traces stay in your own infrastructure.',
+        tags: [
+          'ai',
+          'free',
+          'open-source',
+          'monitoring',
+          'tool',
+          'modern',
+        ],
+      },
+      {
+        title: 'Braintrust',
+        href: 'https://www.braintrust.dev/',
+        description:
+          'Eval-first platform for LLM products, scoring changes against datasets before release and tracing what happens after.',
+        tags: [
+          'ai',
+          'paid',
+          'free',
+          'monitoring',
+          'testing',
+          'tool',
+        ],
+      },
+      {
+        title: 'LangSmith',
+        href: 'https://www.langchain.com/langsmith',
+        description:
+          'Tracing, evaluation, and prompt iteration for agent apps, with the closest view into LangChain and LangGraph runs.',
+        tags: [
+          'ai',
+          'agent',
+          'paid',
+          'free',
+          'monitoring',
+          'tool',
+        ],
+      },
+      {
+        title: 'E2B',
+        href: 'https://e2b.dev/',
+        description:
+          'Isolated cloud sandboxes for running agent-written code, with filesystem, network, and process control per session.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'paid',
+          'open-source',
+          'tool',
+          'security',
+        ],
+      },
+      {
+        title: 'MCP Registry',
+        href: 'https://registry.modelcontextprotocol.io/',
+        description:
+          'Official index of Model Context Protocol servers, so agents discover published tools instead of hardcoding endpoints.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'platform',
+          'modern',
+        ],
+      },
+      {
+        title: 'Vercel AI Gateway',
+        href: 'https://vercel.com/ai-gateway',
+        description:
+          'One endpoint in front of many model providers, adding failover, spend limits, and per-request observability.',
+        tags: [
+          'ai',
+          'paid',
+          'free',
+          'platform',
+          'api',
+          'monitoring',
+          'modern',
+        ],
+      },
+      {
+        title: 'Chroma',
+        href: 'https://www.trychroma.com/',
+        description:
+          'Embedding database that runs in-process during development and as a server in production, behind the same API.',
+        tags: [
+          'ai',
+          'free',
+          'open-source',
+          'database',
+          'tool',
+        ],
+      },
+      {
+        title: 'Qdrant',
+        href: 'https://qdrant.tech/',
+        description:
+          'Rust vector database with payload filtering and hybrid search, built for retrieval across large document sets.',
+        tags: [
+          'ai',
+          'free',
+          'open-source',
+          'database',
+          'performance',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Oxc',
+        href: 'https://oxc.rs/',
+        description:
+          'Rust JavaScript toolchain — parser, linter, resolver, minifier — and the engine underneath Oxlint and Rolldown.',
+        tags: [
+          'tool',
+          'free',
+          'open-source',
+          'javascript',
+          'typescript',
+          'performance',
+          'modern',
+        ],
+      },
+      {
+        title: 'Rolldown',
+        href: 'https://rolldown.rs/',
+        description:
+          "Rust bundler that keeps Rollup's plugin API, now powering Vite for both development and production builds.",
+        tags: [
+          'tool',
+          'free',
+          'open-source',
+          'javascript',
+          'performance',
+          'modern',
+          'trending',
+        ],
+      },
+      {
+        title: 'Rspack',
+        href: 'https://rspack.rs/',
+        description:
+          'Rust bundler that reads webpack config and loaders, offered as a drop-in for large existing webpack builds.',
+        tags: [
+          'tool',
+          'free',
+          'open-source',
+          'javascript',
+          'performance',
+          'modern',
+        ],
+      },
+      {
+        title: 'Upstash',
+        href: 'https://upstash.com/',
+        description:
+          'Serverless Redis, queues, and vector search billed per request, designed for edge runtimes with no connection pooling.',
+        tags: [
+          'platform',
+          'free',
+          'paid',
+          'database',
+          'deployment',
+          'modern',
+        ],
+      },
     ],
   },
   {
@@ -2742,6 +3323,265 @@ export const SECTIONS = [
           'library',
         ],
       },
+      {
+        title: 'Mastra',
+        href: 'https://mastra.ai/',
+        description:
+          'TypeScript agent framework with typed workflows, suspend and resume, memory, and evals in one package.',
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'modern',
+          'trending',
+        ],
+      },
+      {
+        title: 'LangChain.js',
+        href: 'https://docs.langchain.com/oss/javascript/langchain/overview',
+        description:
+          'JavaScript LangChain, wiring models, retrievers, and tools into agents with LangGraph handling control flow.',
+        tags: [
+          'ai',
+          'agent',
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'MCP TypeScript SDK',
+        href: 'https://github.com/modelcontextprotocol/typescript-sdk',
+        description:
+          'Reference client and server implementation of the Model Context Protocol for Node and the browser.',
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'api',
+          'modern',
+        ],
+      },
+      {
+        title: 'OpenAI Agents SDK',
+        href: 'https://openai.github.io/openai-agents-js/',
+        description:
+          "OpenAI's TypeScript agent runtime with handoffs, guardrails, sessions, and tracing built in.",
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'modern',
+        ],
+      },
+      {
+        title: 'Transformers.js',
+        href: 'https://huggingface.co/docs/transformers.js',
+        description:
+          'Runs Hugging Face models directly in the browser on WebGPU, with no inference server in the loop.',
+        tags: [
+          'ai',
+          'javascript',
+          'free',
+          'open-source',
+          'performance',
+          'modern',
+        ],
+      },
+      {
+        title: 'Genkit',
+        href: 'https://genkit.dev/',
+        description:
+          "Google's open framework for AI features in Node, with flows, tracing, and a local developer UI.",
+        tags: [
+          'ai',
+          'agent',
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+        ],
+      },
+      {
+        title: 'CopilotKit',
+        href: 'https://www.copilotkit.ai/',
+        description:
+          'React components and hooks for in-app copilots that read application state and call your own functions.',
+        tags: [
+          'ai',
+          'react',
+          'free',
+          'open-source',
+          'ui',
+          'modern',
+        ],
+      },
+      {
+        title: 'assistant-ui',
+        href: 'https://www.assistant-ui.com/',
+        description:
+          'Composable React primitives for chat interfaces — streaming, tool call rendering, attachments, and message branching.',
+        tags: [
+          'ai',
+          'react',
+          'typescript',
+          'free',
+          'open-source',
+          'ui',
+          'modern',
+        ],
+      },
+      {
+        title: 'TanStack Start',
+        href: 'https://tanstack.com/start/latest',
+        description:
+          'Full-stack React framework on Vite with type-safe routing, server functions, and streaming SSR.',
+        tags: [
+          'react',
+          'typescript',
+          'free',
+          'open-source',
+          'full-stack',
+          'modern',
+          'trending',
+        ],
+      },
+      {
+        title: 'Base UI',
+        href: 'https://base-ui.com/',
+        description:
+          'Unstyled, accessible React components from the maintainers of Radix, Material UI, and Floating UI.',
+        tags: [
+          'react',
+          'typescript',
+          'free',
+          'open-source',
+          'accessibility',
+          'ui',
+          'modern',
+        ],
+      },
+      {
+        title: 'React Aria',
+        href: 'https://react-aria.adobe.com/',
+        description:
+          "Adobe's hooks and components supplying behaviour, accessibility, and internationalization without imposing styles.",
+        tags: [
+          'react',
+          'typescript',
+          'free',
+          'open-source',
+          'accessibility',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Effect',
+        href: 'https://effect.website/',
+        description:
+          'TypeScript library that puts errors, dependencies, and concurrency into the type signature.',
+        tags: [
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+          'modern',
+          'library',
+        ],
+      },
+      {
+        title: 'Valibot',
+        href: 'https://valibot.dev/',
+        description:
+          'Schema validation shaped like Zod but modular, so a bundle carries only the validators it uses.',
+        tags: [
+          'typescript',
+          'free',
+          'open-source',
+          'performance',
+          'modern',
+          'library',
+        ],
+      },
+      {
+        title: 'Nitro',
+        href: 'https://nitro.build/',
+        description:
+          'Server toolkit behind Nuxt that builds one codebase for Node, Deno, Bun, and every major edge runtime.',
+        tags: [
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+          'deployment',
+          'performance',
+          'modern',
+        ],
+      },
+      {
+        title: 'Elysia',
+        href: 'https://elysiajs.com/',
+        description:
+          'Bun-first web framework with end-to-end type inference from route handler through to the client.',
+        tags: [
+          'typescript',
+          'free',
+          'open-source',
+          'performance',
+          'api',
+          'modern',
+        ],
+      },
+      {
+        title: 'Kysely',
+        href: 'https://kysely.dev/',
+        description:
+          'Type-safe SQL query builder for TypeScript — autocompletion over your schema, without an ORM in between.',
+        tags: [
+          'typescript',
+          'free',
+          'open-source',
+          'database',
+          'library',
+          'advanced',
+        ],
+      },
+      {
+        title: 'TanStack Form',
+        href: 'https://tanstack.com/form/latest',
+        description:
+          'Headless, type-safe form state with async validation, shared across React, Vue, Solid, and Svelte.',
+        tags: [
+          'typescript',
+          'react',
+          'free',
+          'open-source',
+          'library',
+          'modern',
+        ],
+      },
+      {
+        title: 'Pinia',
+        href: 'https://pinia.vuejs.org/',
+        description:
+          "Vue's official store, typed end to end with devtools support and no mutation boilerplate.",
+        tags: [
+          'vue',
+          'typescript',
+          'free',
+          'open-source',
+          'library',
+          'modern',
+        ],
+      },
     ],
   },
 
@@ -2846,18 +3686,6 @@ export const SECTIONS = [
         ],
       },
       {
-        title: 'Women Who Code',
-        href: 'https://www.womenwhocode.com/',
-        description:
-          'Global nonprofit community supporting women in technology with events, mentorship, and resources.',
-        tags: [
-          'community',
-          'free',
-          'career-focused',
-          'beginner-friendly',
-        ],
-      },
-      {
         title: 'HackerRank',
         href: 'https://www.hackerrank.com/',
         description:
@@ -2873,19 +3701,6 @@ export const SECTIONS = [
         ],
       },
       {
-        title: 'CodeProject',
-        href: 'https://www.codeproject.com/',
-        description:
-          'Collaborative community for sharing code, tutorials, and real-world software development projects.',
-        tags: [
-          'community',
-          'tutorial',
-          'free',
-          'beginner-friendly',
-          'hands-on',
-        ],
-      },
-      {
         title: 'daily.dev',
         href: 'https://daily.dev/',
         description:
@@ -2896,19 +3711,6 @@ export const SECTIONS = [
           'trending',
           'career-focused',
           'modern',
-        ],
-      },
-      {
-        title: 'CSS-Tricks Forums',
-        href: 'https://css-tricks.com/forums/',
-        description:
-          'Discussion forum for CSS techniques, troubleshooting, and web development best practices.',
-        tags: [
-          'css',
-          'community',
-          'free',
-          'beginner-friendly',
-          'advanced',
         ],
       },
       {
@@ -3009,6 +3811,148 @@ export const SECTIONS = [
           'free',
           'documentation',
           'advanced',
+        ],
+      },
+      {
+        title: 'r/LocalLLaMA',
+        href: 'https://www.reddit.com/r/LocalLLaMA/',
+        description:
+          'Where people running open models locally compare quantizations, hardware, and benchmarks in public.',
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'r/ClaudeAI',
+        href: 'https://www.reddit.com/r/ClaudeAI/',
+        description:
+          'Working notes on Claude and Claude Code — prompts, agent setups, and what breaks in practice.',
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'agent',
+          'modern',
+        ],
+      },
+      {
+        title: 'r/reactjs',
+        href: 'https://www.reddit.com/r/reactjs/',
+        description:
+          'React-specific questions, release discussion, and code review threads.',
+        tags: [
+          'community',
+          'free',
+          'react',
+          'javascript',
+        ],
+      },
+      {
+        title: 'r/ExperiencedDevs',
+        href: 'https://www.reddit.com/r/ExperiencedDevs/',
+        description:
+          'Career and engineering-practice discussion for developers past the junior stage.',
+        tags: [
+          'community',
+          'free',
+          'career-focused',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Hugging Face Forums',
+        href: 'https://discuss.huggingface.co/',
+        description:
+          'Model, dataset, and fine-tuning questions answered by the people maintaining the libraries.',
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'CodePen',
+        href: 'https://codepen.io/',
+        description:
+          'Front-end playground where demos are published in public, and the fastest place to find a working CSS technique.',
+        tags: [
+          'community',
+          'free',
+          'css',
+          'html',
+          'javascript',
+          'interactive',
+        ],
+      },
+      {
+        title: 'AI Engineer',
+        href: 'https://www.ai.engineer/',
+        description:
+          'Conference and community for people shipping AI products, with every talk published free afterwards.',
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'agent',
+          'video-based',
+          'modern',
+        ],
+      },
+      {
+        title: 'Kaggle',
+        href: 'https://www.kaggle.com/',
+        description:
+          'Competitions, public datasets, and shared notebooks for practising machine learning on real problems.',
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'python',
+          'hands-on',
+          'coding-challenges',
+        ],
+      },
+      {
+        title: 'Vercel Community',
+        href: 'https://community.vercel.com/',
+        description:
+          'Support and discussion for Next.js and Vercel, staffed by the people who build them.',
+        tags: [
+          'community',
+          'free',
+          'react',
+          'deployment',
+          'modern',
+        ],
+      },
+      {
+        title: 'Astro Discord',
+        href: 'https://astro.build/chat',
+        description:
+          "Astro's community chat, where the core team answers questions and integrations get built in the open.",
+        tags: [
+          'community',
+          'free',
+          'open-source',
+          'modern',
+        ],
+      },
+      {
+        title: 'Svelte Discord',
+        href: 'https://svelte.dev/chat',
+        description:
+          'Svelte and SvelteKit help in real time, with maintainers regularly in the threads.',
+        tags: [
+          'community',
+          'free',
+          'open-source',
+          'javascript',
         ],
       },
     ],
@@ -3731,6 +4675,218 @@ export const SECTIONS = [
           'blog',
           'free',
           'tutorial',
+        ],
+      },
+      {
+        title: 'Latent Space',
+        href: 'https://www.latent.space/',
+        description:
+          "swyx's newsletter and podcast on AI engineering — inference economics, agent architecture, and the tooling layer.",
+        tags: [
+          'blog',
+          'newsletter',
+          'free',
+          'ai',
+          'agent',
+          'advanced',
+          'modern',
+        ],
+      },
+      {
+        title: 'Anthropic Engineering',
+        href: 'https://www.anthropic.com/engineering',
+        description:
+          "Anthropic's engineering write-ups on agent design, context management, and running Claude in production.",
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'agent',
+          'advanced',
+          'modern',
+        ],
+      },
+      {
+        title: 'OpenAI News',
+        href: 'https://openai.com/news/',
+        description:
+          'Model launches, API changes, and research notes from OpenAI.',
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'modern',
+        ],
+      },
+      {
+        title: 'Ahead of AI',
+        href: 'https://magazine.sebastianraschka.com/',
+        description:
+          "Sebastian Raschka's deep dives into LLM architecture and training, written for people who read the papers.",
+        tags: [
+          'newsletter',
+          'free',
+          'paid',
+          'ai',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Import AI',
+        href: 'https://importai.substack.com/',
+        description:
+          "Jack Clark's weekly read on AI research and policy, pairing each paper with what it implies.",
+        tags: [
+          'newsletter',
+          'free',
+          'ai',
+          'weekly',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Interconnects',
+        href: 'https://www.interconnects.ai/',
+        description:
+          'Nathan Lambert on open models, post-training, and RLHF, with detail rarely published outside a lab.',
+        tags: [
+          'newsletter',
+          'blog',
+          'free',
+          'paid',
+          'ai',
+          'advanced',
+        ],
+      },
+      {
+        title: 'TLDR AI',
+        href: 'https://tldr.tech/ai',
+        description:
+          'Daily five-minute digest of AI research, product launches, and engineering posts.',
+        tags: [
+          'newsletter',
+          'free',
+          'ai',
+          'daily',
+        ],
+      },
+      {
+        title: 'Hugging Face Blog',
+        href: 'https://huggingface.co/blog',
+        description:
+          'Posts from the open-model ecosystem — releases, fine-tuning recipes, and inference benchmarks.',
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'This Week in React',
+        href: 'https://thisweekinreact.com/',
+        description:
+          'Weekly roundup of React, React Native, and the surrounding ecosystem, curated by Sébastien Lorber.',
+        tags: [
+          'newsletter',
+          'free',
+          'react',
+          'weekly',
+          'javascript',
+        ],
+      },
+      {
+        title: 'Master.dev Blog',
+        href: 'https://blog.master.dev/',
+        description:
+          'Writing from the Master.dev instructors on the web platform, framework releases, and AI-assisted development.',
+        tags: [
+          'blog',
+          'free',
+          'javascript',
+          'ai',
+          'tutorial',
+        ],
+      },
+      {
+        title: 'Stefan Judis',
+        href: 'https://www.stefanjudis.com/',
+        description:
+          'Web platform notes and the Web Weekly newsletter, both heavy on small browser details worth knowing.',
+        tags: [
+          'blog',
+          'newsletter',
+          'free',
+          'css',
+          'javascript',
+          'weekly',
+        ],
+      },
+      {
+        title: 'Nolan Lawson',
+        href: 'https://nolanlawson.com/',
+        description:
+          'Performance and web component writing grounded in benchmarks the author ran himself.',
+        tags: [
+          'blog',
+          'free',
+          'performance',
+          'javascript',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Cassidy Williams',
+        href: 'https://cassidoo.co/',
+        description:
+          'Rendezvous with Cassidoo — a weekly newsletter pairing an interview question with links and industry commentary.',
+        tags: [
+          'blog',
+          'newsletter',
+          'free',
+          'weekly',
+          'career-focused',
+          'javascript',
+        ],
+      },
+      {
+        title: 'TypeScript Blog',
+        href: 'https://devblogs.microsoft.com/typescript/',
+        description:
+          'Release notes and design rationale for every TypeScript version, straight from the language team.',
+        tags: [
+          'blog',
+          'free',
+          'typescript',
+          'documentation',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Next.js Blog',
+        href: 'https://nextjs.org/blog',
+        description:
+          'Release posts and migration guides for Next.js, including the reasoning behind each new default.',
+        tags: [
+          'blog',
+          'free',
+          'react',
+          'documentation',
+          'modern',
+        ],
+      },
+      {
+        title: 'Astro Blog',
+        href: 'https://astro.build/blog/',
+        description:
+          'Release notes and case studies for Astro, with detail on content collections and island architecture.',
+        tags: [
+          'blog',
+          'free',
+          'documentation',
+          'performance',
+          'modern',
         ],
       },
     ],
