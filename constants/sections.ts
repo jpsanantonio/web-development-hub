@@ -836,6 +836,144 @@ export const SECTIONS = [
           'hands-on',
         ],
       },
+      {
+        title: 'Can I Use',
+        href: 'https://caniuse.com/',
+        description:
+          'Per-browser support tables for every web platform feature, with usage share so you can judge what a fallback is worth.',
+        tags: [
+          'reference',
+          'free',
+          'css',
+          'javascript',
+          'html',
+          'documentation',
+        ],
+      },
+      {
+        title: 'MDN Curriculum',
+        href: 'https://developer.mozilla.org/en-US/curriculum/',
+        description:
+          "Mozilla's ordered path through front-end development, naming what to learn, in what sequence, and what employers expect.",
+        tags: [
+          'course',
+          'free',
+          'html',
+          'css',
+          'javascript',
+          'beginner-friendly',
+          'career-focused',
+        ],
+      },
+      {
+        title: 'State of JS',
+        href: 'https://stateofjs.com/',
+        description:
+          'Annual survey of what developers actually use and abandon across the JavaScript ecosystem, charted over years.',
+        tags: [
+          'reference',
+          'free',
+          'javascript',
+          'documentation',
+          'trending',
+        ],
+      },
+      {
+        title: 'Web Almanac',
+        href: 'https://almanac.httparchive.org/',
+        description:
+          "HTTP Archive's yearly report on how the web is really built, measured across millions of production sites.",
+        tags: [
+          'reference',
+          'free',
+          'performance',
+          'documentation',
+          'advanced',
+        ],
+      },
+      {
+        title: 'TC39 Proposals',
+        href: 'https://github.com/tc39/proposals',
+        description:
+          'The live list of JavaScript language proposals and the stage each one has reached on its way into the spec.',
+        tags: [
+          'reference',
+          'free',
+          'javascript',
+          'documentation',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Fireship',
+        href: 'https://fireship.dev/',
+        description:
+          "Jeff Delaney's fast-paced courses and videos on frameworks, tooling, and whatever shipped last week.",
+        tags: [
+          'course',
+          'free',
+          'paid',
+          'javascript',
+          'video-based',
+          'trending',
+        ],
+      },
+      {
+        title: 'Kevin Powell',
+        href: 'https://www.kevinpowell.co/',
+        description:
+          'CSS-focused videos and courses that work through modern layout and styling by rebuilding real interfaces.',
+        tags: [
+          'course',
+          'free',
+          'paid',
+          'css',
+          'video-based',
+          'beginner-friendly',
+        ],
+      },
+      {
+        title: 'Every Layout',
+        href: 'https://every-layout.dev/',
+        description:
+          'A set of composable CSS layout primitives, each derived from first principles rather than copied from a framework.',
+        tags: [
+          'reference',
+          'free',
+          'paid',
+          'css',
+          'design',
+          'advanced',
+        ],
+      },
+      {
+        title: 'The Copenhagen Book',
+        href: 'https://thecopenhagenbook.com/',
+        description:
+          'Concise, implementation-agnostic reference for doing web auth correctly — sessions, tokens, password storage, and MFA.',
+        tags: [
+          'reference',
+          'free',
+          'open-source',
+          'authentication',
+          'security',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Advent of Code',
+        href: 'https://adventofcode.com/',
+        description:
+          'December puzzle calendar that has become the yearly excuse to learn a new language alongside everyone else.',
+        tags: [
+          'free',
+          'coding-challenges',
+          'hands-on',
+          'interactive',
+          'community',
+        ],
+      },
     ],
   },
   {
@@ -2403,6 +2541,386 @@ export const SECTIONS = [
           'modern',
         ],
       },
+      {
+        title: 'Node.js',
+        href: 'https://nodejs.org/',
+        description:
+          'The JavaScript runtime most of the server-side ecosystem targets, now with a built-in test runner, watch mode, and type stripping.',
+        tags: [
+          'tool',
+          'free',
+          'open-source',
+          'javascript',
+          'nodejs',
+          'platform',
+        ],
+      },
+      {
+        title: 'Deno',
+        href: 'https://deno.com/',
+        description:
+          'Secure-by-default TypeScript runtime with a built-in formatter, linter, and test runner, and npm compatibility.',
+        tags: [
+          'tool',
+          'free',
+          'open-source',
+          'typescript',
+          'javascript',
+          'modern',
+        ],
+      },
+      {
+        title: 'Zero',
+        href: 'https://zero.rocicorp.dev/',
+        description:
+          'Sync engine that queries a local cache first and reconciles with Postgres in the background, giving reads and writes no spinner.',
+        tags: [
+          'free',
+          'open-source',
+          'database',
+          'performance',
+          'modern',
+          'trending',
+        ],
+      },
+      {
+        title: 'Electric',
+        href: 'https://electric.ax/',
+        description:
+          'Postgres sync engine, now the base of an agent platform where long-running sessions stay resumable and observable.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'database',
+          'modern',
+        ],
+      },
+      {
+        title: 'Liveblocks',
+        href: 'https://liveblocks.io/',
+        description:
+          'Hosted presence, comments, and conflict-free document state for adding multiplayer collaboration to an existing app.',
+        tags: [
+          'free',
+          'paid',
+          'platform',
+          'api',
+          'modern',
+          'collaborative',
+        ],
+      },
+      {
+        title: 'Inngest',
+        href: 'https://www.inngest.com/',
+        description:
+          'Durable execution for background work and agents — each step checkpoints, so a retry resumes rather than restarts.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'paid',
+          'platform',
+          'typescript',
+          'modern',
+        ],
+      },
+      {
+        title: 'Trigger.dev',
+        href: 'https://trigger.dev/',
+        description:
+          'Long-running TypeScript tasks and agents that survive redeploys and crashes, with queues, retries, and streaming built in.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'paid',
+          'open-source',
+          'typescript',
+          'deployment',
+        ],
+      },
+      {
+        title: 'Browserbase',
+        href: 'https://www.browserbase.com/',
+        description:
+          'Managed headless browsers for agents, handling sessions, proxies, and stealth so Playwright code runs at scale.',
+        tags: [
+          'ai',
+          'agent',
+          'paid',
+          'platform',
+          'testing',
+          'modern',
+        ],
+      },
+      {
+        title: 'Stagehand',
+        href: 'https://www.stagehand.dev/',
+        description:
+          'Open-source layer over Playwright giving agents act, extract, and observe, so scripts survive a page redesign.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'typescript',
+          'testing',
+          'modern',
+        ],
+      },
+      {
+        title: 'Firecrawl',
+        href: 'https://www.firecrawl.dev/',
+        description:
+          'Turns any site into clean markdown or structured JSON for retrieval, handling JavaScript rendering and crawling.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'paid',
+          'open-source',
+          'api',
+          'tool',
+        ],
+      },
+      {
+        title: 'Playwright MCP',
+        href: 'https://github.com/microsoft/playwright-mcp',
+        description:
+          "Microsoft's MCP server exposing Playwright as agent tools, driving the accessibility tree rather than screenshots.",
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'testing',
+          'tool',
+          'modern',
+        ],
+      },
+      {
+        title: 'ElevenLabs',
+        href: 'https://elevenlabs.io/',
+        description:
+          'Speech synthesis and voice agent APIs with low enough latency for conversational interfaces in the browser.',
+        tags: [
+          'ai',
+          'free',
+          'paid',
+          'platform',
+          'api',
+          'generative',
+        ],
+      },
+      {
+        title: 'WorkOS',
+        href: 'https://workos.com/',
+        description:
+          'The enterprise checklist as an API — SAML, SCIM directory sync, and audit logs added without rebuilding auth.',
+        tags: [
+          'paid',
+          'free',
+          'platform',
+          'authentication',
+          'api',
+          'security',
+        ],
+      },
+      {
+        title: 'Polar',
+        href: 'https://polar.sh/',
+        description:
+          'Open-source merchant of record for developer products, handling billing, licences, and the tax paperwork.',
+        tags: [
+          'free',
+          'paid',
+          'open-source',
+          'platform',
+          'api',
+          'modern',
+        ],
+      },
+      {
+        title: 'ClickHouse',
+        href: 'https://clickhouse.com/',
+        description:
+          'Columnar database for analytics at scale, fast enough to back user-facing dashboards over billions of rows.',
+        tags: [
+          'free',
+          'open-source',
+          'database',
+          'performance',
+          'advanced',
+          'platform',
+        ],
+      },
+      {
+        title: 'DuckDB',
+        href: 'https://duckdb.org/',
+        description:
+          'In-process analytical database that queries Parquet, CSV, and JSON directly, and runs in the browser via WebAssembly.',
+        tags: [
+          'free',
+          'open-source',
+          'database',
+          'performance',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Framer',
+        href: 'https://www.framer.com/',
+        description:
+          'Design tool that publishes directly to a live site, with a canvas that produces real responsive layout rather than a mockup.',
+        tags: [
+          'design',
+          'free',
+          'paid',
+          'platform',
+          'no-code',
+          'prototyping',
+        ],
+      },
+      {
+        title: 'Penpot',
+        href: 'https://penpot.app/',
+        description:
+          'Open-source design and prototyping tool built on open web standards, self-hostable and free of seat licensing.',
+        tags: [
+          'design',
+          'free',
+          'open-source',
+          'prototyping',
+          'collaborative',
+        ],
+      },
+      {
+        title: 'Rive',
+        href: 'https://rive.app/',
+        description:
+          'Interactive vector animation with a state machine, exported to a runtime that responds to input instead of just playing.',
+        tags: [
+          'design',
+          'free',
+          'paid',
+          'tool',
+          'performance',
+          'modern',
+        ],
+      },
+      {
+        title: 'Spline',
+        href: 'https://spline.design/',
+        description:
+          'Browser-based 3D design tool that exports scenes to the web without a modelling pipeline.',
+        tags: [
+          'design',
+          'free',
+          'paid',
+          'tool',
+          'prototyping',
+          'modern',
+        ],
+      },
+      {
+        title: 'WebPageTest',
+        href: 'https://www.webpagetest.org/',
+        description:
+          'Runs a page on real devices and networks, returning filmstrips, waterfalls, and Core Web Vitals per configuration.',
+        tags: [
+          'tool',
+          'free',
+          'paid',
+          'performance',
+          'monitoring',
+          'advanced',
+        ],
+      },
+      {
+        title: 'axe DevTools',
+        href: 'https://www.deque.com/axe/devtools/',
+        description:
+          "Deque's accessibility scanner in the browser and in CI, built on the axe-core engine most other checkers use.",
+        tags: [
+          'tool',
+          'free',
+          'paid',
+          'accessibility',
+          'testing',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Polypane',
+        href: 'https://polypane.app/',
+        description:
+          'Browser that renders several viewports at once with accessibility, contrast, and meta checks always on.',
+        tags: [
+          'tool',
+          'paid',
+          'accessibility',
+          'testing',
+          'design',
+          'productivity',
+        ],
+      },
+      {
+        title: 'Changesets',
+        href: 'https://github.com/changesets/changesets',
+        description:
+          'Version and changelog management for monorepos, where each pull request declares its own release intent.',
+        tags: [
+          'tool',
+          'free',
+          'open-source',
+          'javascript',
+          'productivity',
+        ],
+      },
+      {
+        title: 'Fumadocs',
+        href: 'https://www.fumadocs.dev/',
+        description:
+          'Composable documentation framework for Next.js with search, OpenAPI reference generation, and full UI control.',
+        tags: [
+          'tool',
+          'free',
+          'open-source',
+          'react',
+          'documentation',
+          'modern',
+        ],
+      },
+      {
+        title: 'Starlight',
+        href: 'https://starlight.astro.build/',
+        description:
+          "Astro's documentation theme — fast builds, built-in search, and internationalization with almost no configuration.",
+        tags: [
+          'tool',
+          'free',
+          'open-source',
+          'documentation',
+          'performance',
+          'modern',
+        ],
+      },
+      {
+        title: 'Mintlify',
+        href: 'https://www.mintlify.com/',
+        description:
+          'Hosted documentation platform with API playgrounds and analytics, written as MDX in your own repository.',
+        tags: [
+          'tool',
+          'free',
+          'paid',
+          'platform',
+          'documentation',
+          'modern',
+        ],
+      },
     ],
   },
   {
@@ -3582,6 +4100,204 @@ export const SECTIONS = [
           'modern',
         ],
       },
+      {
+        title: 'UnoCSS',
+        href: 'https://unocss.dev/',
+        description:
+          'Atomic CSS engine that generates only the utilities used, with presets to mirror Tailwind or define your own.',
+        tags: [
+          'css',
+          'free',
+          'open-source',
+          'performance',
+          'modern',
+          'library',
+        ],
+      },
+      {
+        title: 'Panda CSS',
+        href: 'https://panda-css.com/',
+        description:
+          'Zero-runtime CSS-in-JS from the Chakra team, extracting typed style props to static CSS at build time.',
+        tags: [
+          'css',
+          'typescript',
+          'free',
+          'open-source',
+          'performance',
+          'modern',
+        ],
+      },
+      {
+        title: 'vanilla-extract',
+        href: 'https://vanilla-extract.style/',
+        description:
+          'Styles written in TypeScript and compiled to static CSS, so class names are type-checked and nothing ships at runtime.',
+        tags: [
+          'css',
+          'typescript',
+          'free',
+          'open-source',
+          'performance',
+          'library',
+        ],
+      },
+      {
+        title: 'Open Props',
+        href: 'https://open-props.style/',
+        description:
+          'A design system as plain CSS custom properties — spacing, colour, easing, shadows — usable without a build step.',
+        tags: [
+          'css',
+          'free',
+          'open-source',
+          'design',
+          'library',
+          'modern',
+        ],
+      },
+      {
+        title: 'Mock Service Worker',
+        href: 'https://mswjs.io/',
+        description:
+          'Intercepts requests at the network layer so tests and local development exercise the real fetch path.',
+        tags: [
+          'testing',
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Yjs',
+        href: 'https://yjs.dev/',
+        description:
+          'CRDT implementation behind much of the collaborative editing on the web, with bindings for the major editors.',
+        tags: [
+          'javascript',
+          'free',
+          'open-source',
+          'library',
+          'advanced',
+          'collaborative',
+        ],
+      },
+      {
+        title: 'Automerge',
+        href: 'https://automerge.org/',
+        description:
+          'CRDT library for local-first apps, merging concurrent edits without a central server arbitrating order.',
+        tags: [
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+          'library',
+          'advanced',
+        ],
+      },
+      {
+        title: 'TanStack DB',
+        href: 'https://tanstack.com/db/latest',
+        description:
+          'Reactive client store with live queries and optimistic writes, layered over a sync engine or a plain API.',
+        tags: [
+          'typescript',
+          'react',
+          'free',
+          'open-source',
+          'database',
+          'modern',
+          'trending',
+        ],
+      },
+      {
+        title: 'TanStack Table',
+        href: 'https://tanstack.com/table/latest',
+        description:
+          'Headless table logic — sorting, grouping, pagination, virtualization — with the markup left entirely to you.',
+        tags: [
+          'typescript',
+          'react',
+          'free',
+          'open-source',
+          'library',
+          'ui',
+        ],
+      },
+      {
+        title: 'Ark UI',
+        href: 'https://ark-ui.com/',
+        description:
+          'State-machine-driven headless components shared across React, Vue, Solid, and Svelte from one implementation.',
+        tags: [
+          'typescript',
+          'react',
+          'vue',
+          'free',
+          'open-source',
+          'accessibility',
+          'ui',
+        ],
+      },
+      {
+        title: 'React Three Fiber',
+        href: 'https://r3f.docs.pmnd.rs/',
+        description:
+          'Three.js expressed as React components, so a 3D scene is declarative and reconciles like the rest of the tree.',
+        tags: [
+          'react',
+          'javascript',
+          'free',
+          'open-source',
+          'design',
+          'advanced',
+        ],
+      },
+      {
+        title: 'PixiJS',
+        href: 'https://pixijs.com/',
+        description:
+          'WebGL and WebGPU 2D renderer for games and data-heavy canvases where the DOM runs out of headroom.',
+        tags: [
+          'javascript',
+          'free',
+          'open-source',
+          'performance',
+          'advanced',
+          'library',
+        ],
+      },
+      {
+        title: 'Apache ECharts',
+        href: 'https://echarts.apache.org/',
+        description:
+          'Charting library covering the awkward cases — large datasets, geo maps, and dense dashboards — with canvas or SVG output.',
+        tags: [
+          'javascript',
+          'free',
+          'open-source',
+          'design',
+          'library',
+          'performance',
+        ],
+      },
+      {
+        title: 'Observable Plot',
+        href: 'https://observablehq.com/plot/',
+        description:
+          'Grammar-of-graphics layer over D3 that turns most exploratory charts into a single concise call.',
+        tags: [
+          'javascript',
+          'free',
+          'open-source',
+          'design',
+          'library',
+          'modern',
+        ],
+      },
     ],
   },
 
@@ -3953,6 +4669,69 @@ export const SECTIONS = [
           'free',
           'open-source',
           'javascript',
+        ],
+      },
+      {
+        title: 'r/nextjs',
+        href: 'https://www.reddit.com/r/nextjs/',
+        description:
+          'Next.js release discussion, App Router questions, and deployment troubleshooting in the open.',
+        tags: [
+          'community',
+          'free',
+          'react',
+          'deployment',
+          'modern',
+        ],
+      },
+      {
+        title: 'TypeScript Discord',
+        href: 'https://discord.com/invite/typescript',
+        description:
+          'Real-time help with types, generics, and compiler configuration from people who read the spec for fun.',
+        tags: [
+          'community',
+          'free',
+          'typescript',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Vue Land',
+        href: 'https://chat.vuejs.org/',
+        description:
+          "Vue's official Discord, where core team members answer questions across Vue, Nuxt, Vite, and Pinia.",
+        tags: [
+          'community',
+          'free',
+          'vue',
+          'javascript',
+          'open-source',
+        ],
+      },
+      {
+        title: 'Devpost',
+        href: 'https://devpost.com/',
+        description:
+          'Hackathon listings and project showcases, and a practical way to ship something small against a deadline.',
+        tags: [
+          'community',
+          'free',
+          'hands-on',
+          'career-focused',
+          'coding-challenges',
+        ],
+      },
+      {
+        title: 'AnitaB.org',
+        href: 'https://anitab.org/',
+        description:
+          'Long-running nonprofit for women and non-binary technologists, running Grace Hopper and year-round local communities.',
+        tags: [
+          'community',
+          'free',
+          'career-focused',
+          'beginner-friendly',
         ],
       },
     ],
@@ -4887,6 +5666,167 @@ export const SECTIONS = [
           'documentation',
           'performance',
           'modern',
+        ],
+      },
+      {
+        title: 'The Pragmatic Engineer',
+        href: 'https://newsletter.pragmaticengineer.com/',
+        description:
+          'Gergely Orosz on how engineering organisations actually run, reported from inside the companies in question.',
+        tags: [
+          'newsletter',
+          'free',
+          'paid',
+          'career-focused',
+          'weekly',
+          'advanced',
+        ],
+      },
+      {
+        title: 'ByteByteGo',
+        href: 'https://blog.bytebytego.com/',
+        description:
+          'System design explained in diagrams, working up from single components to the architectures behind large services.',
+        tags: [
+          'newsletter',
+          'blog',
+          'free',
+          'paid',
+          'system-design',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Console.dev',
+        href: 'https://console.dev/',
+        description:
+          'Weekly pick of developer tools worth a look, each with a short note on what it is and who it suits.',
+        tags: [
+          'newsletter',
+          'free',
+          'tool',
+          'weekly',
+          'modern',
+        ],
+      },
+      {
+        title: 'The Changelog',
+        href: 'https://changelog.com/',
+        description:
+          'Podcast network covering open source and the people maintaining it, with long-form interviews weekly.',
+        tags: [
+          'blog',
+          'free',
+          'open-source',
+          'weekly',
+          'career-focused',
+        ],
+      },
+      {
+        title: 'ShopTalk Show',
+        href: 'https://shoptalkshow.com/',
+        description:
+          'Chris Coyier and Dave Rupert on front-end work, taking listener questions about the messy parts of the job.',
+        tags: [
+          'blog',
+          'free',
+          'css',
+          'javascript',
+          'weekly',
+          'career-focused',
+        ],
+      },
+      {
+        title: 'Hamel Husain',
+        href: 'https://hamel.dev/',
+        description:
+          'Writing on LLM evaluation and fine-tuning that argues, with data, for measuring before optimizing.',
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'advanced',
+          'modern',
+        ],
+      },
+      {
+        title: 'Chip Huyen',
+        href: 'https://huyenchip.com/',
+        description:
+          'Essays on AI engineering and production ML systems, from the author of Designing Machine Learning Systems.',
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'system-design',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Eugene Yan',
+        href: 'https://eugeneyan.com/',
+        description:
+          'Applied ML and recommender system write-ups grounded in what shipped and what it cost.',
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'advanced',
+          'system-design',
+        ],
+      },
+      {
+        title: 'Node.js Blog',
+        href: 'https://nodejs.org/en/blog',
+        description:
+          'Release announcements and security advisories for Node, including what each LTS line changes.',
+        tags: [
+          'blog',
+          'free',
+          'nodejs',
+          'javascript',
+          'documentation',
+        ],
+      },
+      {
+        title: 'Deno Blog',
+        href: 'https://deno.com/blog',
+        description:
+          'Release notes and deep dives from the Deno team on the runtime, JSR, and TypeScript tooling.',
+        tags: [
+          'blog',
+          'free',
+          'typescript',
+          'javascript',
+          'documentation',
+          'modern',
+        ],
+      },
+      {
+        title: 'Tailwind CSS Blog',
+        href: 'https://tailwindcss.com/blog',
+        description:
+          'Release posts and technique write-ups from the Tailwind team, usually with the reasoning behind each change.',
+        tags: [
+          'blog',
+          'free',
+          'css',
+          'design',
+          'documentation',
+          'modern',
+        ],
+      },
+      {
+        title: 'Vue.js Blog',
+        href: 'https://blog.vuejs.org/',
+        description:
+          'Official Vue announcements — releases, RFC outcomes, and ecosystem direction from the core team.',
+        tags: [
+          'blog',
+          'free',
+          'vue',
+          'javascript',
+          'documentation',
         ],
       },
     ],
