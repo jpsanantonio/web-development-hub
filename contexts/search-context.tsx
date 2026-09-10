@@ -1,3 +1,5 @@
+// Search and tag-filter state shared by the header input, the filter panel and
+// every page that renders results.
 'use client';
 
 import React, {
@@ -5,21 +7,16 @@ import React, {
   useContext,
   useState,
   useCallback,
+  useDeferredValue,
   useEffect,
+  useMemo,
   ReactNode,
 } from 'react';
 import { usePathname } from 'next/navigation';
 import { SECTIONS } from '@/constants/sections';
+import type { Resource } from '@/lib/types';
 import { useBookmarks } from './bookmarks-context';
 import { useFilter } from '@/hooks/useFilter';
-
-type Resource = {
-  title: string;
-  href: string;
-  description: string;
-  section: string;
-  tags?: string[];
-};
 
 type SearchContextType = {
   searchQuery: string;
@@ -46,25 +43,29 @@ const SearchContext = createContext<SearchContextType | undefined>(
   undefined
 );
 
-const getAllResources = (): Resource[] => {
-  return SECTIONS.flatMap((section) =>
-    section.links.map((link) => ({
-      title: link.title,
-      href: link.href,
-      description: link.description,
-      section: section.title,
-      tags: link.tags,
-    }))
-  );
-};
+// Flattened once at module load. SECTIONS is static, and rebuilding this list
+// inside the search meant allocating an object per resource on every keystroke.
+const ALL_RESOURCES: Resource[] = SECTIONS.flatMap((section) =>
+  section.links.map((link) => ({
+    title: link.title,
+    href: link.href,
+    description: link.description,
+    section: section.title,
+    tags: link.tags,
+  }))
+);
+
+const matchesQuery = (resource: Resource, query: string) =>
+  resource.title.toLowerCase().includes(query) ||
+  resource.description.toLowerCase().includes(query) ||
+  resource.section.toLowerCase().includes(query);
 
 export function SearchProvider({
   children,
 }: {
   children: ReactNode;
 }) {
-  const [searchQuery, setSearchQueryState] = useState('');
-  const [searchResults, setSearchResults] = useState<Resource[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [currentCategory, setCurrentCategory] = useState<
     string | null
   >(null);
@@ -82,13 +83,12 @@ export function SearchProvider({
     filterResourcesByTags,
   } = useFilter({});
 
-  const setSearchQuery = useCallback((query: string) => {
-    setSearchQueryState(query);
-  }, []);
+  // Keeps typing responsive while the scan over every resource runs at a lower
+  // priority, without a timer to clean up.
+  const deferredQuery = useDeferredValue(searchQuery);
 
   const clearSearch = useCallback(() => {
-    setSearchQueryState('');
-    setSearchResults([]);
+    setSearchQuery('');
   }, []);
 
   const toggleFilterPanel = useCallback(() => {
@@ -99,37 +99,24 @@ export function SearchProvider({
     clearSearch();
   }, [pathname, clearSearch]);
 
-  useEffect(() => {
-    if (!searchQuery || searchQuery.trim() === '') {
-      let results;
+  // Derived rather than stored: an effect writing this into state ran a render
+  // behind the query and needed its dependencies kept in sync by hand.
+  const searchResults = useMemo(() => {
+    const query = deferredQuery.trim().toLowerCase();
+    const isBookmarksPage = pathname === '/bookmarks';
+    const source = isBookmarksPage ? bookmarks : ALL_RESOURCES;
 
-      if (pathname === '/bookmarks') {
-        results = bookmarks;
-      } else if (selectedTags.length > 0) {
-        results = getAllResources();
-      } else {
-        setSearchResults([]);
-        return;
+    if (!query) {
+      // An empty result list means "not searching" to every consumer, so with
+      // nothing typed only the bookmarks page and an active tag produce rows.
+      if (!isBookmarksPage && selectedTags.length === 0) {
+        return [];
       }
-
-      if (selectedTags.length > 0) {
-        results = filterResourcesByTags(results);
-      }
-
-      setSearchResults(results);
-      return;
+      return filterResourcesByTags(source);
     }
 
-    const query = searchQuery.toLowerCase();
-
-    const searchSource =
-      pathname === '/bookmarks' ? bookmarks : getAllResources();
-
-    let results = searchSource.filter(
-      (resource) =>
-        resource.title.toLowerCase().includes(query) ||
-        resource.description.toLowerCase().includes(query) ||
-        resource.section.toLowerCase().includes(query)
+    let results = source.filter((resource) =>
+      matchesQuery(resource, query)
     );
 
     if (currentCategory) {
@@ -138,20 +125,17 @@ export function SearchProvider({
       );
     }
 
-    if (selectedTags.length > 0) {
-      results = filterResourcesByTags(results);
-    }
-
-    setSearchResults(results);
+    return filterResourcesByTags(results);
   }, [
-    searchQuery,
+    deferredQuery,
     currentCategory,
     pathname,
     bookmarks,
     selectedTags,
+    filterResourcesByTags,
   ]);
 
-  const contextValue = React.useMemo(
+  const contextValue = useMemo(
     () => ({
       searchQuery,
       setSearchQuery,
@@ -175,10 +159,8 @@ export function SearchProvider({
     [
       searchQuery,
       searchResults,
-      setSearchQuery,
       clearSearch,
       currentCategory,
-      setCurrentCategory,
 
       selectedTags,
       toggleTag,
@@ -189,7 +171,6 @@ export function SearchProvider({
 
       // Filter panel dependencies
       isFilterPanelOpen,
-      setIsFilterPanelOpen,
       toggleFilterPanel,
     ]
   );

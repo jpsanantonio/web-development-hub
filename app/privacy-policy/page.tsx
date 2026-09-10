@@ -1,6 +1,14 @@
-'use client';
-
+// Privacy Policy: static prose. A server component, so the route carries its own
+// metadata and ships no JavaScript of its own.
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description:
+    'How Web Development Hub handles your data. Bookmarks and theme are stored in your own browser.',
+  alternates: { canonical: '/privacy-policy' },
+};
 
 export default function PrivacyPolicyPage() {
   return (
@@ -15,7 +23,7 @@ export default function PrivacyPolicyPage() {
           </p>
         </div>
 
-        <div className="prose prose-invert max-w-none space-y-8">
+        <div className="max-w-none space-y-8">
           <div className="bg-card rounded-lg p-6 border border-border">
             <h2 className="text-2xl font-semibold text-accent-neon mb-4">
               Introduction

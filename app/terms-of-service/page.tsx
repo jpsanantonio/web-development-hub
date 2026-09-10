@@ -1,6 +1,14 @@
-'use client';
-
+// Terms of Service: static prose. A server component, so the route carries its own
+// metadata and ships no JavaScript of its own.
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description:
+    'The terms that apply to using Web Development Hub.',
+  alternates: { canonical: '/terms-of-service' },
+};
 
 export default function TermsOfServicePage() {
   return (
@@ -15,7 +23,7 @@ export default function TermsOfServicePage() {
           </p>
         </div>
 
-        <div className="prose prose-invert max-w-none space-y-8">
+        <div className="max-w-none space-y-8">
           <div className="bg-card rounded-lg p-6 border border-border">
             <h2 className="text-2xl font-semibold text-accent-neon mb-4">
               Agreement to Terms

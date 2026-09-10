@@ -1,3 +1,5 @@
+// The nav's view of the sections: the id each one renders under, and which of
+// them a given result set covers.
 import { SECTIONS } from '@/constants/sections';
 import { getResourceIcon } from '@/lib/data/resource-mappings';
 
@@ -23,67 +25,34 @@ export function toSectionId(title: string): string {
   return `section-${toSlug(title)}`;
 }
 
+function toNavigationItem(title: string): NavigationItem {
+  return {
+    id: toSectionId(title),
+    title,
+    iconName: getResourceIcon(title),
+  };
+}
+
 export const DEFAULT_NAV_ITEMS: NavigationItem[] = SECTIONS.map(
-  (section) => ({
-    id: toSectionId(section.title),
-    title: section.title,
-    iconName: getResourceIcon(section.title),
-  })
+  (section) => toNavigationItem(section.title)
 );
 
-export function createSearchNavItems(
-  searchQuery: string
+/**
+ * The sections a result set covers, in the order the site lists them.
+ *
+ * This used to be read back out of the rendered page: it queried every
+ * `section[id]`, treated a `.grid` with children as "has results", then
+ * rebuilt the display title by title-casing the id — with a hard-coded
+ * exception for 'Frameworks and Libraries'. That coupled the nav to a Tailwind
+ * utility class and to a round trip through the DOM, and it had to be deferred
+ * a tick to let layout settle. The results already carry the answer.
+ */
+export function sectionNavItems(
+  results: { section: string }[]
 ): NavigationItem[] {
-  if (!searchQuery || searchQuery.trim().length === 0) {
-    return DEFAULT_NAV_ITEMS;
-  }
+  const present = new Set(results.map((result) => result.section));
 
-  if (typeof document === 'undefined') {
-    return DEFAULT_NAV_ITEMS;
-  }
-
-  const sections = document.querySelectorAll('section[id]');
-  const sectionsWithContent = Array.from(sections).filter(
-    (section) => {
-      const gridContainer = section.querySelector('.grid');
-      return gridContainer && gridContainer.children.length > 0;
-    }
-  );
-
-  const sectionIdsWithContent = sectionsWithContent.map(
-    (section) => section.id
-  );
-
-  const searchNavItems = sectionIdsWithContent
-    .filter((id) => id.startsWith('section-'))
-    .map((id) => {
-      let displayName = id
-        .replace('section-', '')
-        .split('-')
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-
-      if (displayName === 'Frameworks And Libraries') {
-        displayName = 'Frameworks and Libraries';
-      } else {
-        displayName = displayName.replace(/\b[aA][nN][dD]\b/g, '&');
-      }
-
-      const matchingSection = SECTIONS.find(
-        (section) =>
-          section.title.toLowerCase() === displayName.toLowerCase() ||
-          section.title.toLowerCase().replace(' & ', ' and ') ===
-            displayName.toLowerCase()
-      );
-
-      return {
-        id,
-        title: displayName,
-        iconName: getResourceIcon(displayName),
-      };
-    });
-
-  return searchNavItems;
+  return DEFAULT_NAV_ITEMS.filter((item) => present.has(item.title));
 }
 
 export function scrollToSection(id: string, onComplete?: () => void) {

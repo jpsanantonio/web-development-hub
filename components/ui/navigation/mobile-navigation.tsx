@@ -34,7 +34,7 @@ export function MobileNavigation({
 }: MobileNavigationProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const pathname = usePathname();
 
   const navItemRefs = useRef<
@@ -125,23 +125,16 @@ export function MobileNavigation({
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full transition-colors  cursor-pointer"
-            aria-label={
-              theme === 'dark'
-                ? 'Switch to light mode'
-                : 'Switch to dark mode'
-            }
+            aria-label="Switch between light and dark mode"
           >
-            {theme === 'dark' ? (
-              <Sun
-                className="h-5 w-5 text-foreground"
-                aria-hidden="true"
-              />
-            ) : (
-              <Moon
-                className="h-5 w-5 text-foreground"
-                aria-hidden="true"
-              />
-            )}
+            <Sun
+              className="hidden dark:block h-5 w-5 text-foreground"
+              aria-hidden="true"
+            />
+            <Moon
+              className="block dark:hidden h-5 w-5 text-foreground"
+              aria-hidden="true"
+            />
           </button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -191,7 +184,7 @@ export function MobileNavigation({
                 item={{
                   id: 'home',
                   title: 'Home',
-                  icon: undefined,
+                  iconName: 'mdi:home-outline',
                 }}
                 isActive={pathname === '/'}
                 href="/"

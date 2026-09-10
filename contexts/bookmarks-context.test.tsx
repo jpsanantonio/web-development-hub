@@ -113,11 +113,26 @@ describe('BookmarksProvider', () => {
   });
 
   it('does not persist derived icon names', async () => {
-    // iconName is looked up from the title on load, so writing it would put a
-    // second copy of a derived value into storage where it can go stale.
+    // Icons are resolved from the title wherever a card is drawn, so writing
+    // one here would put a second copy of a derived value into storage where
+    // it can go stale.
     const { result } = await mount();
     act(() => result.current.addBookmark(resource()));
     await waitFor(() => expect(stored()).toHaveLength(1));
     expect(stored()[0]).not.toHaveProperty('iconName');
+  });
+
+  it('round-trips tags, which the bookmarks page filters on', async () => {
+    const tagged = resource({ tags: ['free', 'reference'] });
+    const first = await mount();
+    act(() => first.result.current.addBookmark(tagged));
+    await waitFor(() => expect(stored()).toHaveLength(1));
+    first.unmount();
+
+    const second = await mount();
+    expect(second.result.current.bookmarks[0].tags).toEqual([
+      'free',
+      'reference',
+    ]);
   });
 });

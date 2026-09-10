@@ -1,3 +1,5 @@
+// Bookmarks state, persisted to localStorage. Only the fields the site cannot
+// re-derive are stored; icons are resolved from the title at render time.
 'use client';
 
 import React, {
@@ -9,17 +11,9 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
-import { SECTIONS } from '@/constants/sections';
-import { Icon } from '@iconify/react';
-import { getResourceIcon } from '@/lib/data/resource-mappings';
+import type { Resource } from '@/lib/types';
 
-export type Resource = {
-  title: string;
-  href: string;
-  description: string;
-  section: string;
-  iconName?: string;
-};
+export type { Resource };
 
 type BookmarksContextType = {
   bookmarks: Resource[];
@@ -32,40 +26,20 @@ type BookmarksContextType = {
 
 const LOCAL_STORAGE_KEY = 'web-dev-hub-bookmarks';
 
-const createResourceMap = (): Map<string, Map<string, string>> => {
-  const resourceMap = new Map();
+const validateResource = (
+  resource: unknown
+): resource is Resource => {
+  if (typeof resource !== 'object' || resource === null) {
+    return false;
+  }
 
-  SECTIONS.forEach((section) => {
-    const sectionMap = new Map<string, string>();
-
-    section.links.forEach((link) => {
-      if (link.href && link.title) {
-        sectionMap.set(link.href, getResourceIcon(link.title));
-      }
-    });
-
-    if (sectionMap.size > 0) {
-      resourceMap.set(section.title, sectionMap);
-    }
-  });
-
-  return resourceMap;
-};
-
-const validateResource = (resource: any): resource is Resource => {
+  const candidate = resource as Record<string, unknown>;
   return (
-    resource &&
-    typeof resource.title === 'string' &&
-    typeof resource.href === 'string' &&
-    typeof resource.description === 'string' &&
-    typeof resource.section === 'string'
+    typeof candidate.title === 'string' &&
+    typeof candidate.href === 'string' &&
+    typeof candidate.description === 'string' &&
+    typeof candidate.section === 'string'
   );
-};
-
-const getSerializableBookmarks = (
-  bookmarks: Resource[]
-): Omit<Resource, 'iconName'>[] => {
-  return bookmarks.map(({ iconName, ...rest }) => rest);
 };
 
 const BookmarksContext = createContext<
@@ -80,69 +54,42 @@ export function BookmarksProvider({
   const [bookmarks, setBookmarks] = useState<Resource[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const resourceMap = useMemo(() => createResourceMap(), []);
-
-  const restoreIcons = useCallback(
-    (bookmarkItems: Resource[]): Resource[] => {
-      return bookmarkItems.map((bookmark) => {
-        const sectionMap = resourceMap.get(bookmark.section);
-        const icon = sectionMap?.get(bookmark.href);
-
-        return icon ? { ...bookmark, icon } : bookmark;
-      });
-    },
-    [resourceMap]
-  );
-
   useEffect(() => {
-    const loadBookmarks = async () => {
-      setIsLoading(true);
+    try {
+      const storedBookmarks = localStorage.getItem(LOCAL_STORAGE_KEY);
 
-      try {
-        const storedBookmarks =
-          localStorage.getItem(LOCAL_STORAGE_KEY);
-
-        if (!storedBookmarks) {
-          setBookmarks([]);
-          return;
-        }
-
-        const parsedBookmarks = JSON.parse(storedBookmarks);
-
-        if (!Array.isArray(parsedBookmarks)) {
-          console.error(
-            'Stored bookmarks is not an array:',
-            parsedBookmarks
-          );
-          setBookmarks([]);
-          return;
-        }
-
-        const validBookmarks =
-          parsedBookmarks.filter(validateResource);
-        const bookmarksWithIcons = restoreIcons(validBookmarks);
-
-        setBookmarks(bookmarksWithIcons);
-      } catch (error) {
-        console.error('Error loading bookmarks:', error);
+      if (!storedBookmarks) {
         setBookmarks([]);
-      } finally {
-        setIsLoading(false);
+        return;
       }
-    };
 
-    loadBookmarks();
-  }, [restoreIcons]);
+      const parsedBookmarks = JSON.parse(storedBookmarks);
+
+      if (!Array.isArray(parsedBookmarks)) {
+        console.error(
+          'Stored bookmarks is not an array:',
+          parsedBookmarks
+        );
+        setBookmarks([]);
+        return;
+      }
+
+      setBookmarks(parsedBookmarks.filter(validateResource));
+    } catch (error) {
+      console.error('Error loading bookmarks:', error);
+      setBookmarks([]);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
     if (isLoading) return;
 
     try {
-      const serializableBookmarks =
-        getSerializableBookmarks(bookmarks);
       localStorage.setItem(
         LOCAL_STORAGE_KEY,
-        JSON.stringify(serializableBookmarks)
+        JSON.stringify(bookmarks)
       );
     } catch (error) {
       console.error(

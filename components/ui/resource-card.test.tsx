@@ -1,0 +1,132 @@
+// Covers what a card renders and the identifiers other things hang off it:
+// the anchor id, the aria-labelledby pairing, and the bookmark round trip.
+import { describe, it, expect } from 'vitest';
+import { render, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import ResourceCard from './resource-card';
+import { BookmarksProvider } from '@/contexts/bookmarks-context';
+import type { CardResource } from '@/lib/types';
+
+const RESOURCE: CardResource = {
+  title: 'MDN Web Docs',
+  href: 'https://developer.mozilla.org/',
+  description: 'Reference documentation for the web platform.',
+  section: 'Learning Resources',
+  tags: ['free', 'documentation'],
+};
+
+const renderCard = (resource: CardResource = RESOURCE) =>
+  render(
+    <BookmarksProvider>
+      <ResourceCard resource={resource} />
+    </BookmarksProvider>
+  );
+
+describe('content', () => {
+  it('renders the title, description and link', () => {
+    renderCard();
+
+    const link = screen.getByRole('link');
+    expect(link).toHaveAttribute('href', RESOURCE.href);
+    expect(link).toHaveAttribute('target', '_blank');
+    // Without noreferrer the opened page can reach back through window.opener.
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+
+    expect(screen.getByText(RESOURCE.title)).toBeInTheDocument();
+    expect(
+      screen.getByText(RESOURCE.description)
+    ).toBeInTheDocument();
+  });
+
+  it('labels the card with its own heading', () => {
+    renderCard();
+    const link = screen.getByRole('link');
+    const headingId = link.getAttribute('aria-labelledby');
+
+    expect(headingId).toBeTruthy();
+    expect(document.getElementById(headingId!)).toHaveTextContent(
+      RESOURCE.title
+    );
+  });
+
+  it('gives the card a slugged id for the nav to scroll to', () => {
+    renderCard();
+    expect(screen.getByRole('link')).toHaveAttribute(
+      'id',
+      'mdn-web-docs'
+    );
+  });
+});
+
+describe('tags', () => {
+  it('renders every tag with hyphens replaced', () => {
+    renderCard({ ...RESOURCE, tags: ['beginner-friendly'] });
+    expect(
+      screen.getByText('beginner friendly')
+    ).toBeInTheDocument();
+  });
+
+  it('replaces every hyphen, not just the first', () => {
+    // `replace` with a string pattern only swaps the first occurrence, so a
+    // tag like this rendered as "ci cd-tools".
+    renderCard({ ...RESOURCE, tags: ['ci-cd-tools'] });
+    expect(screen.getByText('ci cd tools')).toBeInTheDocument();
+  });
+
+  it('renders no tag row when there are no tags', () => {
+    const { container } = renderCard({
+      ...RESOURCE,
+      tags: undefined,
+    });
+    expect(
+      container.querySelector('[title^="Filter by"]')
+    ).not.toBeInTheDocument();
+  });
+});
+
+describe('bookmarking', () => {
+  it('toggles the button label without following the card link', async () => {
+    const user = userEvent.setup();
+    renderCard();
+
+    const add = screen.getByRole('button', {
+      name: `Add ${RESOURCE.title} to bookmarks`,
+    });
+    await user.click(add);
+
+    expect(
+      screen.getByRole('button', {
+        name: `Remove ${RESOURCE.title} from bookmarks`,
+      })
+    ).toBeInTheDocument();
+  });
+
+  it('resolves the section when the card is given one without it', async () => {
+    const user = userEvent.setup();
+    const { rerender } = renderCard({
+      title: 'MDN Web Docs',
+      href: RESOURCE.href,
+      description: RESOURCE.description,
+    });
+
+    await user.click(
+      screen.getByRole('button', { name: /Add .* to bookmarks/ })
+    );
+
+    const raw = localStorage.getItem('web-dev-hub-bookmarks');
+    expect(JSON.parse(raw ?? '[]')[0].section).toBe(
+      'Learning Resources'
+    );
+    rerender(<div />);
+  });
+});
+
+describe('the grid it sits in', () => {
+  it('keeps each card addressable by its own heading', () => {
+    renderCard();
+    const link = screen.getByRole('link');
+    expect(
+      within(link).getByRole('heading', { level: 3 })
+    ).toHaveTextContent(RESOURCE.title);
+  });
+});

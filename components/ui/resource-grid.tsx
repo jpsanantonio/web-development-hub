@@ -1,16 +1,13 @@
+// A responsive grid of resource cards, with the result count above it when a
+// search is running.
 'use client';
 
 import React from 'react';
 import ResourceCard from '@/components/ui/resource-card';
-
-export type Resource = {
-  title: string;
-  href: string;
-  description: string;
-};
+import type { CardResource } from '@/lib/types';
 
 interface ResourceGridProps {
-  resources: Resource[];
+  resources: CardResource[];
   searchQuery?: string;
 }
 
@@ -29,7 +26,7 @@ export default function ResourceGrid({
       )}
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {resources.map((resource: Resource) => (
+        {resources.map((resource) => (
           <ResourceCard key={resource.href} resource={resource} />
         ))}
       </div>

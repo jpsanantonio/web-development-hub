@@ -1,3 +1,5 @@
+// The fixed side rail: home, bookmarks, the sections of the current page, and
+// the theme toggle. Arrow keys rove focus through the section buttons.
 'use client';
 
 import Link from 'next/link';
@@ -6,8 +8,63 @@ import { BookmarkIcon, HomeIcon, Moon, Sun } from 'lucide-react';
 import { useTheme } from '@/contexts/theme-context';
 import { NavigationItem } from '@/components/ui/navigation-item';
 import { type NavigationItem as NavigationItemType } from '@/lib/utils/navigation';
-import { useState, useEffect, useMemo } from 'react';
+import {
+  useCallback,
+  useRef,
+  useState,
+  useEffect,
+  useMemo,
+} from 'react';
 import { useBookmarks } from '@/contexts/bookmarks-context';
+import { useIsMac } from '@/lib/hooks/use-is-mac';
+
+/**
+ * The hover/focus label beside a rail button. `isSuppressed` hides it after a
+ * click, so the tooltip does not linger over the thing the click navigated to.
+ */
+function NavTooltip({
+  label,
+  shortcut,
+  isSuppressed,
+  offsetClassName = 'right-12',
+  shortcutClassName = 'w-10',
+  ariaHidden,
+}: {
+  label: string;
+  shortcut?: string;
+  isSuppressed: boolean;
+  offsetClassName?: string;
+  shortcutClassName?: string;
+  ariaHidden?: boolean;
+}) {
+  return (
+    <div
+      className={cn(
+        'absolute top-1/2 transform -translate-y-1/2 transition-opacity duration-200 whitespace-nowrap will-change-[opacity,transform] pointer-events-none',
+        offsetClassName,
+        isSuppressed
+          ? 'opacity-0'
+          : 'opacity-0 group-hover:opacity-100 group-focus-within:opacity-100',
+      )}
+      role="tooltip"
+      aria-hidden={ariaHidden}
+    >
+      <div className="bg-popover/90 backdrop-blur-optimized px-3 py-2 rounded-md text-sm font-medium text-popover-foreground flex items-center gap-2 border border-border shadow-md transform-gpu">
+        {label}
+        {shortcut && (
+          <div
+            className={cn(
+              'h-5 rounded-md bg-muted border border-border/50 flex items-center justify-center text-[10px] font-medium text-muted-foreground px-1 tracking-tight leading-none',
+              shortcutClassName,
+            )}
+          >
+            {shortcut}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 interface DesktopNavigationProps {
   navItems: NavigationItemType[];
@@ -24,11 +81,12 @@ export function DesktopNavigation({
   isBookmarksActive,
   onScrollToSection,
 }: DesktopNavigationProps) {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const [hiddenTooltip, setHiddenTooltip] = useState<string | null>(
-    null
+    null,
   );
-  const [isMac, setIsMac] = useState(false);
+  const isMac = useIsMac();
+  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const { bookmarks } = useBookmarks();
 
@@ -40,19 +98,16 @@ export function DesktopNavigation({
     return sections;
   }, [bookmarks]);
 
+  // The bookmarks page only lists sections the visitor actually saved into.
   const filteredNavItems = useMemo(() => {
-    if (isHomeActive) {
-      return navItems;
-    }
+    return isBookmarksActive
+      ? navItems.filter((item) => favoritedSections.has(item.title))
+      : navItems;
+  }, [navItems, favoritedSections, isBookmarksActive]);
 
-    if (isBookmarksActive) {
-      return navItems.filter((item) =>
-        favoritedSections.has(item.title)
-      );
-    }
-
-    return navItems;
-  }, [navItems, favoritedSections, isHomeActive, isBookmarksActive]);
+  const focusItem = useCallback((index: number) => {
+    itemRefs.current[index]?.focus();
+  }, []);
 
   useEffect(() => {
     if (hiddenTooltip) {
@@ -63,10 +118,6 @@ export function DesktopNavigation({
       return () => clearTimeout(timer);
     }
   }, [hiddenTooltip]);
-
-  useEffect(() => {
-    setIsMac(navigator.platform.toUpperCase().indexOf('MAC') >= 0);
-  }, []);
 
   return (
     <nav
@@ -93,26 +144,15 @@ export function DesktopNavigation({
                 'h-5 w-5',
                 isHomeActive
                   ? 'text-accent-neon opacity-100 stroke-2'
-                  : 'text-foreground opacity-75 group-hover:opacity-100'
+                  : 'text-foreground opacity-75 group-hover:opacity-100',
               )}
             />
           </Link>
-          <div
-            className={cn(
-              'absolute right-12 top-1/2 transform -translate-y-1/2 transition-opacity duration-200 whitespace-nowrap pointer-events-none',
-              hiddenTooltip === 'home'
-                ? 'opacity-0'
-                : 'opacity-0 group-hover:opacity-100'
-            )}
-            role="tooltip"
-          >
-            <div className="bg-popover/90 backdrop-blur-optimized px-3 py-2 rounded-md text-sm font-medium text-popover-foreground flex items-center gap-2 border border-border shadow-md transform-gpu">
-              Home
-              <div className="h-5 w-10 rounded-md bg-muted border border-border/50 flex items-center justify-center text-[10px] font-medium text-muted-foreground px-1 tracking-tight leading-none">
-                {isMac ? '⌘H' : 'Ctrl+H'}
-              </div>
-            </div>
-          </div>
+          <NavTooltip
+            label="Home"
+            shortcut={isMac ? '⌘H' : 'Ctrl+H'}
+            isSuppressed={hiddenTooltip === 'home'}
+          />
         </li>
         <li className="relative group">
           <Link
@@ -129,37 +169,26 @@ export function DesktopNavigation({
                 'h-5 w-5',
                 isBookmarksActive
                   ? 'text-accent-neon opacity-100 stroke-2'
-                  : 'text-foreground opacity-75 group-hover:opacity-100'
+                  : 'text-foreground opacity-75 group-hover:opacity-100',
               )}
             />
           </Link>
-          <div
-            className={cn(
-              'absolute right-12 top-1/2 transform -translate-y-1/2 transition-opacity duration-200 whitespace-nowrap pointer-events-none',
-              hiddenTooltip === 'bookmarks'
-                ? 'opacity-0'
-                : 'opacity-0 group-hover:opacity-100'
-            )}
-            role="tooltip"
-          >
-            <div className="bg-popover/90 backdrop-blur-optimized px-3 py-2 rounded-md text-sm font-medium text-popover-foreground flex items-center gap-2 border border-border shadow-md transform-gpu">
-              Bookmarks
-              <div className="h-5 w-10 rounded-md bg-muted border border-border/50 flex items-center justify-center text-[10px] font-medium text-muted-foreground px-1 tracking-tight leading-none">
-                {isMac ? '⌘B' : 'Ctrl+B'}
-              </div>
-            </div>
-          </div>
+          <NavTooltip
+            label="Bookmarks"
+            shortcut={isMac ? '⌘B' : 'Ctrl+B'}
+            isSuppressed={hiddenTooltip === 'bookmarks'}
+          />
         </li>
 
-        {((isHomeActive && filteredNavItems.length > 0) ||
-          (isBookmarksActive && filteredNavItems.length > 0)) && (
-          <li className="w-full">
-            <div
-              className="h-px w-6 bg-border/50 mx-auto"
-              aria-hidden="true"
-            ></div>
-          </li>
-        )}
+        {(isHomeActive || isBookmarksActive) &&
+          filteredNavItems.length > 0 && (
+            <li className="w-full">
+              <div
+                className="h-px w-6 bg-border/50 mx-auto"
+                aria-hidden="true"
+              ></div>
+            </li>
+          )}
 
         {(isHomeActive || isBookmarksActive) &&
           filteredNavItems.map((item, index) => (
@@ -175,59 +204,44 @@ export function DesktopNavigation({
                 index={index}
                 totalItems={filteredNavItems.length}
                 aria-describedby="nav-description"
+                ref={(el) => {
+                  itemRefs.current[index] = el as HTMLButtonElement;
+                }}
                 onKeyDown={(e) => {
+                  // Indexed refs rather than a selector: every button is the
+                  // only element in its <li>, so :nth-of-type(n) matched them
+                  // all at n=1 and nothing at all beyond it.
                   switch (e.key) {
                     case 'ArrowUp':
                       e.preventDefault();
-                      if (index > 0) {
-                        const prevButton = document.querySelector(
-                          `.desktop-nav-button:nth-of-type(${index})`
-                        ) as HTMLElement;
-                        prevButton?.focus();
-                      }
+                      focusItem(Math.max(0, index - 1));
                       break;
                     case 'ArrowDown':
                       e.preventDefault();
-                      if (index < filteredNavItems.length - 1) {
-                        const nextButton = document.querySelector(
-                          `.desktop-nav-button:nth-of-type(${
-                            index + 2
-                          })`
-                        ) as HTMLElement;
-                        nextButton?.focus();
-                      }
+                      focusItem(
+                        Math.min(
+                          filteredNavItems.length - 1,
+                          index + 1,
+                        ),
+                      );
                       break;
                     case 'Home':
                       e.preventDefault();
-                      const firstButton = document.querySelector(
-                        `.desktop-nav-button:nth-of-type(1)`
-                      ) as HTMLElement;
-                      firstButton?.focus();
+                      focusItem(0);
                       break;
                     case 'End':
                       e.preventDefault();
-                      const lastButton = document.querySelector(
-                        `.desktop-nav-button:nth-of-type(${filteredNavItems.length})`
-                      ) as HTMLElement;
-                      lastButton?.focus();
+                      focusItem(filteredNavItems.length - 1);
                       break;
                   }
                 }}
               />
-              <div
-                className={cn(
-                  'absolute right-14 top-1/2 transform -translate-y-1/2 transition-opacity duration-200 whitespace-nowrap will-change-[opacity,transform] pointer-events-none',
-                  hiddenTooltip === item.id
-                    ? 'opacity-0'
-                    : 'opacity-0 group-hover:opacity-100 group-focus-within:opacity-100'
-                )}
-                role="tooltip"
-                aria-hidden={activeSection !== item.id}
-              >
-                <div className="bg-popover/90 backdrop-blur-optimized px-3 py-2 rounded-md text-sm font-medium text-popover-foreground flex items-center border border-border shadow-md transform-gpu">
-                  {item.title}
-                </div>
-              </div>
+              <NavTooltip
+                label={item.title}
+                isSuppressed={hiddenTooltip === item.id}
+                offsetClassName="right-14"
+                ariaHidden={activeSection !== item.id}
+              />
             </li>
           ))}
 
@@ -245,44 +259,25 @@ export function DesktopNavigation({
               setHiddenTooltip('theme');
             }}
             className="cursor-pointer desktop-nav-button-link flex items-center justify-center w-10 h-10 transition-all duration-300"
-            aria-label={
-              theme === 'dark'
-                ? `Switch to light mode (${
-                    isMac ? '⌘⇧L' : 'Ctrl+Shift+L'
-                  })`
-                : `Switch to dark mode (${
-                    isMac ? '⌘⇧L' : 'Ctrl+Shift+L'
-                  })`
-            }
+            aria-label={`Switch between light and dark mode (${
+              isMac ? '⌘⇧L' : 'Ctrl+Shift+L'
+            })`}
           >
-            {theme === 'dark' ? (
-              <Sun
-                className="h-5 w-5 text-foreground opacity-75 group-hover:opacity-100"
-                aria-hidden="true"
-              />
-            ) : (
-              <Moon
-                className="h-5 w-5 text-foreground opacity-75 group-hover:opacity-100"
-                aria-hidden="true"
-              />
-            )}
+            <Sun
+              className="hidden dark:block h-5 w-5 text-foreground opacity-75 group-hover:opacity-100"
+              aria-hidden="true"
+            />
+            <Moon
+              className="block dark:hidden h-5 w-5 text-foreground opacity-75 group-hover:opacity-100"
+              aria-hidden="true"
+            />
           </button>
-          <div
-            className={cn(
-              'absolute right-12 top-1/2 transform -translate-y-1/2 transition-opacity duration-200 whitespace-nowrap pointer-events-none',
-              hiddenTooltip === 'theme'
-                ? 'opacity-0'
-                : 'opacity-0 group-hover:opacity-100'
-            )}
-            role="tooltip"
-          >
-            <div className="bg-popover/90 backdrop-blur-optimized px-3 py-2 rounded-md text-sm font-medium text-popover-foreground flex items-center gap-2 border border-border shadow-md transform-gpu">
-              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-              <div className="h-5 w-12 rounded-md bg-muted border border-border/50 flex items-center justify-center text-[10px] font-medium text-muted-foreground px-1 tracking-tight leading-none">
-                {isMac ? '⌘⇧L' : 'Ctrl+⇧L'}
-              </div>
-            </div>
-          </div>
+          <NavTooltip
+            label="Toggle Theme"
+            shortcut={isMac ? '⌘⇧L' : 'Ctrl+⇧L'}
+            isSuppressed={hiddenTooltip === 'theme'}
+            shortcutClassName="w-12"
+          />
         </li>
       </ul>
     </nav>

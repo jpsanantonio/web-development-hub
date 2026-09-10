@@ -1,17 +1,11 @@
+// The save/unsave control on a resource card.
 'use client';
 
 import React from 'react';
 import { Bookmark, BookmarkCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useBookmarks } from '@/contexts/bookmarks-context';
-
-type Resource = {
-  title: string;
-  href: string;
-  description: string;
-  section: string;
-  icon?: React.FC<{ className?: string }>;
-};
+import type { Resource } from '@/lib/types';
 
 interface BookmarkButtonProps {
   resource: Resource;

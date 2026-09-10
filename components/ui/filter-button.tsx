@@ -1,8 +1,9 @@
+// The filter toggle beside the search box, plus the panel it opens.
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Filter, X } from 'lucide-react';
 import { useSearch } from '@/contexts/search-context';
+import { useIsMac } from '@/lib/hooks/use-is-mac';
 import { TagFilterPanel } from '@/components/ui/tag-filter-panel';
 
 interface FilterButtonProps {
@@ -17,15 +18,7 @@ export function FilterButton({ className = '' }: FilterButtonProps) {
     setIsFilterPanelOpen,
   } = useSearch();
 
-  // Detect platform for keyboard shortcut display
-  const [isMac, setIsMac] = useState(false);
-
-  useEffect(() => {
-    setIsMac(
-      typeof navigator !== 'undefined' &&
-        navigator.platform.includes('Mac')
-    );
-  }, []);
+  const isMac = useIsMac();
 
   const hasFilters = selectedTags.length > 0;
 
@@ -58,7 +51,6 @@ export function FilterButton({ className = '' }: FilterButtonProps) {
             {isMac ? '⌘F' : 'Ctrl+F'}
           </div>
 
-          {}
           {hasFilters && isFilterPanelOpen && (
             <div className="absolute -top-1 -right-1 h-4 w-4 bg-destructive rounded-full flex items-center justify-center animate-scale-in">
               <span className="text-xs font-medium text-destructive-foreground">
@@ -68,7 +60,6 @@ export function FilterButton({ className = '' }: FilterButtonProps) {
           )}
         </button>
 
-        {}
         {hasFilters && !isFilterPanelOpen && (
           <button
             onClick={clearFilters}
@@ -87,7 +78,6 @@ export function FilterButton({ className = '' }: FilterButtonProps) {
         )}
       </div>
 
-      {}
       <TagFilterPanel
         isOpen={isFilterPanelOpen}
         onClose={() => setIsFilterPanelOpen(false)}

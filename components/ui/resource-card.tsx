@@ -8,21 +8,12 @@ import {
   determineSection,
   getResourceIcon,
 } from '@/lib/data/resource-mappings';
-import {
-  generateResourceId,
-  getCardClassName,
-  getAccentColorClasses,
-} from '@/lib/utils/resource-card';
+import { generateResourceId } from '@/lib/utils/resource-card';
 import { getTagIconName } from '@/lib/utils/tag-icons';
+import type { CardResource } from '@/lib/types';
 
 type ResourceCardProps = {
-  resource: {
-    title: string;
-    href: string;
-    description: string;
-    section?: string;
-    tags?: string[];
-  };
+  resource: CardResource;
 };
 
 export default function ResourceCard({
@@ -41,29 +32,17 @@ export default function ResourceCard({
       target="_blank"
       rel="noopener noreferrer"
       className="relative flex flex-col h-full rounded-lg transition-all bg-card border border-border hover:shadow-lg hover:scale-[1.01]"
-      key={resourceId}
       id={resourceId}
       aria-labelledby={`title-${resourceId}`}
     >
       <div className="flex items-center justify-between p-6 border-b border-border">
         <div className="flex items-center gap-3">
           <div className="relative">
-            {iconName ? (
-              <Icon
-                icon={iconName}
-                className={cn('h-8 w-8')}
-                aria-hidden="true"
-              />
-            ) : (
-              <div
-                className={cn(
-                  'h-8 w-8 flex items-center justify-center rounded-full bg-muted'
-                )}
-                aria-hidden="true"
-              >
-                {resource.title.charAt(0).toUpperCase()}
-              </div>
-            )}
+            <Icon
+              icon={iconName}
+              className="h-8 w-8"
+              aria-hidden="true"
+            />
           </div>
           <h3
             id={`title-${resourceId}`}
@@ -85,31 +64,31 @@ export default function ResourceCard({
 
         {resource.tags && resource.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-2">
-            {resource.tags.map((tag, index) => (
-              <span
-                key={`${resourceId}-tag-${index}`}
-                className={cn(
-                  'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium',
-                  'transition-colors duration-200 ease-in-out transform-gpu',
-                  'border border-border/50',
-                  'bg-secondary/5 text-secondary border-secondary/30 hover:bg-secondary/10',
-                  'dark:bg-secondary/30 dark:text-secondary-foreground dark:border-secondary/95 dark:hover:bg-secondary/80'
-                )}
-                title={`Filter by ${tag}`}
-              >
-                {(() => {
-                  const iconName = getTagIconName(tag);
-                  return iconName ? (
+            {resource.tags.map((tag) => {
+              const tagIcon = getTagIconName(tag);
+              return (
+                <span
+                  key={`${resourceId}-tag-${tag}`}
+                  className={cn(
+                    'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium',
+                    'transition-colors duration-200 ease-in-out transform-gpu',
+                    'border border-border/50',
+                    'bg-secondary/5 text-secondary border-secondary/30 hover:bg-secondary/10',
+                    'dark:bg-secondary/30 dark:text-secondary-foreground dark:border-secondary/95 dark:hover:bg-secondary/80',
+                  )}
+                  title={`Filter by ${tag}`}
+                >
+                  {tagIcon && (
                     <Icon
-                      icon={iconName}
+                      icon={tagIcon}
                       className="w-3 h-3 mr-1.5"
                       aria-hidden="true"
                     />
-                  ) : null;
-                })()}
-                {tag.replace('-', ' ')}
-              </span>
-            ))}
+                  )}
+                  {tag.replaceAll('-', ' ')}
+                </span>
+              );
+            })}
           </div>
         )}
       </div>

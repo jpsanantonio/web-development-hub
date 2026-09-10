@@ -8,7 +8,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `pnpm dev` - Start development server with Turbopack
 - `pnpm build` - Build the application for production
 - `pnpm preview` - Serve the built static export locally (see below)
-- `pnpm lint` - Run ESLint
+- `pnpm lint` - Run ESLint over the whole repo (flat config, warnings fail)
+- `pnpm format` - Format with Prettier
 - `pnpm typecheck` - Type-check without emitting
 - `pnpm test` - Run the Vitest suite once (`pnpm test:watch` to rerun on change)
 - `pnpm test:e2e` - Playwright smoke tests against the built export via wrangler
@@ -32,8 +33,12 @@ This project uses **pnpm** exclusively for package management. Always use `pnpm 
 ### Next.js App Router Structure
 - Uses Next.js 15 with App Router in `/app` directory
 - Each route has its own directory with `page.tsx` (e.g., `/blogs/page.tsx`)
-- Global layout in `app/layout.tsx` with providers and font configuration
-- SEO metadata configured at layout level with OpenGraph and Twitter cards
+- Global layout in `app/layout.tsx` with providers, font configuration and the
+  blocking script that applies the theme before first paint
+- Each route is a server component that exports its own `metadata`; the
+  interactive part is a client component it renders (e.g. `app/blogs/page.tsx`
+  renders `components/category-page.tsx`). Keeping a route `'use client'`
+  costs it its metadata, so the whole site shares one title
 
 ### Component Organization
 - UI components in `/components/ui/` following atomic design patterns
@@ -43,14 +48,22 @@ This project uses **pnpm** exclusively for package management. Always use `pnpm 
 
 ### State Management
 - React Context for global state:
-  - `BookmarksProvider` - manages user bookmarks
+  - `BookmarksProvider` - manages user bookmarks, persisted to localStorage
   - `ThemeProvider` - handles light/dark theme switching
-- Custom hooks in `/hooks/` for reusable logic
-- Form handling with React Hook Form + Zod validation
+  - `SearchProvider` - the query, tag filters and derived results
+- Custom hooks in `/hooks/`; smaller presentational ones in `/lib/hooks/`
 
 ### Data Layer
-- Static data in `/lib/data/` with TypeScript definitions
-- Resource mappings and category types in `/lib/types.ts`
+- `constants/sections.ts` is the single source of truth: five sections and
+  every resource, checked against `Section` from `lib/types.ts` via `satisfies`
+- Anything derivable from it must be derived, not copied. Section titles come
+  from `SECTION_TITLES`, a section from `sectionByTitle()`, and a resource's
+  section from `determineSection()`, which builds its map from `SECTIONS`
+- `lib/data/resource-mappings.ts` holds the hand-maintained per-resource icon
+  map, which is editorial and cannot be derived; `constants/sections.test.ts`
+  fails if it drifts from the dataset
+- Shared shapes (`Section`, `ResourceLink`, `Resource`, `CardResource`) live in
+  `lib/types.ts`; do not redeclare them per file
 - Utility functions in `/lib/utils/` and `/lib/utils.ts`
 
 ### Styling System

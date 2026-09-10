@@ -1,12 +1,18 @@
+// One nav entry, in both the shapes the site needs: a labelled row in the
+// mobile menu and a bare dot in the desktop rail.
 import { forwardRef } from 'react';
+import { Icon } from '@iconify/react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 interface NavigationItemProps {
+  // Matches NavigationItem in lib/utils/navigation.ts. This used to declare an
+  // `icon` component instead, which nothing supplied, so the mobile menu drew
+  // no icons at all.
   item: {
     id: string;
     title: string;
-    icon?: React.FC<{ className?: string }>;
+    iconName?: string;
   };
   isActive: boolean;
   onClick: () => void;
@@ -36,13 +42,12 @@ export const NavigationItem = forwardRef<
     },
     ref
   ) => {
-    const Icon = item.icon;
-
     if (variant === 'mobile') {
       const content = (
         <>
-          {Icon && (
+          {item.iconName && (
             <Icon
+              icon={item.iconName}
               className={cn(
                 'h-5 w-5',
                 isActive
