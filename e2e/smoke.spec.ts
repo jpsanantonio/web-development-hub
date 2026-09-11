@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { SECTIONS } from '../constants/sections';
+import { toSectionId } from '../lib/utils/navigation';
 
 const ROUTES = [
   '/',
@@ -37,6 +38,31 @@ test.describe('the deployed static export', () => {
     expect(headers['x-frame-options']).toBe('DENY');
     expect(headers['x-content-type-options']).toBe('nosniff');
     expect(headers['referrer-policy']).toBe('origin-when-cross-origin');
+
+    const csp = headers['content-security-policy'];
+    expect(csp, 'Content-Security-Policy').toBeTruthy();
+    expect(csp).toContain("default-src 'self'");
+    expect(csp).toContain("frame-ancestors 'none'");
+    expect(csp).toContain("object-src 'none'");
+    // Iconify is the only origin the page is allowed to talk to.
+    expect(csp).toContain('https://api.iconify.design');
+
+    expect(headers['permissions-policy']).toContain('geolocation=()');
+  });
+
+  test('loads with no console errors, so the CSP blocks nothing it needs', async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on('console', (message) => {
+      if (message.type() === 'error') errors.push(message.text());
+    });
+    page.on('pageerror', (error) => errors.push(error.message));
+
+    await page.goto('/');
+    await expect(page.locator('main')).toBeVisible();
+
+    expect(errors).toEqual([]);
   });
 
   test('does not serve _headers itself as an asset', async ({
@@ -76,6 +102,60 @@ test.describe('the deployed static export', () => {
   });
 });
 
+test.describe('theme', () => {
+  test('paints the stored theme on the first frame', async ({
+    page,
+  }) => {
+    // The class used to be applied from an effect after hydration, so a
+    // visitor who had chosen light saw the dark default flash first.
+    await page.addInitScript(() =>
+      localStorage.setItem('theme', 'light')
+    );
+    await page.goto('/');
+
+    // documentElement is read before any of the page's own scripts could have
+    // reacted to load; the blocking script in <head> has already run.
+    await expect(page.locator('html')).not.toHaveClass(/dark/);
+
+    await page.addInitScript(() =>
+      localStorage.setItem('theme', 'dark')
+    );
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveClass(/dark/);
+  });
+
+  test('follows the system preference when nothing is stored', async ({
+    browser,
+  }) => {
+    const context = await browser.newContext({
+      colorScheme: 'light',
+    });
+    const page = await context.newPage();
+    await page.goto('/');
+    await expect(page.locator('html')).not.toHaveClass(/dark/);
+    await context.close();
+  });
+});
+
+test.describe('metadata', () => {
+  test('gives every section page its own title and description', async ({
+    page,
+  }) => {
+    // Every page shared the root layout's single title until each route
+    // became a server component that could export its own metadata.
+    for (const section of SECTIONS) {
+      await page.goto(section.href);
+
+      await expect(page).toHaveTitle(
+        `${section.title} | Web Development Hub`
+      );
+      await expect(
+        page.locator('meta[name="description"]')
+      ).toHaveAttribute('content', section.description);
+    }
+  });
+});
+
 test.describe('navigation', () => {
   test('every section anchor the nav points at exists on the page', async ({
     page,
@@ -84,10 +164,9 @@ test.describe('navigation', () => {
     // section-blogs-and-newsletters, so it could neither scroll nor highlight.
     await page.goto('/');
     for (const section of SECTIONS) {
-      const id = `section-${section.title
-        .toLowerCase()
-        .replace(/\s+&\s+/g, '-')
-        .replace(/\s+/g, '-')}`;
+      // Imported rather than reimplemented: a local copy of the slug rule
+      // would drift in step with the bug this test exists to catch.
+      const id = toSectionId(section.title);
       await expect(
         page.locator(`#${id}`),
         `${section.title} anchor`

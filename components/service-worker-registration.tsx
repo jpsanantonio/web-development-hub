@@ -1,51 +1,80 @@
+// Registers the service worker and surfaces the "new version" prompt when a
+// newer one is waiting to take over.
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function ServiceWorkerRegistration() {
-  const [showUpdateNotification, setShowUpdateNotification] = useState(false);
-  const [newWorker, setNewWorker] = useState<ServiceWorker | null>(null);
+  const [waitingWorker, setWaitingWorker] =
+    useState<ServiceWorker | null>(null);
+  const [isDismissed, setIsDismissed] = useState(false);
 
-  const handleRefresh = () => {
-    if (newWorker) {
-      // Send message to service worker to skip waiting
-      newWorker.postMessage({ type: 'SKIP_WAITING' });
-      // Refresh the page
-      window.location.reload();
-    }
-  };
+  const handleRefresh = useCallback(() => {
+    if (!waitingWorker) return;
 
-  const handleDismiss = () => {
-    setShowUpdateNotification(false);
-  };
+    // The reload is driven by controllerchange rather than fired here: the new
+    // worker has to finish activating first, or the page reloads under the old
+    // one and the prompt comes straight back.
+    navigator.serviceWorker.addEventListener(
+      'controllerchange',
+      () => window.location.reload(),
+      { once: true },
+    );
+    waitingWorker.postMessage({ type: 'SKIP_WAITING' });
+  }, [waitingWorker]);
+
+  const handleDismiss = useCallback(() => {
+    setIsDismissed(true);
+  }, []);
 
   useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker
-          .register('/sw.js')
-          .then(registration => {
-            console.log('Service worker registered successfully:', registration);
-            
-            // Check for updates
-            registration.addEventListener('updatefound', () => {
-              const installingWorker = registration.installing;
-              if (installingWorker) {
-                installingWorker.addEventListener('statechange', () => {
-                  if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                    // New version available - show UI notification
-                    console.log('New version available! Showing update notification.');
-                    setNewWorker(installingWorker);
-                    setShowUpdateNotification(true);
-                  }
-                });
-              }
-            });
-          })
-          .catch(err => console.error('Service worker registration failed:', err));
-      });
-    }
+    if (!('serviceWorker' in navigator)) return;
+
+    let cancelled = false;
+
+    // Registered directly rather than from a window 'load' listener. React
+    // effects usually run after load has already fired, and a listener added
+    // then never runs — so the worker often never registered at all.
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then((registration) => {
+        if (cancelled) return;
+
+        const promote = (worker: ServiceWorker | null) => {
+          // Only meaningful once a worker is already in control; on a first
+          // visit the incoming worker is the only one there has ever been.
+          if (worker && navigator.serviceWorker.controller) {
+            setWaitingWorker(worker);
+            setIsDismissed(false);
+          }
+        };
+
+        // A worker may already be waiting from an earlier visit, in which case
+        // no updatefound will fire for it.
+        promote(registration.waiting);
+
+        registration.addEventListener('updatefound', () => {
+          const installingWorker = registration.installing;
+          if (!installingWorker) return;
+
+          installingWorker.addEventListener('statechange', () => {
+            if (installingWorker.state === 'installed') {
+              promote(installingWorker);
+            }
+          });
+        });
+      })
+      .catch((err) =>
+        console.error('Service worker registration failed:', err),
+      );
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
+
+  const showUpdateNotification =
+    waitingWorker !== null && !isDismissed;
 
   if (!showUpdateNotification) {
     return null;
@@ -76,7 +105,8 @@ export default function ServiceWorkerRegistration() {
               New Version Available
             </h3>
             <p className="text-xs text-foreground-muted mb-3">
-              A new version of the app is ready. Refresh to get the latest features and improvements.
+              A new version of the app is ready. Refresh to get the
+              latest features and improvements.
             </p>
             <div className="flex gap-2">
               <button

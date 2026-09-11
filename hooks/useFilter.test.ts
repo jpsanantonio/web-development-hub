@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+import { StrictMode } from 'react';
 import { renderHook, act } from '@testing-library/react';
 import { useFilter } from './useFilter';
 
@@ -64,6 +65,40 @@ describe('useFilter', () => {
     const { result } = renderHook(() => useFilter({ onTagsChange }));
     act(() => result.current.addTag('python'));
     expect(onTagsChange).toHaveBeenCalledWith(['python']);
+  });
+
+  it('notifies onTagsChange exactly once per change', () => {
+    // React invokes a setState updater twice under StrictMode, so a callback
+    // fired from inside the updater is delivered twice per interaction.
+    const onTagsChange = vi.fn();
+    const { result } = renderHook(() => useFilter({ onTagsChange }), {
+      wrapper: StrictMode,
+    });
+
+    act(() => result.current.addTag('python'));
+    expect(onTagsChange).toHaveBeenCalledTimes(1);
+
+    act(() => result.current.toggleTag('rust'));
+    expect(onTagsChange).toHaveBeenCalledTimes(2);
+    expect(onTagsChange).toHaveBeenLastCalledWith(['python', 'rust']);
+
+    act(() => result.current.removeTag('python'));
+    expect(onTagsChange).toHaveBeenCalledTimes(3);
+    expect(onTagsChange).toHaveBeenLastCalledWith(['rust']);
+  });
+
+  it('does not notify when maxTags rejects the addition', () => {
+    const onTagsChange = vi.fn();
+    const { result } = renderHook(() =>
+      useFilter({ maxTags: 1, onTagsChange })
+    );
+
+    act(() => result.current.addTag('a'));
+    act(() => result.current.addTag('b'));
+    act(() => result.current.toggleTag('c'));
+
+    expect(result.current.selectedTags).toEqual(['a']);
+    expect(onTagsChange).toHaveBeenCalledTimes(1);
   });
 
   it('returns everything when nothing is selected', () => {

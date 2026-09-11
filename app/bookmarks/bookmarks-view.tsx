@@ -1,0 +1,232 @@
+// The bookmarks view: everything the visitor saved, grouped by section and
+// ordered the way the site orders its sections. Client-only — it reads
+// localStorage through BookmarksProvider.
+'use client';
+
+import { useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import {
+  useBookmarks,
+  type Resource,
+} from '@/contexts/bookmarks-context';
+import { SECTION_TITLES } from '@/constants/sections';
+import { toSectionId } from '@/lib/utils/navigation';
+import ResourceCard from '@/components/ui/resource-card';
+import { useSearch } from '@/contexts/search-context';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
+
+const formatCount = (count: number): string =>
+  `${count} ${count === 1 ? 'bookmark' : 'bookmarks'}`;
+
+const BookmarksHeader = ({
+  searchQuery,
+  displayedBookmarks,
+  bookmarks,
+  onClearAll,
+}: {
+  searchQuery: string;
+  displayedBookmarks: Resource[];
+  bookmarks: Resource[];
+  onClearAll: () => void;
+}) => {
+  const getDescription = () => {
+    if (searchQuery && searchQuery.trim()) {
+      return displayedBookmarks.length === 0
+        ? `No bookmarks found for "${searchQuery}"`
+        : `Found ${formatCount(
+            displayedBookmarks.length,
+          )} for "${searchQuery}"`;
+    }
+
+    return bookmarks.length === 0
+      ? "You haven't added any bookmarks yet."
+      : `You have ${formatCount(bookmarks.length)}.`;
+  };
+
+  return (
+    <div className="flex items-center justify-between">
+      <div>
+        <h1 className="text-4xl font-bold tracking-tight mb-2">
+          My Bookmarks
+        </h1>
+        <p className="text-foreground-muted">{getDescription()}</p>
+      </div>
+
+      {bookmarks.length > 0 && (
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <button
+              className="
+                cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-md 
+                border border-border/50 
+                text-muted-foreground hover:text-foreground 
+                bg-background hover:bg-muted/50 
+                transition-all duration-200 ease-in-out
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+                hover:border-border/80
+                shadow-sm hover:shadow-md
+                transform-gpu
+                disabled:pointer-events-none disabled:opacity-50
+              "
+              aria-label="Clear all bookmarks"
+            >
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+              Clear All
+            </button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Clear All Bookmarks</AlertDialogTitle>
+              <AlertDialogDescription>
+                Are you sure you want to clear all your bookmarks?
+                This action cannot be undone.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction
+                onClick={onClearAll}
+                className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              >
+                Clear All
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      )}
+    </div>
+  );
+};
+
+const EmptyState = ({ searchQuery }: { searchQuery: string }) => (
+  <div className="py-12 text-center">
+    <p className="text-lg mb-6">
+      {searchQuery && searchQuery.trim()
+        ? "Try adjusting your search terms to find what you're looking for."
+        : 'Bookmark resources to add them to your bookmarks list.'}
+    </p>
+    <Link
+      href="/"
+      className="inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ring-offset-background disabled:pointer-events-none disabled:opacity-50 border hover:bg-accent/10 h-10 px-4 py-2 rounded-full border-accent-neon text-accent-neon focus-visible:ring-accent-neon hover:text-accent-neon/80"
+    >
+      Explore Resources
+    </Link>
+  </div>
+);
+
+const BookmarksSection = ({
+  section,
+  bookmarks,
+}: {
+  section: string;
+  bookmarks: Resource[];
+}) => (
+  <section id={toSectionId(section)} className="space-y-6">
+    <h2 className="text-2xl font-bold tracking-tight">{section}</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {bookmarks.map((bookmark) => (
+        <ResourceCard key={bookmark.href} resource={bookmark} />
+      ))}
+    </div>
+  </section>
+);
+
+export function BookmarksView() {
+  const { bookmarks, clearBookmarks } = useBookmarks();
+  const {
+    searchQuery,
+    searchResults,
+    selectedTags,
+    setCurrentCategory,
+  } = useSearch();
+
+  useEffect(() => {
+    setCurrentCategory(null);
+  }, [setCurrentCategory]);
+
+  const displayedBookmarks = useMemo(() => {
+    return (searchQuery && searchQuery.trim()) ||
+      selectedTags.length > 0
+      ? searchResults
+      : bookmarks;
+  }, [searchQuery, searchResults, bookmarks, selectedTags]);
+
+  const groupedBookmarks = useMemo(() => {
+    return displayedBookmarks.reduce(
+      (acc, bookmark) => {
+        if (!acc[bookmark.section]) {
+          acc[bookmark.section] = [];
+        }
+        acc[bookmark.section].push(bookmark);
+        return acc;
+      },
+      {} as Record<string, typeof displayedBookmarks>,
+    );
+  }, [displayedBookmarks]);
+
+  // Known sections in their canonical order, then anything else. Rendering
+  // only the known titles meant a bookmark whose section fell outside that
+  // list was stored and counted but never drawn — and so could not be removed
+  // from this page, which is the only place it can be removed.
+  const orderedSections = useMemo(() => {
+    const known = SECTION_TITLES.filter(
+      (section) => groupedBookmarks[section],
+    );
+    const unknown = Object.keys(groupedBookmarks)
+      .filter((section) => !SECTION_TITLES.includes(section))
+      .sort();
+    return [...known, ...unknown];
+  }, [groupedBookmarks]);
+
+  const handleClearAll = () => {
+    clearBookmarks();
+  };
+
+  return (
+    <div className="container mx-auto md:mt-20 mt-8 py-12 space-y-12">
+      <BookmarksHeader
+        searchQuery={searchQuery}
+        displayedBookmarks={displayedBookmarks}
+        bookmarks={bookmarks}
+        onClearAll={handleClearAll}
+      />
+
+      {displayedBookmarks.length === 0 ? (
+        <EmptyState searchQuery={searchQuery} />
+      ) : (
+        <div className="space-y-16">
+          {orderedSections.map((section) => (
+            <BookmarksSection
+              key={section}
+              section={section}
+              bookmarks={groupedBookmarks[section]}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

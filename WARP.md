@@ -34,7 +34,7 @@ High-level architecture and structure
   - app/layout.tsx is the root layout: sets fonts (Inter, JetBrains Mono), global SEO metadata, viewport, and wraps the app with providers.
   - Providers used globally:
     - ThemeProvider (contexts/theme-context.tsx): toggles light/dark theme, persists to localStorage, applies the `dark` class to documentElement.
-    - BookmarksProvider (contexts/bookmarks-context.tsx): manages a list of bookmarked resources, persisted to localStorage; restores icon names by mapping titles through lib/data/resource-mappings.ts and constants/sections.ts.
+    - BookmarksProvider (contexts/bookmarks-context.tsx): manages a list of bookmarked resources, persisted to localStorage. Only fields that cannot be re-derived are stored; icons are resolved from the title wherever a card renders.
   - ServiceWorkerRegistration (components/service-worker-registration.tsx) is mounted in layout to register public/sw.js and prompt for updates.
   - LayoutWrapper (components/ui/layout-wrapper.tsx): wraps page content with SearchProvider and the persistent navigation chrome.
 
@@ -51,7 +51,7 @@ High-level architecture and structure
 
 - Data model and content
   - The primary content comes from constants/sections.ts: a curated list of resources grouped into top-level sections. Each resource has title, href, description, and optional tags.
-  - lib/data/resource-mappings.ts maps well-known resource names to icon identifiers and also groups titles by rubric for display.
+  - lib/data/resource-mappings.ts maps resource titles to icon identifiers. The title-to-section lookup beside it is derived from constants/sections.ts rather than hand-listed.
   - lib/types.ts defines CategoryType used in app/page.tsx and routes.
 
 - Pages and composition

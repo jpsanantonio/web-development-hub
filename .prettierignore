@@ -1,0 +1,14 @@
+# Build output and tool caches.
+.next
+out
+node_modules
+playwright-report
+test-results
+.wrangler
+.vercel
+pnpm-lock.yaml
+tsconfig.tsbuildinfo
+
+# The resource dataset is machine-uniform by design: scripts/check-links.mjs
+# parses it with indentation-anchored regexes. Prettier already agrees with its
+# current shape, so this is a guard rather than an exemption.

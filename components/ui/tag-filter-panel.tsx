@@ -117,7 +117,6 @@ export function TagFilterPanel({
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center md:absolute md:inset-auto md:top-14 md:left-1/2 md:-translate-x-1/2">
-      {}
       <div
         ref={panelRef}
         className="
@@ -131,7 +130,6 @@ export function TagFilterPanel({
           transform-gpu
         "
       >
-        {}
         <div className="flex items-center justify-between mb-4 md:mb-6">
           <h2 className="text-lg md:text-xl font-semibold text-foreground">
             Filter by Tags
@@ -149,7 +147,6 @@ export function TagFilterPanel({
           </button>
         </div>
 
-        {}
         {selectedTags.length > 0 && (
           <div className="mb-4 md:mb-5">
             <div className="flex items-center justify-between mb-1.5 md:mb-2">
@@ -196,9 +193,7 @@ export function TagFilterPanel({
           </div>
         )}
 
-        {}
         <div className="space-y-4 md:space-y-6">
-          {}
           <div>
             <div className="flex items-center gap-1.5 md:gap-2 mb-2 md:mb-4">
               <Star className="h-3.5 w-3.5 md:h-4 md:w-4 text-accent-purple" />
@@ -231,7 +226,6 @@ export function TagFilterPanel({
             </div>
           </div>
 
-          {}
           <div>
             <span className="text-sm md:text-base font-semibold text-foreground mb-2 md:mb-4 block">
               All Tags
@@ -261,7 +255,6 @@ export function TagFilterPanel({
           </div>
         </div>
 
-        {}
         <div className="flex items-center justify-between text-[10px] md:text-xs text-muted-foreground pt-2 border-t border-border/20">
           <span>Click tags to add or remove filters</span>
           <span>

@@ -1,52 +1,22 @@
-'use client';
+// Frameworks and Libraries: the dataset's "Frameworks and Libraries" section, rendered as a full page.
+// A server component so the route can carry its own metadata.
+import type { Metadata } from 'next';
+import { CategoryPage } from '@/components/category-page';
+import { sectionByTitle } from '@/constants/sections';
 
-import React, { useEffect } from 'react';
+const section = sectionByTitle('Frameworks and Libraries');
 
-import { SECTIONS } from '@/constants/sections';
-import ResourceGrid from '@/components/ui/resource-grid';
-import { useSearch } from '@/contexts/search-context';
+export const metadata: Metadata = {
+  title: section.title,
+  description: section.description,
+  alternates: { canonical: section.href },
+  openGraph: {
+    title: section.title,
+    description: section.description,
+    url: section.href,
+  },
+};
 
 export default function Page() {
-  const CATEGORY_TITLE = 'Frameworks and Libraries';
-  const { searchQuery, searchResults, setCurrentCategory } =
-    useSearch();
-
-  useEffect(() => {
-    setCurrentCategory(CATEGORY_TITLE);
-
-    return () => setCurrentCategory(null);
-  }, [setCurrentCategory]);
-
-  const sectionData = SECTIONS.find(
-    (section) => section.title === CATEGORY_TITLE
-  );
-
-  const allResources = (sectionData?.links || []).map((link) => ({
-    title: link.title,
-    href: link.href,
-    description: link.description,
-    tags: link.tags,
-  }));
-
-  const displayedResources =
-    searchQuery && searchQuery.trim() ? searchResults : allResources;
-
-  return (
-    <div className="container mx-auto md:mt-20 mt-8 py-12 px-4 md:px-6 flex flex-col gap-10">
-      <div className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">
-          Frameworks and Libraries
-        </h1>
-        <p className="text-foreground-muted max-w-[700px]">
-          Powerful frameworks and libraries to build modern web
-          applications
-        </p>
-      </div>
-
-      <ResourceGrid
-        resources={displayedResources}
-        searchQuery={searchQuery || ''}
-      />
-    </div>
-  );
+  return <CategoryPage section={section} />;
 }

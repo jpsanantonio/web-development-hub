@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { SECTIONS } from './sections';
+import {
+  SECTIONS,
+  SECTION_TITLES,
+  sectionByTitle,
+} from './sections';
 import {
   determineSection,
   getResourceIcon,
@@ -58,6 +62,34 @@ describe('resource dataset integrity', () => {
       expect(r.title, `${r.section} entry missing title`).toBeTruthy();
       expect(r.description, `${r.title} missing description`).toBeTruthy();
       expect(r.href, `${r.title} missing href`).toMatch(/^https?:\/\//);
+    }
+  });
+});
+
+describe('section lookup', () => {
+  it('lists every section title in order', () => {
+    expect(SECTION_TITLES).toEqual(SECTIONS.map((s) => s.title));
+  });
+
+  it('returns the section a title names', () => {
+    expect(sectionByTitle('Communities').href).toBe('/communities');
+  });
+
+  it('throws rather than returning undefined for an unknown title', () => {
+    // Pages call this at module scope, so an unknown title should fail the
+    // build instead of prerendering an empty grid.
+    expect(() => sectionByTitle('Nope')).toThrow(/No section titled/);
+  });
+
+  it('gives every section a tagline the pages can render', () => {
+    // Both the homepage preview and the section's own page read this, so an
+    // empty one leaves two places blank.
+    for (const section of SECTIONS) {
+      expect(
+        section.description,
+        `${section.title} description`
+      ).toBeTruthy();
+      expect(section.href).toMatch(/^\//);
     }
   });
 });

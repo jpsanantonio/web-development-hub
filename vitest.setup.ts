@@ -8,7 +8,9 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-// jsdom implements neither of these, and the contexts under test call both.
+// jsdom does not implement matchMedia, and theme-context reads it to fall back
+// to the operating system's preference. Individual tests override this to
+// choose an answer; the default here is "no preference expressed".
 if (!window.matchMedia) {
   window.matchMedia = ((query: string) => ({
     matches: false,
@@ -22,6 +24,7 @@ if (!window.matchMedia) {
   })) as unknown as typeof window.matchMedia;
 }
 
-if (!window.scrollTo) {
-  window.scrollTo = (() => {}) as typeof window.scrollTo;
+// Nor scrollIntoView, which the nav calls to jump between sections.
+if (!Element.prototype.scrollIntoView) {
+  Element.prototype.scrollIntoView = () => {};
 }

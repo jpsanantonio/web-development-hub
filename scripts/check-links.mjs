@@ -20,6 +20,10 @@ import { dirname, join } from 'node:path';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE = join(ROOT, 'constants', 'sections.ts');
 
+// A floor, not an exact count: the dataset only grows, and this exists to
+// catch a parse that silently matched almost nothing.
+const MIN_EXPECTED_LINKS = 300;
+
 const CONCURRENCY = 8;
 const TIMEOUT_MS = 20_000;
 // Sent verbatim: a plain fetch UA is refused by Cloudflare-fronted hosts, which
@@ -63,6 +67,23 @@ function parseResources(source) {
       pendingTitle = null;
     }
   }
+
+  // The regexes above are anchored to the file's indentation, which Prettier
+  // keeps uniform. If that ever changes, the parse degrades into finding fewer
+  // links rather than failing — so assert it found a plausible number instead
+  // of quietly reporting that a handful of links are all healthy.
+  const linkCount = sections.reduce(
+    (total, section) => total + section.links.length,
+    0
+  );
+  if (sections.length === 0 || linkCount < MIN_EXPECTED_LINKS) {
+    throw new Error(
+      `Parsed only ${linkCount} link(s) in ${sections.length} section(s) from ` +
+        `${SOURCE}. The file's shape has changed and the regexes in ` +
+        `parseResources() no longer match it.`
+    );
+  }
+
   return sections;
 }
 

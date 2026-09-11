@@ -1,9 +1,13 @@
+// The curated resource dataset: five sections, each holding the links the site
+// renders. `satisfies` checks every entry's shape without widening the array.
+import type { Section } from '@/lib/types';
+
 export const SECTIONS = [
   {
     title: 'Learning Resources',
     href: '/learning-resources',
     description:
-      'Comprehensive tutorials, courses, and educational content to master web development fundamentals and advanced concepts.',
+      'Start or advance your web development journey with these educational resources',
     links: [
       {
         title: 'Master.dev',
@@ -980,7 +984,7 @@ export const SECTIONS = [
     title: 'Developer Tools',
     href: '/developer-tools',
     description:
-      'Essential software, services, and utilities to enhance your development workflow and boost productivity.',
+      'Essential tools to streamline your development workflow',
     links: [
       {
         title: 'Visual Studio Code',
@@ -2927,7 +2931,7 @@ export const SECTIONS = [
     title: 'Frameworks and Libraries',
     href: '/frameworks-and-libraries',
     description:
-      'Modern frameworks, libraries, and tools for building robust, scalable web applications with optimal performance.',
+      'Powerful frameworks and libraries to build modern web applications',
     links: [
       {
         title: 'React',
@@ -4305,7 +4309,7 @@ export const SECTIONS = [
     title: 'Communities',
     href: '/communities',
     description:
-      'Vibrant communities and platforms where developers connect, share knowledge, and collaborate on web development projects.',
+      'Connect with fellow developers in these vibrant communities',
     links: [
       {
         title: 'Dev.to',
@@ -4740,7 +4744,7 @@ export const SECTIONS = [
     title: 'Blogs and Newsletters',
     href: '/blogs',
     description:
-      'Personal blogs and insights from individual web developers sharing their experiences, learnings, and perspectives.',
+      'Stay updated with insights from industry experts and thought leaders',
     links: [
       {
         title: 'Josh W Comeau',
@@ -5831,4 +5835,21 @@ export const SECTIONS = [
       },
     ],
   },
-];
+] satisfies Section[];
+
+// Derived rather than hand-listed: every consumer that needs the canonical
+// section order reads this, so adding a section cannot leave a copy behind.
+export const SECTION_TITLES = SECTIONS.map((section) => section.title);
+
+/**
+ * The section a page renders. Throws rather than returning undefined so a page
+ * naming a section that no longer exists fails the build instead of rendering
+ * an empty grid.
+ */
+export function sectionByTitle(title: string): Section {
+  const section = SECTIONS.find((s) => s.title === title);
+  if (!section) {
+    throw new Error(`No section titled "${title}" in SECTIONS`);
+  }
+  return section;
+}

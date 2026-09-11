@@ -1,3 +1,5 @@
+// Tracks which section is nearest the middle of the viewport, for the nav's
+// active highlight.
 import { useState, useEffect, useRef } from 'react';
 
 interface UseIntersectionObserverOptions {
@@ -19,8 +21,14 @@ export const useIntersectionObserver = (
     root = null,
   } = options;
 
+  // Keyed on the ids themselves rather than the array's identity. Callers
+  // build this list inline, and depending on the array meant the observer was
+  // disconnected and rebuilt on every render of the nav.
+  const sectionKey = sectionIds.join('|');
+
   useEffect(() => {
-    if (sectionIds.length === 0) return;
+    const ids = sectionKey ? sectionKey.split('|') : [];
+    if (ids.length === 0) return;
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
@@ -60,7 +68,7 @@ export const useIntersectionObserver = (
       }
     );
 
-    sectionIds.forEach((id) => {
+    ids.forEach((id) => {
       const element = document.getElementById(id);
       if (element && observerRef.current) {
         observerRef.current.observe(element);
@@ -72,7 +80,7 @@ export const useIntersectionObserver = (
         observerRef.current.disconnect();
       }
     };
-  }, [sectionIds, rootMargin, threshold, root]);
+  }, [sectionKey, rootMargin, threshold, root]);
 
   return activeSection;
 };

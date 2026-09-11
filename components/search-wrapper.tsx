@@ -1,18 +1,12 @@
+// Swaps the page's own content for grouped search results while a search or
+// tag filter is active.
 'use client';
 
 import { useEffect } from 'react';
 import { useSearch } from '@/contexts/search-context';
 import { toSectionId } from '@/lib/utils/navigation';
 import ResourceCard from '@/components/ui/resource-card';
-
-// Import Resource type from search context
-type Resource = {
-  title: string;
-  href: string;
-  description: string;
-  section: string;
-  tags?: string[];
-};
+import type { Resource } from '@/lib/types';
 
 interface SearchWrapperProps {
   children: React.ReactNode;

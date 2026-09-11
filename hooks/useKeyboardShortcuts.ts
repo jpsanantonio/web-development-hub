@@ -1,13 +1,13 @@
+// Global keyboard shortcuts. Mounted once by LayoutWrapper; it renders nothing
+// and returns nothing, so every handler lives inside the effect that binds it.
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSearch } from '@/contexts/search-context';
 import { useTheme } from '@/contexts/theme-context';
 
 /**
- * Custom hook for global keyboard shortcuts
- *
  * Keyboard shortcuts:
  * - Ctrl+K or Cmd+K: Focus search input
  * - Ctrl+F or Cmd+F: Toggle filter panel
@@ -22,58 +22,48 @@ export function useKeyboardShortcuts() {
   const router = useRouter();
   const { clearSearch, searchQuery, toggleFilterPanel } = useSearch();
   const { toggleTheme } = useTheme();
-  const searchInputRef = useRef<HTMLInputElement | null>(null);
-
-  // Function to focus on search input
-  const focusSearchInput = () => {
-    // Try to find the search input element
-    const desktopSearchInput = document.querySelector(
-      'input[type="search"]'
-    ) as HTMLInputElement;
-    const mobileSearchInput = document.querySelector(
-      '#mobile-search input[type="search"]'
-    ) as HTMLInputElement;
-
-    const searchInput = desktopSearchInput || mobileSearchInput;
-
-    if (searchInput) {
-      searchInput.focus();
-      searchInput.select();
-    }
-  };
-
-  // Function to toggle filter panel - now uses context
-  const handleToggleFilterPanel = () => {
-    console.log('Toggling filter panel via context');
-    toggleFilterPanel();
-  };
-
-  // Function to handle ESC key - clear search only
-  const handleEscape = () => {
-    const activeElement = document.activeElement as HTMLElement;
-
-    // If search input is focused, clear it and blur
-    if (
-      activeElement?.tagName === 'INPUT' &&
-      activeElement.getAttribute('type') === 'search'
-    ) {
-      clearSearch();
-      activeElement.blur();
-    } else if (searchQuery) {
-      // If there's a search query but input isn't focused, just clear search
-      clearSearch();
-    }
-  };
 
   useEffect(() => {
-    // Helper function to check if an input element is currently focused
+    const focusSearchInput = () => {
+      // Unscoped on purpose: whichever search box is mounted — the header one
+      // on desktop, the sheet one on mobile — is the one to focus.
+      const searchInput =
+        document.querySelector<HTMLInputElement>(
+          'input[type="search"]'
+        );
+
+      searchInput?.focus();
+      searchInput?.select();
+    };
+
+    const activeElement = () =>
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
+
     const isInputFocused = () => {
-      const activeElement = document.activeElement as HTMLElement;
+      const element = activeElement();
       return (
-        activeElement?.tagName === 'INPUT' ||
-        activeElement?.tagName === 'TEXTAREA' ||
-        activeElement?.isContentEditable === true
+        element?.tagName === 'INPUT' ||
+        element?.tagName === 'TEXTAREA' ||
+        element?.isContentEditable === true
       );
+    };
+
+    const handleEscape = () => {
+      const element = activeElement();
+
+      // If search input is focused, clear it and blur
+      if (
+        element?.tagName === 'INPUT' &&
+        element.getAttribute('type') === 'search'
+      ) {
+        clearSearch();
+        element.blur();
+      } else if (searchQuery) {
+        // If there's a search query but input isn't focused, just clear search
+        clearSearch();
+      }
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -87,7 +77,7 @@ export function useKeyboardShortcuts() {
       // Ctrl/Cmd + F to toggle filter panel
       if ((event.ctrlKey || event.metaKey) && event.key === 'f') {
         event.preventDefault();
-        handleToggleFilterPanel();
+        toggleFilterPanel();
         return;
       }
 
@@ -150,9 +140,4 @@ export function useKeyboardShortcuts() {
     toggleFilterPanel,
     toggleTheme,
   ]);
-
-  return {
-    focusSearchInput,
-    searchInputRef,
-  };
 }
