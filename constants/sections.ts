@@ -754,6 +754,151 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'OpenAI Platform Docs',
+        href: 'https://developers.openai.com/api/docs',
+        description:
+          'Reference for the OpenAI API — responses, structured outputs, function calling, embeddings, and realtime — with a guide beside every endpoint.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'api',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Gemini API Docs',
+        href: 'https://ai.google.dev/gemini-api/docs',
+        description:
+          "Google's developer docs for Gemini, covering long context, multimodal input, function calling, grounding, and which model family fits which job.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'reference',
+          'modern',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Gemini Cookbook',
+        href: 'https://github.com/google-gemini/cookbook',
+        description:
+          'Notebooks from Google showing Gemini against real tasks — long documents, video, structured output, and tool calling.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'open-source',
+          'hands-on',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Mistral AI Docs',
+        href: 'https://docs.mistral.ai/',
+        description:
+          "API and deployment guides for Mistral's open and commercial models, including fine-tuning, embeddings, and self-hosted inference.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'open-source',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Grok API Docs',
+        href: 'https://docs.x.ai/',
+        description:
+          'Quickstarts and API reference for Grok, spanning chat, image and video generation, voice, tool calling, and structured outputs.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'DeepSeek API Docs',
+        href: 'https://api-docs.deepseek.com/',
+        description:
+          "OpenAI-compatible reference for DeepSeek's chat and reasoning models, documenting context caching, reasoning output, and per-token pricing.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Cohere Docs',
+        href: 'https://docs.cohere.com/',
+        description:
+          "Docs for Cohere's command, embed, and rerank models, written around retrieval and enterprise search rather than chat alone.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Hugging Face Transformers',
+        href: 'https://huggingface.co/docs/transformers',
+        description:
+          'Reference for the library most open models ship against, covering loading, generation, quantization, and fine-tuning in Python.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'python',
+          'open-source',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Microsoft Foundry Docs',
+        href: 'https://learn.microsoft.com/en-us/azure/foundry/',
+        description:
+          "Microsoft's platform docs for deploying models, agents, and evaluations on Azure, with the quotas and regions each model is bound by.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'PyTorch Tutorials',
+        href: 'https://docs.pytorch.org/tutorials/',
+        description:
+          'Official runnable tutorials for PyTorch, from tensors and autograd through training loops, fine-tuning, and deployment.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'python',
+          'open-source',
+          'hands-on',
+          'advanced',
+        ],
+      },
+      {
         title: 'Model Context Protocol',
         href: 'https://modelcontextprotocol.io/',
         description:
@@ -2461,6 +2606,72 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'LiteLLM',
+        href: 'https://docs.litellm.ai/',
+        description:
+          'Proxy and SDK putting every major provider behind the OpenAI request shape, adding virtual keys, budgets, fallbacks, and request logs.',
+        tags: [
+          'ai',
+          'free',
+          'open-source',
+          'tool',
+          'api',
+          'platform',
+        ],
+      },
+      {
+        title: 'Together AI',
+        href: 'https://www.together.ai/',
+        description:
+          'Hosted inference and fine-tuning for open models, with dedicated endpoints for when shared capacity stops being enough.',
+        tags: [
+          'ai',
+          'paid',
+          'platform',
+          'api',
+          'open-source',
+        ],
+      },
+      {
+        title: 'Artificial Analysis',
+        href: 'https://artificialanalysis.ai/',
+        description:
+          'Independent benchmarks comparing models and the providers hosting them on quality, price, latency, and tokens per second.',
+        tags: [
+          'ai',
+          'free',
+          'reference',
+          'tool',
+          'modern',
+        ],
+      },
+      {
+        title: 'Arena AI',
+        href: 'https://arena.ai/',
+        description:
+          'Public leaderboard ranking text, image, and code models by blind side-by-side votes rather than self-reported benchmarks.',
+        tags: [
+          'ai',
+          'free',
+          'reference',
+          'community',
+          'trending',
+        ],
+      },
+      {
+        title: 'Pinecone',
+        href: 'https://www.pinecone.io/',
+        description:
+          'Managed vector database with serverless indexes and built-in reranking, sized for retrieval without running your own cluster.',
+        tags: [
+          'ai',
+          'paid',
+          'database',
+          'platform',
+          'tool',
+        ],
+      },
+      {
         title: 'Chroma',
         href: 'https://www.trychroma.com/',
         description:
@@ -3905,6 +4116,49 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'LangGraph',
+        href: 'https://docs.langchain.com/oss/javascript/langgraph/overview',
+        description:
+          'Graph runtime for agents that need loops, branches, and human approval, with checkpoints so a run can resume where it stopped.',
+        tags: [
+          'ai',
+          'agent',
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Agent Development Kit',
+        href: 'https://adk.dev/',
+        description:
+          "Google's agent framework, with a TypeScript runtime alongside Python, covering multi-agent delegation, tools, sessions, and local evaluation.",
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'modern',
+        ],
+      },
+      {
+        title: 'LlamaIndex.TS',
+        href: 'https://developers.llamaindex.ai/typescript/framework/',
+        description:
+          'TypeScript build of LlamaIndex, wiring loaders, indexes, and query engines into retrieval pipelines over your own documents.',
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
         title: 'Transformers.js',
         href: 'https://huggingface.co/docs/transformers.js',
         description:
@@ -4581,6 +4835,19 @@ export const SECTIONS = [
           'free',
           'career-focused',
           'advanced',
+        ],
+      },
+      {
+        title: 'OpenAI Developer Community',
+        href: 'https://community.openai.com/',
+        description:
+          "OpenAI's official forum, where API changes, rate limits, and model quirks get worked out in public.",
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'api',
+          'modern',
         ],
       },
       {
@@ -5499,6 +5766,45 @@ export const SECTIONS = [
           'free',
           'ai',
           'modern',
+        ],
+      },
+      {
+        title: 'Google DeepMind Blog',
+        href: 'https://deepmind.google/blog/',
+        description:
+          'Model releases and research announcements from DeepMind, usually published alongside the paper and evaluations behind them.',
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'advanced',
+          'modern',
+        ],
+      },
+      {
+        title: 'The Batch',
+        href: 'https://www.deeplearning.ai/the-batch',
+        description:
+          "Andrew Ng's weekly letter on where the field is heading, followed by the research and product news it draws on.",
+        tags: [
+          'newsletter',
+          'free',
+          'ai',
+          'weekly',
+          'beginner-friendly',
+        ],
+      },
+      {
+        title: 'Lilian Weng',
+        href: 'https://lilianweng.github.io/',
+        description:
+          "Lil'Log — long-form explainers on agents, hallucination, reward hacking, and diffusion, each written as a survey with citations.",
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'agent',
+          'advanced',
         ],
       },
       {
