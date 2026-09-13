@@ -914,6 +914,186 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'AGENTS.md',
+        href: 'https://agents.md/',
+        description:
+          'Open format for the instructions file coding agents read, honored across tools so one file serves Claude Code, Codex, and Cursor alike.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'open-source',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Claude Code Docs',
+        href: 'https://code.claude.com/docs/en/overview',
+        description:
+          'Reference for Claude Code — subagents, hooks, slash commands, MCP servers, and the settings governing what the agent may touch.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Cursor Docs',
+        href: 'https://cursor.com/docs',
+        description:
+          "How Cursor's agent, rules, and MCP integration actually work, alongside the CLI and the codebase indexing behind them.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'GitHub Copilot Docs',
+        href: 'https://docs.github.com/en/copilot',
+        description:
+          "GitHub's reference for Copilot across editor, CLI, and coding agent, covering custom instructions and organization policy.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Codex Docs',
+        href: 'https://developers.openai.com/codex/cli',
+        description:
+          'Setup and configuration for the Codex CLI, covering approval modes, sandboxing, and running the agent against your own repository.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Aider Docs',
+        href: 'https://aider.chat/docs/',
+        description:
+          'Configuration and usage for Aider, including model choice, repository maps, and the commit-per-edit git workflow it is built around.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'reference',
+        ],
+      },
+      {
+        title: 'Cline Docs',
+        href: 'https://docs.cline.bot/',
+        description:
+          'Reference for the Cline editor agent — plan and act modes, MCP servers, checkpoints, and bringing your own provider key.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'reference',
+        ],
+      },
+      {
+        title: 'Continue Docs',
+        href: 'https://docs.continue.dev/',
+        description:
+          'Docs for the open-source Continue extension, covering custom assistants, context providers, and pointing it at local models.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'reference',
+        ],
+      },
+      {
+        title: 'OpenCode Docs',
+        href: 'https://opencode.ai/docs/',
+        description:
+          'Reference for the terminal agent, covering providers, shared sessions, and the config driving its non-interactive runs.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'reference',
+        ],
+      },
+      {
+        title: 'Kiro Docs',
+        href: 'https://kiro.dev/docs/',
+        description:
+          "Reference for AWS's spec-driven agent IDE, covering specs, steering files, and hooks that fire on repository events.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Ollama Docs',
+        href: 'https://docs.ollama.com/',
+        description:
+          'Reference for running models locally — Modelfiles, the REST API, GPU configuration, and the OpenAI-compatible endpoint.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'tool',
+          'open-source',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Langfuse Docs',
+        href: 'https://langfuse.com/docs',
+        description:
+          'Docs for the open-source LLM observability stack — tracing, prompt management, evaluations, and running it self-hosted.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
         title: 'fast.ai',
         href: 'https://www.fast.ai/',
         description:
@@ -2320,6 +2500,21 @@ export const SECTIONS = [
           'paid',
           'tool',
           'trending',
+          'modern',
+        ],
+      },
+      {
+        title: 'Gemini CLI',
+        href: 'https://google-gemini.github.io/gemini-cli/',
+        description:
+          "Google's open-source terminal agent for Gemini, with search grounding, MCP support, and extensions built in.",
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'tool',
+          'cli',
           'modern',
         ],
       },
