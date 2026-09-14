@@ -929,6 +929,21 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'Agent Skills',
+        href: 'https://agentskills.io/',
+        description:
+          'Open specification for SKILL.md packages, loaded on demand so one skill works across Claude Code, Codex, Cursor, and Copilot.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'open-source',
+          'reference',
+          'modern',
+        ],
+      },
+      {
         title: 'Claude Code Docs',
         href: 'https://code.claude.com/docs/en/overview',
         description:
@@ -2504,18 +2519,163 @@ export const SECTIONS = [
         ],
       },
       {
-        title: 'Gemini CLI',
-        href: 'https://google-gemini.github.io/gemini-cli/',
+        title: 'Antigravity CLI',
+        href: 'https://antigravity.google/product/antigravity-cli/',
         description:
-          "Google's open-source terminal agent for Gemini, with search grounding, MCP support, and extensions built in.",
+          "Google's terminal agent, invoked as agy, running Antigravity subagents concurrently; it replaced Gemini CLI in June 2026.",
         tags: [
           'ai',
           'agent',
           'free',
-          'open-source',
           'tool',
           'cli',
           'modern',
+          'trending',
+        ],
+      },
+      {
+        title: 'GitHub Copilot CLI',
+        href: 'https://github.com/features/copilot/cli',
+        description:
+          "Copilot's terminal agent, with a plan mode for review before edits and an autopilot mode that runs commands without stopping.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'paid',
+          'cli',
+          'modern',
+        ],
+      },
+      {
+        title: 'Factory Droid',
+        href: 'https://factory.ai/',
+        description:
+          'Terminal and CI coding agent that routes across models, runs headless in pipelines, and hands off to Slack and Linear.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'paid',
+          'cli',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Kilo Code',
+        href: 'https://kilo.ai/',
+        description:
+          'Open-source agent for VS Code, JetBrains, and the terminal, with subagents and hundreds of models billed at provider rates.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'paid',
+          'open-source',
+          'trending',
+        ],
+      },
+      {
+        title: 'Qwen Code',
+        href: 'https://github.com/QwenLM/qwen-code',
+        description:
+          "Alibaba's open-source terminal agent, tuned for the open-weight Qwen coder models but usable with any compatible API.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'cli',
+        ],
+      },
+      {
+        title: 'Crush',
+        href: 'https://github.com/charmbracelet/crush',
+        description:
+          "Charm's terminal coding agent, pairing a polished TUI with MCP, LSP context, and switching models mid-session.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'cli',
+          'modern',
+        ],
+      },
+      {
+        title: 'Pi',
+        href: 'https://pi.dev/',
+        description:
+          'Deliberately minimal terminal harness — four tools and a one-screen system prompt — extended through TypeScript hooks and skills.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'cli',
+          'typescript',
+          'advanced',
+        ],
+      },
+      {
+        title: 'goose',
+        href: 'https://goose-docs.ai/',
+        description:
+          'General-purpose local agent with desktop app and CLI, governed by the Agentic AI Foundation and extended entirely through MCP.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'cli',
+          'desktop-dev',
+        ],
+      },
+      {
+        title: 'OpenHands',
+        href: 'https://www.openhands.dev/',
+        description:
+          'Open platform for autonomous coding agents, offering a GUI, CLI, and SDK for unattended runs locally or in the cloud.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'paid',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Hermes Agent',
+        href: 'https://hermes-agent.nousresearch.com/',
+        description:
+          "Nous Research's self-improving agent harness, which writes and refines its own skills and keeps memory across sessions.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'trending',
+        ],
+      },
+      {
+        title: 'OpenClaw',
+        href: 'https://openclaw.ai/',
+        description:
+          'Self-hosted personal agent gateway connecting models to messaging apps and dozens of integrations; review what it can reach before granting access.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'trending',
         ],
       },
       {
@@ -2576,6 +2736,81 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'Conductor',
+        href: 'https://www.conductor.build/',
+        description:
+          'Mac app running Claude Code, Codex, and Cursor agents in parallel, each in its own git worktree, with review and merge built in.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'desktop-dev',
+          'productivity',
+          'modern',
+        ],
+      },
+      {
+        title: 'T3 Code',
+        href: 'https://t3.codes/',
+        description:
+          'Open-source desktop, web, and mobile front end for driving Claude Code, Codex, and OpenCode sessions across worktrees.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'desktop-dev',
+          'modern',
+        ],
+      },
+      {
+        title: 'Superpowers',
+        href: 'https://github.com/obra/superpowers',
+        description:
+          'Skills library and working method for coding agents, enforcing brainstorm, plan, test-first implementation, and review in order.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'testing',
+          'trending',
+        ],
+      },
+      {
+        title: 'Spec Kit',
+        href: 'https://github.com/github/spec-kit',
+        description:
+          "GitHub's toolkit for spec-driven development, turning a written specification into a plan and task list an agent implements.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'cli',
+          'modern',
+        ],
+      },
+      {
+        title: 'Context7',
+        href: 'https://context7.com/',
+        description:
+          'MCP server feeding agents current, version-specific library documentation, so generated code stops targeting outdated APIs.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'paid',
+          'api',
+          'modern',
+        ],
+      },
+      {
         title: 'CodeRabbit',
         href: 'https://www.coderabbit.ai/',
         description:
@@ -2586,6 +2821,19 @@ export const SECTIONS = [
           'free',
           'tool',
           'testing',
+          'modern',
+        ],
+      },
+      {
+        title: 'Greptile',
+        href: 'https://www.greptile.com/',
+        description:
+          'AI pull request reviewer that indexes the whole codebase, so comments account for code outside the diff.',
+        tags: [
+          'ai',
+          'paid',
+          'tool',
+          'productivity',
           'modern',
         ],
       },
@@ -2772,6 +3020,20 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'Daytona',
+        href: 'https://www.daytona.io/',
+        description:
+          'Sandboxes for running agent-generated code, started in milliseconds and kept isolated from the host and each other.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'paid',
+          'platform',
+          'open-source',
+        ],
+      },
+      {
         title: 'MCP Registry',
         href: 'https://registry.modelcontextprotocol.io/',
         description:
@@ -2851,6 +3113,34 @@ export const SECTIONS = [
           'reference',
           'community',
           'trending',
+        ],
+      },
+      {
+        title: 'Terminal-Bench',
+        href: 'https://www.tbench.ai/',
+        description:
+          'Open benchmark scoring agents on end-to-end terminal tasks, and the leaderboard coding-agent harnesses compete on.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'reference',
+          'trending',
+        ],
+      },
+      {
+        title: 'SWE-bench',
+        href: 'https://www.swebench.com/',
+        description:
+          'Leaderboards measuring whether agents resolve real GitHub issues, with Verified and multimodal splits alongside the original.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'reference',
+          'advanced',
         ],
       },
       {
@@ -3063,6 +3353,20 @@ export const SECTIONS = [
           'platform',
           'testing',
           'modern',
+        ],
+      },
+      {
+        title: 'Browser Use',
+        href: 'https://browser-use.com/',
+        description:
+          'Open-source library and hosted browsers for agents that navigate, fill forms, and extract data from live websites.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'paid',
+          'open-source',
+          'tool',
         ],
       },
       {
@@ -4354,6 +4658,48 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'Claude Agent SDK',
+        href: 'https://code.claude.com/docs/en/agent-sdk/overview',
+        description:
+          'The loop, tools, and context management behind Claude Code, packaged as a TypeScript and Python library for your own agents.',
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Codex SDK',
+        href: 'https://developers.openai.com/codex/sdk',
+        description:
+          'Programmatic control of the Codex agent from TypeScript or Python, for CI pipelines and coding tasks inside your own tools.',
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Deep Agents',
+        href: 'https://docs.langchain.com/oss/javascript/deepagents/overview',
+        description:
+          'Agent harness on LangGraph with planning, a virtual filesystem, subagents, and context compression for long-running tasks.',
+        tags: [
+          'ai',
+          'agent',
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
         title: 'Transformers.js',
         href: 'https://huggingface.co/docs/transformers.js',
         description:
@@ -5084,6 +5430,19 @@ export const SECTIONS = [
           'agent',
           'video-based',
           'modern',
+        ],
+      },
+      {
+        title: 'Agentic AI Foundation',
+        href: 'https://aaif.io/',
+        description:
+          'Linux Foundation body stewarding MCP, AGENTS.md, and goose, where the open agent standards are governed in public.',
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'agent',
+          'open-source',
         ],
       },
       {
