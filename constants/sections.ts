@@ -754,6 +754,151 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'OpenAI Platform Docs',
+        href: 'https://developers.openai.com/api/docs',
+        description:
+          'Reference for the OpenAI API — responses, structured outputs, function calling, embeddings, and realtime — with a guide beside every endpoint.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'api',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Gemini API Docs',
+        href: 'https://ai.google.dev/gemini-api/docs',
+        description:
+          "Google's developer docs for Gemini, covering long context, multimodal input, function calling, grounding, and which model family fits which job.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'reference',
+          'modern',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Gemini Cookbook',
+        href: 'https://github.com/google-gemini/cookbook',
+        description:
+          'Notebooks from Google showing Gemini against real tasks — long documents, video, structured output, and tool calling.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'open-source',
+          'hands-on',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Mistral AI Docs',
+        href: 'https://docs.mistral.ai/',
+        description:
+          "API and deployment guides for Mistral's open and commercial models, including fine-tuning, embeddings, and self-hosted inference.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'open-source',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Grok API Docs',
+        href: 'https://docs.x.ai/',
+        description:
+          'Quickstarts and API reference for Grok, spanning chat, image and video generation, voice, tool calling, and structured outputs.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'DeepSeek API Docs',
+        href: 'https://api-docs.deepseek.com/',
+        description:
+          "OpenAI-compatible reference for DeepSeek's chat and reasoning models, documenting context caching, reasoning output, and per-token pricing.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Cohere Docs',
+        href: 'https://docs.cohere.com/',
+        description:
+          "Docs for Cohere's command, embed, and rerank models, written around retrieval and enterprise search rather than chat alone.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'api',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Hugging Face Transformers',
+        href: 'https://huggingface.co/docs/transformers',
+        description:
+          'Reference for the library most open models ship against, covering loading, generation, quantization, and fine-tuning in Python.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'python',
+          'open-source',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Microsoft Foundry Docs',
+        href: 'https://learn.microsoft.com/en-us/azure/foundry/',
+        description:
+          "Microsoft's platform docs for deploying models, agents, and evaluations on Azure, with the quotas and regions each model is bound by.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'PyTorch Tutorials',
+        href: 'https://docs.pytorch.org/tutorials/',
+        description:
+          'Official runnable tutorials for PyTorch, from tensors and autograd through training loops, fine-tuning, and deployment.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'python',
+          'open-source',
+          'hands-on',
+          'advanced',
+        ],
+      },
+      {
         title: 'Model Context Protocol',
         href: 'https://modelcontextprotocol.io/',
         description:
@@ -766,6 +911,201 @@ export const SECTIONS = [
           'open-source',
           'reference',
           'modern',
+        ],
+      },
+      {
+        title: 'AGENTS.md',
+        href: 'https://agents.md/',
+        description:
+          'Open format for the instructions file coding agents read, honored across tools so one file serves Claude Code, Codex, and Cursor alike.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'open-source',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Agent Skills',
+        href: 'https://agentskills.io/',
+        description:
+          'Open specification for SKILL.md packages, loaded on demand so one skill works across Claude Code, Codex, Cursor, and Copilot.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'open-source',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Claude Code Docs',
+        href: 'https://code.claude.com/docs/en/overview',
+        description:
+          'Reference for Claude Code — subagents, hooks, slash commands, MCP servers, and the settings governing what the agent may touch.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Cursor Docs',
+        href: 'https://cursor.com/docs',
+        description:
+          "How Cursor's agent, rules, and MCP integration actually work, alongside the CLI and the codebase indexing behind them.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'GitHub Copilot Docs',
+        href: 'https://docs.github.com/en/copilot',
+        description:
+          "GitHub's reference for Copilot across editor, CLI, and coding agent, covering custom instructions and organization policy.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Codex Docs',
+        href: 'https://developers.openai.com/codex/cli',
+        description:
+          'Setup and configuration for the Codex CLI, covering approval modes, sandboxing, and running the agent against your own repository.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Aider Docs',
+        href: 'https://aider.chat/docs/',
+        description:
+          'Configuration and usage for Aider, including model choice, repository maps, and the commit-per-edit git workflow it is built around.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'reference',
+        ],
+      },
+      {
+        title: 'Cline Docs',
+        href: 'https://docs.cline.bot/',
+        description:
+          'Reference for the Cline editor agent — plan and act modes, MCP servers, checkpoints, and bringing your own provider key.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'reference',
+        ],
+      },
+      {
+        title: 'Continue Docs',
+        href: 'https://docs.continue.dev/',
+        description:
+          'Docs for the open-source Continue extension, covering custom assistants, context providers, and pointing it at local models.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'reference',
+        ],
+      },
+      {
+        title: 'OpenCode Docs',
+        href: 'https://opencode.ai/docs/',
+        description:
+          'Reference for the terminal agent, covering providers, shared sessions, and the config driving its non-interactive runs.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'reference',
+        ],
+      },
+      {
+        title: 'Kiro Docs',
+        href: 'https://kiro.dev/docs/',
+        description:
+          "Reference for AWS's spec-driven agent IDE, covering specs, steering files, and hooks that fire on repository events.",
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'reference',
+          'modern',
+        ],
+      },
+      {
+        title: 'Ollama Docs',
+        href: 'https://docs.ollama.com/',
+        description:
+          'Reference for running models locally — Modelfiles, the REST API, GPU configuration, and the OpenAI-compatible endpoint.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'tool',
+          'open-source',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Langfuse Docs',
+        href: 'https://langfuse.com/docs',
+        description:
+          'Docs for the open-source LLM observability stack — tracing, prompt management, evaluations, and running it self-hosted.',
+        tags: [
+          'documentation',
+          'free',
+          'ai',
+          'agent',
+          'tool',
+          'open-source',
+          'advanced',
         ],
       },
       {
@@ -2179,6 +2519,166 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'Antigravity CLI',
+        href: 'https://antigravity.google/product/antigravity-cli/',
+        description:
+          "Google's terminal agent, invoked as agy, running Antigravity subagents concurrently; it replaced Gemini CLI in June 2026.",
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'tool',
+          'cli',
+          'modern',
+          'trending',
+        ],
+      },
+      {
+        title: 'GitHub Copilot CLI',
+        href: 'https://github.com/features/copilot/cli',
+        description:
+          "Copilot's terminal agent, with a plan mode for review before edits and an autopilot mode that runs commands without stopping.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'paid',
+          'cli',
+          'modern',
+        ],
+      },
+      {
+        title: 'Factory Droid',
+        href: 'https://factory.ai/',
+        description:
+          'Terminal and CI coding agent that routes across models, runs headless in pipelines, and hands off to Slack and Linear.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'paid',
+          'cli',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Kilo Code',
+        href: 'https://kilo.ai/',
+        description:
+          'Open-source agent for VS Code, JetBrains, and the terminal, with subagents and hundreds of models billed at provider rates.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'paid',
+          'open-source',
+          'trending',
+        ],
+      },
+      {
+        title: 'Qwen Code',
+        href: 'https://github.com/QwenLM/qwen-code',
+        description:
+          "Alibaba's open-source terminal agent, tuned for the open-weight Qwen coder models but usable with any compatible API.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'cli',
+        ],
+      },
+      {
+        title: 'Crush',
+        href: 'https://github.com/charmbracelet/crush',
+        description:
+          "Charm's terminal coding agent, pairing a polished TUI with MCP, LSP context, and switching models mid-session.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'cli',
+          'modern',
+        ],
+      },
+      {
+        title: 'Pi',
+        href: 'https://pi.dev/',
+        description:
+          'Deliberately minimal terminal harness — four tools and a one-screen system prompt — extended through TypeScript hooks and skills.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'cli',
+          'typescript',
+          'advanced',
+        ],
+      },
+      {
+        title: 'goose',
+        href: 'https://goose-docs.ai/',
+        description:
+          'General-purpose local agent with desktop app and CLI, governed by the Agentic AI Foundation and extended entirely through MCP.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'cli',
+          'desktop-dev',
+        ],
+      },
+      {
+        title: 'OpenHands',
+        href: 'https://www.openhands.dev/',
+        description:
+          'Open platform for autonomous coding agents, offering a GUI, CLI, and SDK for unattended runs locally or in the cloud.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'paid',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Hermes Agent',
+        href: 'https://hermes-agent.nousresearch.com/',
+        description:
+          "Nous Research's self-improving agent harness, which writes and refines its own skills and keeps memory across sessions.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'trending',
+        ],
+      },
+      {
+        title: 'OpenClaw',
+        href: 'https://openclaw.ai/',
+        description:
+          'Self-hosted personal agent gateway connecting models to messaging apps and dozens of integrations; review what it can reach before granting access.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'trending',
+        ],
+      },
+      {
         title: 'Amp',
         href: 'https://ampcode.com/',
         description:
@@ -2236,6 +2736,81 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'Conductor',
+        href: 'https://www.conductor.build/',
+        description:
+          'Mac app running Claude Code, Codex, and Cursor agents in parallel, each in its own git worktree, with review and merge built in.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'desktop-dev',
+          'productivity',
+          'modern',
+        ],
+      },
+      {
+        title: 'T3 Code',
+        href: 'https://t3.codes/',
+        description:
+          'Open-source desktop, web, and mobile front end for driving Claude Code, Codex, and OpenCode sessions across worktrees.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'desktop-dev',
+          'modern',
+        ],
+      },
+      {
+        title: 'Superpowers',
+        href: 'https://github.com/obra/superpowers',
+        description:
+          'Skills library and working method for coding agents, enforcing brainstorm, plan, test-first implementation, and review in order.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'testing',
+          'trending',
+        ],
+      },
+      {
+        title: 'Spec Kit',
+        href: 'https://github.com/github/spec-kit',
+        description:
+          "GitHub's toolkit for spec-driven development, turning a written specification into a plan and task list an agent implements.",
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'open-source',
+          'cli',
+          'modern',
+        ],
+      },
+      {
+        title: 'Context7',
+        href: 'https://context7.com/',
+        description:
+          'MCP server feeding agents current, version-specific library documentation, so generated code stops targeting outdated APIs.',
+        tags: [
+          'ai',
+          'agent',
+          'tool',
+          'free',
+          'paid',
+          'api',
+          'modern',
+        ],
+      },
+      {
         title: 'CodeRabbit',
         href: 'https://www.coderabbit.ai/',
         description:
@@ -2246,6 +2821,19 @@ export const SECTIONS = [
           'free',
           'tool',
           'testing',
+          'modern',
+        ],
+      },
+      {
+        title: 'Greptile',
+        href: 'https://www.greptile.com/',
+        description:
+          'AI pull request reviewer that indexes the whole codebase, so comments account for code outside the diff.',
+        tags: [
+          'ai',
+          'paid',
+          'tool',
+          'productivity',
           'modern',
         ],
       },
@@ -2432,6 +3020,20 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'Daytona',
+        href: 'https://www.daytona.io/',
+        description:
+          'Sandboxes for running agent-generated code, started in milliseconds and kept isolated from the host and each other.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'paid',
+          'platform',
+          'open-source',
+        ],
+      },
+      {
         title: 'MCP Registry',
         href: 'https://registry.modelcontextprotocol.io/',
         description:
@@ -2458,6 +3060,100 @@ export const SECTIONS = [
           'api',
           'monitoring',
           'modern',
+        ],
+      },
+      {
+        title: 'LiteLLM',
+        href: 'https://docs.litellm.ai/',
+        description:
+          'Proxy and SDK putting every major provider behind the OpenAI request shape, adding virtual keys, budgets, fallbacks, and request logs.',
+        tags: [
+          'ai',
+          'free',
+          'open-source',
+          'tool',
+          'api',
+          'platform',
+        ],
+      },
+      {
+        title: 'Together AI',
+        href: 'https://www.together.ai/',
+        description:
+          'Hosted inference and fine-tuning for open models, with dedicated endpoints for when shared capacity stops being enough.',
+        tags: [
+          'ai',
+          'paid',
+          'platform',
+          'api',
+          'open-source',
+        ],
+      },
+      {
+        title: 'Artificial Analysis',
+        href: 'https://artificialanalysis.ai/',
+        description:
+          'Independent benchmarks comparing models and the providers hosting them on quality, price, latency, and tokens per second.',
+        tags: [
+          'ai',
+          'free',
+          'reference',
+          'tool',
+          'modern',
+        ],
+      },
+      {
+        title: 'Arena AI',
+        href: 'https://arena.ai/',
+        description:
+          'Public leaderboard ranking text, image, and code models by blind side-by-side votes rather than self-reported benchmarks.',
+        tags: [
+          'ai',
+          'free',
+          'reference',
+          'community',
+          'trending',
+        ],
+      },
+      {
+        title: 'Terminal-Bench',
+        href: 'https://www.tbench.ai/',
+        description:
+          'Open benchmark scoring agents on end-to-end terminal tasks, and the leaderboard coding-agent harnesses compete on.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'reference',
+          'trending',
+        ],
+      },
+      {
+        title: 'SWE-bench',
+        href: 'https://www.swebench.com/',
+        description:
+          'Leaderboards measuring whether agents resolve real GitHub issues, with Verified and multimodal splits alongside the original.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'open-source',
+          'reference',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Pinecone',
+        href: 'https://www.pinecone.io/',
+        description:
+          'Managed vector database with serverless indexes and built-in reranking, sized for retrieval without running your own cluster.',
+        tags: [
+          'ai',
+          'paid',
+          'database',
+          'platform',
+          'tool',
         ],
       },
       {
@@ -2657,6 +3353,20 @@ export const SECTIONS = [
           'platform',
           'testing',
           'modern',
+        ],
+      },
+      {
+        title: 'Browser Use',
+        href: 'https://browser-use.com/',
+        description:
+          'Open-source library and hosted browsers for agents that navigate, fill forms, and extract data from live websites.',
+        tags: [
+          'ai',
+          'agent',
+          'free',
+          'paid',
+          'open-source',
+          'tool',
         ],
       },
       {
@@ -3905,6 +4615,91 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'LangGraph',
+        href: 'https://docs.langchain.com/oss/javascript/langgraph/overview',
+        description:
+          'Graph runtime for agents that need loops, branches, and human approval, with checkpoints so a run can resume where it stopped.',
+        tags: [
+          'ai',
+          'agent',
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Agent Development Kit',
+        href: 'https://adk.dev/',
+        description:
+          "Google's agent framework, with a TypeScript runtime alongside Python, covering multi-agent delegation, tools, sessions, and local evaluation.",
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'modern',
+        ],
+      },
+      {
+        title: 'LlamaIndex.TS',
+        href: 'https://developers.llamaindex.ai/typescript/framework/',
+        description:
+          'TypeScript build of LlamaIndex, wiring loaders, indexes, and query engines into retrieval pipelines over your own documents.',
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Claude Agent SDK',
+        href: 'https://code.claude.com/docs/en/agent-sdk/overview',
+        description:
+          'The loop, tools, and context management behind Claude Code, packaged as a TypeScript and Python library for your own agents.',
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Codex SDK',
+        href: 'https://developers.openai.com/codex/sdk',
+        description:
+          'Programmatic control of the Codex agent from TypeScript or Python, for CI pipelines and coding tasks inside your own tools.',
+        tags: [
+          'ai',
+          'agent',
+          'typescript',
+          'free',
+          'advanced',
+        ],
+      },
+      {
+        title: 'Deep Agents',
+        href: 'https://docs.langchain.com/oss/javascript/deepagents/overview',
+        description:
+          'Agent harness on LangGraph with planning, a virtual filesystem, subagents, and context compression for long-running tasks.',
+        tags: [
+          'ai',
+          'agent',
+          'javascript',
+          'typescript',
+          'free',
+          'open-source',
+          'advanced',
+        ],
+      },
+      {
         title: 'Transformers.js',
         href: 'https://huggingface.co/docs/transformers.js',
         description:
@@ -4584,6 +5379,19 @@ export const SECTIONS = [
         ],
       },
       {
+        title: 'OpenAI Developer Community',
+        href: 'https://community.openai.com/',
+        description:
+          "OpenAI's official forum, where API changes, rate limits, and model quirks get worked out in public.",
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'api',
+          'modern',
+        ],
+      },
+      {
         title: 'Hugging Face Forums',
         href: 'https://discuss.huggingface.co/',
         description:
@@ -4622,6 +5430,19 @@ export const SECTIONS = [
           'agent',
           'video-based',
           'modern',
+        ],
+      },
+      {
+        title: 'Agentic AI Foundation',
+        href: 'https://aaif.io/',
+        description:
+          'Linux Foundation body stewarding MCP, AGENTS.md, and goose, where the open agent standards are governed in public.',
+        tags: [
+          'community',
+          'free',
+          'ai',
+          'agent',
+          'open-source',
         ],
       },
       {
@@ -5499,6 +6320,45 @@ export const SECTIONS = [
           'free',
           'ai',
           'modern',
+        ],
+      },
+      {
+        title: 'Google DeepMind Blog',
+        href: 'https://deepmind.google/blog/',
+        description:
+          'Model releases and research announcements from DeepMind, usually published alongside the paper and evaluations behind them.',
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'advanced',
+          'modern',
+        ],
+      },
+      {
+        title: 'The Batch',
+        href: 'https://www.deeplearning.ai/the-batch',
+        description:
+          "Andrew Ng's weekly letter on where the field is heading, followed by the research and product news it draws on.",
+        tags: [
+          'newsletter',
+          'free',
+          'ai',
+          'weekly',
+          'beginner-friendly',
+        ],
+      },
+      {
+        title: 'Lilian Weng',
+        href: 'https://lilianweng.github.io/',
+        description:
+          "Lil'Log — long-form explainers on agents, hallucination, reward hacking, and diffusion, each written as a survey with citations.",
+        tags: [
+          'blog',
+          'free',
+          'ai',
+          'agent',
+          'advanced',
         ],
       },
       {
